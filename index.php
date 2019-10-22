@@ -8,18 +8,22 @@
 <body>
 	
 <form action="welcome_get.php" method="get">
-<input type="text" placeholder="Name" name="name"><br>
+<input type="text" placeholder="Name" name="name">
 <input type="text" placeholder="Surname" name="surname"><br>
 <input type="text" placeholder="Address" name="address"><br>
 <input type="text" placeholder="E-mail" name="email"><br>
 <input type="numbers" placeholder="Phone number" name="name"><br>
-<input type="text" placeholder="Complainee Company name" name="company name"><br>
-<input type="text" placeholder="Complainee Company address" name="company address"><br>
-<input type="numbers" placeholder="Complainee Company Phone number" name="company phone"><br>
-<input type="numbers" placeholder="Complainee Company Tax Id" name="company taxId"><br>
+<input type="text" placeholder="Complainee Company name" name="company name" required>
+<span class="error">* <?php echo $nameErr;?></span><br>
+<input type="text" placeholder="Complainee Company address" name="company address" required>
+<span class="error">* <?php echo $nameErr;?></span><br>
+<input type="numbers" placeholder="Complainee Company Phone number" name="company phone" required>
+<span class="error">* <?php echo $nameErr;?></span><br>
+<input type="numbers" placeholder="Complainee Company Tax Id" name="company taxId"required>
+<span class="error">* <?php echo $nameErr;?></span><br>
 <textarea rows="4" cols="50" name="comment" form="usrform">
 Enter here Complaint Description:...</textarea><br>
-Evidence file(image,audio etc.): <input type="text" name="company phone"><br>
+Evidence file(image,audio etc.): <input type="text" name="company phone" required><br>
 
 GPS location:  
 <br><script>
