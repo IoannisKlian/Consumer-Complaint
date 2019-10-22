@@ -8,17 +8,17 @@
 	$username = mysqli_real_escape_string($connection, $username);
 	$password = mysqli_real_escape_string($connection, $password);
 
-	$result = mysqli_query($connection, "SELECT * FROM Users WHERE username = '$username' AND password = '$password'");
+	$result = mysqli_query($connection, "SELECT * FROM govrn_emp WHERE username = '$username' AND password = '$password'");
 	$row = mysqli_fetch_array($result);
 	
-	if ($row['Username'] == $username && $row['Password'] == $password) {
+	if ($row['username'] == $username && $row['password'] == $password) {
 		session_start();
 		$_SESSION["user"] = true;
 		$_SESSION["id"] = $row['id'];
-		$_SESSION["user_name"] = $row['First Name'];
-		$_SESSION["password"] = $row['Last Name'];
+		$_SESSION["user_name"] = $row['username'];
+		$_SESSION["name"] = $row['name'];
 		
-		header("Location: index.php");
+		header("Location: employeeIndex.php");
 	}
 	else {
 		session_start();
