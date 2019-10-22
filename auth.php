@@ -8,7 +8,7 @@
 	$username = mysqli_real_escape_string($connection, $username);
 	$password = mysqli_real_escape_string($connection, $password);
 
-	$result = mysqli_query($connection, "SELECT * FROM Users WHERE Username = '$username' AND Password = '$password'");
+	$result = mysqli_query($connection, "SELECT * FROM Users WHERE username = '$username' AND password = '$password'");
 	$row = mysqli_fetch_array($result);
 	
 	if ($row['Username'] == $username && $row['Password'] == $password) {

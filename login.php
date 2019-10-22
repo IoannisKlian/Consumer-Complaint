@@ -12,6 +12,6 @@
 				<input type="text" name="password" id="password">
 				<input type="submit" value="Login" id="btn">
 			</form>
-		</div>
+	</div>
 </body>
 </html>
