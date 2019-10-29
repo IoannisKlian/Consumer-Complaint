@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-<form action="welcome_get.php" method="get">
+<form action="complaintSumbitHandler.php" method="post">
 <input type="text" placeholder="Όνομα" name="name">
 <input type="text" placeholder="Επώνυμο" name="surname"><br>
 <input type="text" placeholder="Διεύθυνση" name="address"><br>
@@ -27,6 +27,7 @@
 <input type="numbers" placeholder="Complainee Company Tax Id" name="company_taxId"required>
 <span class="error">*</span><br>
 <textarea rows="4" cols="50" name="comment" form="usrform">
+
 Enter here Complaint Description:...</textarea><br>
 Evidence file(image,audio etc.): <input type="text" name="file_upload" required><br>
 
@@ -47,6 +48,7 @@ function showPosition(position) {
 }
 </script><br> 
 
-<input type="submit">
+
+<input type="submit" name="submit">
 </form>
 </HTML>
