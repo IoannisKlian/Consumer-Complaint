@@ -13,7 +13,7 @@
 <body>
 	
 <form action="complaintSumbitHandler.php" method="post">
-<input type="text" placeholder="Όνομα" name="name">
+<input type="text" placeholder="Όνομα" name="name"><br>
 <input type="text" placeholder="Επώνυμο" name="surname"><br>
 <input type="text" placeholder="Διεύθυνση" name="address"><br>
 <input type="text" placeholder="E-mail" name="email"><br>
@@ -26,8 +26,13 @@
 <span class="error">*</span><br>
 <input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
 <span class="error">*</span><br>
-<textarea rows="4" cols="50" name="comment" form="usrform">
-Περιγραφή του προβλήματος:...</textarea><br>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Περιγραφή προβλήματος</span>
+  </div>
+  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
+</div><br>
 
 Evidence file(image,audio etc.): Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
