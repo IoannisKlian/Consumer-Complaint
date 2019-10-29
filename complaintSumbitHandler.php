@@ -1,22 +1,37 @@
 <?php
 if(isset($_POST['submit'])) {
-	if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['comment'])) {
+	if(isset($_POST['company_name']) && isset($_POST['company_address']) && isset($_POST['company_phone']) && 
+		isset($_POST['company_taxId'])) {
 		include ("connect.php");
-
-		$fname = mysqli_real_escape_string($connect,$_POST['fname']);
-		$lname = mysqli_real_escape_string($connect,$_POST['lname']);
-		$email = mysqli_real_escape_string($connect,$_POST['email']);
-		$subject = "Email_from_".$fname."_".$lname;
-		$message = htmlentities(mysqli_real_escape_string($connect,$_POST['message']));
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			exit('email is not valid');
+	
+		if (!empty($_POST['name'])) {
+			$fname = mysqli_real_escape_string($connection,$_POST['name']);
 		}
-		// write email sending code(PHPMailer or email())
-		$email = mail('giannisklian@gmail.com', $subject, $message, "From:" . $email);
+		if (!empty($_POST['surname'])) {
+			$lname = mysqli_real_escape_string($connection,$_POST['surname']);
+		}
+		if (!empty($_POST['adress'])) {
+			$adress = mysqli_real_escape_string($connection,$_POST['adress']);
+		}
+		if (!empty($_POST['email'])) {
+			$email = mysqli_real_escape_string($connection,$_POST['email']);
+		}
+		if (!empty($_POST['phone'])) {
+			$phone = mysqli_real_escape_string($connection,$_POST['phone']);
+		}
+		$company_name = mysqli_real_escape_string($connection,$_POST['company_name']);
+		$company_address = mysqli_real_escape_string($connection,$_POST['company_address']);
+		$company_phone = mysqli_real_escape_string($connection,$_POST['company_phone']);
+		$company_taxId = mysqli_real_escape_string($connection,$_POST['company_taxId']);
+		$comment = $_POST['phone'];
+		if (!empty($_POST['nomoi_elladas'])) {
+			$nomoi_elladas = mysqli_real_escape_string($connection,$_POST['nomoi_elladas']);
+		}
 	} 
-else {
-echo "Something went wrong";
+	else {
+	echo "Something went wrong";
+	}
 }
-}
+
 
 ?>

@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-<form action="welcome_get.php" method="get">
+<form action="complaintSumbitHandler.php" method="post">
 <input type="text" placeholder="Όνομα" name="name">
 <input type="text" placeholder="Επώνυμο" name="surname"><br>
 <input type="text" placeholder="Διεύθυνση" name="address"><br>
@@ -101,6 +101,7 @@ function showPosition(position) {
 }
 </script><br> 
 
-<input type="submit">
+
+<input type="submit" name="submit">
 </form>
 </HTML>
