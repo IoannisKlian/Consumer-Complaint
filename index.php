@@ -28,7 +28,10 @@
 <span class="error">*</span><br>
 <textarea rows="4" cols="50" name="comment" form="usrform">
 Περιγραφή του προβλήματος:...</textarea><br>
-Evidence file(image,audio etc.): <input type="text" name="file_upload" required><br>
+
+Evidence file(image,audio etc.): Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+ 
  <select name="nomoi_elladas">
     <option value="Αττική">Αττική</option>
     <option value="Θεσσαλονίκη">Θεσσαλονίκη</option>
@@ -82,7 +85,9 @@ Evidence file(image,audio etc.): <input type="text" name="file_upload" required>
     <option value="Λασιθίου">Λασιθίου</option>
     <option value="Ρεθύμνης">Ρεθύμνης</option>
     <option value="Λέσβου">Λέσβου</option>
-  </select>
+
+
+  </select><br>
   
 GPS location:  
 <br><script>
