@@ -17,20 +17,32 @@
 <input type="text" placeholder="Επώνυμο" name="surname"><br>
 <input type="text" placeholder="Διεύθυνση" name="address"><br>
 <input type="text" placeholder="E-mail" name="email"><br>
-<input type="numbers" placeholder="Phone number" name="phone"><br>
-<input type="text" placeholder="Complainee Company name" name="company_name" required>
+<input type="numbers" placeholder="Τηλέφωνο επικοινωνίας" name="phone"><br>
+<input type="text" placeholder="Επωνυμία εταιρείας" name="company_name" required>
 <span class="error">*</span><br>
-<input type="text" placeholder="Complainee Company address" name="company_address" required>
+<input type="text" placeholder="Διεύθυνση εταιρείας" name="company_address" required>
 <span class="error">*</span><br>
-<input type="numbers" placeholder="Complainee Company Phone number" name="company_phone" required>
+<input type="numbers" placeholder="Τηλέφωνο επικοινωνίας εταιρείας" name="company_phone" required>
 <span class="error">*</span><br>
-<input type="numbers" placeholder="Complainee Company Tax Id" name="company_taxId"required>
+<input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
 <span class="error">*</span><br>
 <textarea rows="4" cols="50" name="comment" form="usrform">
+<<<<<<< HEAD
 
 Enter here Complaint Description:...</textarea><br>
+||||||| merged common ancestors
+Enter here Complaint Description:...</textarea><br>
+=======
+Περιγραφή του προβλήματος:...</textarea><br>
+>>>>>>> 64d5f544fee438bb190f107c83897043caab64e4
 Evidence file(image,audio etc.): <input type="text" name="file_upload" required><br>
-
+ <select name="nomoi_elladas">
+    <option value="Αττική">Αττική</option>
+    <option value="saab">Saab 95</option>
+    <option value="mercedes">Mercedes SLK</option>
+    <option value="audi">Audi TT</option>
+  </select>
+  
 GPS location:  
 <br><script>
 var x = document.getElementById("demo");
