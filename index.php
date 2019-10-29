@@ -27,14 +27,7 @@
 <input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
 <span class="error">*</span><br>
 <textarea rows="4" cols="50" name="comment" form="usrform">
-<<<<<<< HEAD
-
-Enter here Complaint Description:...</textarea><br>
-||||||| merged common ancestors
-Enter here Complaint Description:...</textarea><br>
-=======
 Περιγραφή του προβλήματος:...</textarea><br>
->>>>>>> 64d5f544fee438bb190f107c83897043caab64e4
 Evidence file(image,audio etc.): <input type="text" name="file_upload" required><br>
  <select name="nomoi_elladas">
     <option value="Αττική">Αττική</option>
