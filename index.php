@@ -1,7 +1,3 @@
-<?php  
-
-	include ("connect.php");
-	?>
 
 <HTML>
 <head>
@@ -16,66 +12,59 @@
 
 <div class="form-group">
     <label for="exampleFormControlInput1">Όνομα</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ιωάννης" name="name">
+    <input type="text" class="form-control" id="name" placeholder="Ιωάννης" name="name">
   </div>
 
 <div class="form-group">
     <label for="exampleFormControlInput1">Επώνυμο</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Παραπόλας" name="surname">
+    <input type="text" class="form-control" id="surname" placeholder="Παραπόλας" name="surname">
   </div>
 
 <div class="form-group">
     <label for="exampleFormControlInput1">Διεύθυνση</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Λεωφ. Αλεξάνδρας 205" name="address">
+    <input type="text" class="form-control" id="address" placeholder="Λεωφ. Αλεξάνδρας 205" name="address">
   </div>
 
 <div class="form-group">
     <label for="exampleFormControlInput1">Email address</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+    <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email">
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlInput1">Τηλέφωνο επικοινωνίας</label>
-    <input type="numbers" class="form-control" id="exampleFormControlInput1" placeholder="6941234567" name="phone">
+    <input type="numbers" class="form-control" id="phone" placeholder="6941234567" name="phone">
   </div>
 
-<input type="text" placeholder="Επωνυμία εταιρείας" name="company_name" required>
+<input type="text" placeholder="Επωνυμία εταιρείας" id="company_name" name="company_name" required>
 <span class="error">*</span><br>
-<input type="text" placeholder="Διεύθυνση εταιρείας" name="company_address" required>
+<input type="text" placeholder="Διεύθυνση εταιρείας" id="company_address" name="company_address" required>
 <span class="error">*</span><br>
-<input type="numbers" placeholder="Τηλέφωνο επικοινωνίας εταιρείας" name="company_phone" required>
+<input type="numbers" placeholder="Τηλέφωνο επικοινωνίας εταιρείας" id="company_phone" name="company_phone" required>
 <span class="error">*</span><br>
-<input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
+<input type="numbers" placeholder="ΑΦΜ εταιρείας" id="company_taxId" name="company_taxId"required>
 <span class="error">*</span><br>
 
 <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος</span>
   </div>
-  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
+  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment"></textarea>
 </div><br>
   
-<br><script>
-var x = document.getElementById("demo");
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script><br> 
+<br><br> 
 
 Evidence file(image,audio etc.): Select image to upload:
   <br>
 <input type="file" name="file" id="file">
 
-<input type="submit" name="submit">
+<input type="submit" id="submit" name="submit">
 </form>
 </body>
+<script type="text/javascript" src="js/form"></script>
 </HTML>
+
+<?php  
+  include ("connect.php");
+  include ("modals/modal_form_anonymous_check.php");
+  include ("modals/modal_form_communication_alert.php");
+?>
