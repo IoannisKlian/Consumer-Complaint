@@ -32,10 +32,32 @@ if(isset($_POST['submit'])) {
 		else{
 			$phone = "empty";
 		}
-		$company_name = mysqli_real_escape_string($connection,$_POST['company_name']);
-		$company_address = mysqli_real_escape_string($connection,$_POST['company_address']);
-		$company_phone = mysqli_real_escape_string($connection,$_POST['company_phone']);
-		$company_taxId = mysqli_real_escape_string($connection,$_POST['company_taxId']);
+		if (!empty($_POST['company_name'])) {
+			$company_name = mysqli_real_escape_string($connection,$_POST['company_name']);
+		}
+		else{
+			$company_name = "empty";
+		}
+		if (!empty($_POST['company_address'])) {
+			$company_address = mysqli_real_escape_string($connection,$_POST['company_address']);
+		}
+		else{
+			$company_address = "empty";
+		}
+		if (!empty($_POST['company_phone'])) {
+			$company_phone = mysqli_real_escape_string($connection,$_POST['company_phone']);
+		}
+		else{
+			$company_phone = "empty";
+		}
+		if (!empty($_POST['company_taxId'])) {
+			$company_taxId = mysqli_real_escape_string($connection,$_POST['company_taxId']);
+		}
+		else{
+			$company_taxId = "empty";
+		}
+		
+		
 		if (isset($_POST['comment'])) {
 		    // Escape any html characters
 		    $comment = htmlentities(mysqli_real_escape_string($connection,$_POST['comment']));
