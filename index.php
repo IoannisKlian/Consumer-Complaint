@@ -26,8 +26,8 @@
 <span class="error">*</span><br>
 <input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
 <span class="error">*</span><br>
-<textarea rows="4" cols="50" name="comment" form="usrform">
-Περιγραφή του προβλήματος:...</textarea><br>
+<textarea rows="4" cols="50" id="comment" name="comment" placeholder="Περιγραφή του προβλήματος:...">
+</textarea><br>
 
 Evidence file(image,audio etc.): Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
