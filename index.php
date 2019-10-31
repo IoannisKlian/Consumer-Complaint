@@ -36,63 +36,6 @@
 
 Evidence file(image,audio etc.): Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload"><br>
- 
- <select name="nomoi_elladas">
-    <option value="Αττική">Αττική</option>
-    <option value="Θεσσαλονίκη">Θεσσαλονίκη</option>
-    <option value="Αχαϊα">Αχαϊα</option>
-    <option value="Έβρου">Έβρου</option>
-    <option value="Ροδόπης">Ροδόπης</option>
-    <option value="Ξάνθης">Ξάνθης</option>
-    <option value="Δράμας">Δράμας</option>
-    <option value="Καβάλας">Καβάλας</option>
-    <option value="Χαλκιδικής">Χαλκιδικής</option>
-    <option value="Ημαθίας">Ημαθίας</option>
-    <option value="Κιλκίς">Κιλκίς</option>
-    <option value="Πέλλας">Πέλλας</option>
-    <option value="Πιερίας">Πιερίας</option>
-    <option value="Σερρών">Σερρών</option>
-    <option value="Κοζάνης">Κοζάνης</option>
-    <option value="Φλώρινας">Φλώρινας</option>
-    <option value="Γρεβενών">Γρεβενών</option>
-    <option value="Καστοριάς">Καστοριάς</option>
-    <option value="Ιωαννίνων">Ιωαννίνων</option>
-    <option value="Άρτας">Άρτας</option>
-    <option value="Πρέβεζας">Πρέβεζας</option>
-    <option value="Ξάνθης">Ξάνθης</option>
-    <option value="Θεσπρωτίας">Θεσπρωτίας</option>
-    <option value="Λάρισας">Λάρισας</option>
-    <option value="Καρδίτσας">Καρδίτσας</option>
-    <option value="Μαγνησίας">Μαγνησίας</option>
-    <option value="Τρικάλων">Τρικάλων</option>
-    <option value="Βοιωτίας">Βοιωτίας</option>
-    <option value="Ευβοίας">Ευβοίας</option>
-    <option value="Ευρυτανίας">Ευρυτανίας</option>
-    <option value="Φωκίδας">Φωκίδας</option>
-    <option value="Φθιώτιδας">Φθιώτιδας</option>
-    <option value="Κεφαλληνίας">Κεφαλληνίας</option>
-    <option value="Κέρκυρας">Κέρκυρας</option>
-    <option value="Λευκάδας">Λευκάδας</option>
-    <option value="Ζακύνθου">Ζακύνθου</option>
-    <option value="Ηλείας">Ηλείας</option>
-    <option value="Αιτωλοακαρνανίας">Αιτωλοακαρνανίας</option>
-    <option value="Αρκαδίας">Αρκαδίας</option>
-    <option value="Αργολίδας">Αργολίδας</option>
-    <option value="Κορινθίας">Κορινθίας</option>
-    <option value="Λακωνίας">Λακωνίας</option>
-    <option value="Μεσσηνίας">Μεσσηνίας</option>
-    <option value="Χίου">Χίου</option>
-    <option value="Σάμου">Πιερίας</option>
-    <option value="Κυκλάδων">Κυκλάδων</option>
-    <option value="Δωδεκανήσου">Δωδεκανήσου</option>
-    <option value="Ηρακλείου">Ηρακλείου</option>
-    <option value="Χανίων">Χανίων</option>
-    <option value="Λασιθίου">Λασιθίου</option>
-    <option value="Ρεθύμνης">Ρεθύμνης</option>
-    <option value="Λέσβου">Λέσβου</option>
-
-
-  </select><br>
   
 GPS location:  
 <br><script>
