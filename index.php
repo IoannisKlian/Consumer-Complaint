@@ -11,13 +11,34 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-	
-<form action="complaintSumbitHandler.php" enctype="multipart/form-data" method="post">
-<input type="text" placeholder="Όνομα" name="name"><br>
-<input type="text" placeholder="Επώνυμο" name="surname"><br>
-<input type="text" placeholder="Διεύθυνση" name="address"><br>
-<input type="text" placeholder="E-mail" name="email"><br>
-<input type="numbers" placeholder="Τηλέφωνο επικοινωνίας" name="phone"><br>
+
+<form action="complaintSumbitHandler.php" method="post" enctype="multipart/form-data">
+
+<div class="form-group">
+    <label for="exampleFormControlInput1">Όνομα</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ιωάννης" name="name">
+  </div>
+
+<div class="form-group">
+    <label for="exampleFormControlInput1">Επώνυμο</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Παραπόλας" name="surname">
+  </div>
+
+<div class="form-group">
+    <label for="exampleFormControlInput1">Διεύθυνση</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Λεωφ. Αλεξάνδρας 205" name="address">
+  </div>
+
+<div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Τηλέφωνο επικοινωνίας</label>
+    <input type="numbers" class="form-control" id="exampleFormControlInput1" placeholder="6941234567" name="phone">
+  </div>
+
 <input type="text" placeholder="Επωνυμία εταιρείας" name="company_name" required>
 <span class="error">*</span><br>
 <input type="text" placeholder="Διεύθυνση εταιρείας" name="company_address" required>
@@ -33,7 +54,7 @@
   </div>
   <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
 </div><br>
- 
+  
 <br><script>
 var x = document.getElementById("demo");
 function getLocation() {
@@ -49,9 +70,12 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 </script><br> 
+
 Evidence file(image,audio etc.): Select image to upload:
   <br>
 <input type="file" name="file" id="file">
+
 <input type="submit" name="submit">
 </form>
+</body>
 </HTML>
