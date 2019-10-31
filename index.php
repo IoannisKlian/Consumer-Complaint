@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-<form action="complaintSumbitHandler.php" method="post">
+<form action="complaintSumbitHandler.php" enctype="multipart/form-data" method="post">
 <input type="text" placeholder="Όνομα" name="name"><br>
 <input type="text" placeholder="Επώνυμο" name="surname"><br>
 <input type="text" placeholder="Διεύθυνση" name="address"><br>
@@ -33,12 +33,7 @@
   </div>
   <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
 </div><br>
->>>>>>> d1b7d3e139740a72d6a8e3dd618af699550bca66
-
-Evidence file(image,audio etc.): Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload"><br>
-  
-GPS location:  
+ 
 <br><script>
 var x = document.getElementById("demo");
 function getLocation() {
@@ -54,8 +49,9 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 </script><br> 
-
-
+Evidence file(image,audio etc.): Select image to upload:
+  <br>
+<input type="file" name="file" id="file">
 <input type="submit" name="submit">
 </form>
 </HTML>

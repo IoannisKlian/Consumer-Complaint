@@ -44,14 +44,10 @@ if(isset($_POST['submit'])) {
 			$comment = "empty";
 		}
 		
-		if (!empty($_POST['nomoi_elladas'])) {
-			$nomoi_elladas = mysqli_real_escape_string($connection,$_POST['nomoi_elladas']);
-		}
+		mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now())");
+		$complaint_id = mysqli_insert_id($connection);
 
-		//$filename =  $_FILES['fileToUpload']['name'];
-		//echo $filename;
-
-		mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','filename','".$nomoi_elladas."','".$comment."')");
+		include('upload.php');
 	} 
 	else {
 	echo "Something went wrong";
