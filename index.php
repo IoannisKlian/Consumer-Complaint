@@ -53,6 +53,7 @@
   </div>
   <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
 </div><br>
+>>>>>>> d1b7d3e139740a72d6a8e3dd618af699550bca66
 
 
   
