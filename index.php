@@ -13,30 +13,41 @@
 <body>
 <form action="complaintSumbitHandler.php" method="post" enctype="multipart/form-data">
 
-<div class="form-group">
+<div class="form-row">
+  <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Όνομα</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ιωάννης" name="name">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Όνομα" name="name">
   </div>
+  
 
-<div class="form-group">
+
+  <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Επώνυμο</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Παραπόλας" name="surname">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Επώνυμο" name="surname">
   </div>
+</div>
 
 <div class="form-group">
+  <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Διεύθυνση</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Λεωφ. Αλεξάνδρας 205" name="address">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Διεύθυνση" name="address">
+    </div>
   </div>
 
 <div class="form-group">
+  <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Email address</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+    </div>
   </div>
 
   <div class="form-group">
+    <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Τηλέφωνο επικοινωνίας</label>
-    <input type="numbers" class="form-control" id="exampleFormControlInput1" placeholder="6941234567" name="phone">
+    <input type="numbers" class="form-control" id="exampleFormControlInput1" placeholder="Τηλέφωνο" name="phone">
+    </div>
   </div>
+
 
 <input type="text" placeholder="Επωνυμία εταιρείας" name="company_name" required>
 <span class="error">*</span><br>
@@ -45,15 +56,16 @@
 <input type="numbers" placeholder="Τηλέφωνο επικοινωνίας εταιρείας" name="company_phone" required>
 <span class="error">*</span><br>
 <input type="numbers" placeholder="ΑΦΜ εταιρείας" name="company_taxId"required>
-<span class="error">*</span><br>
+<span class="error">*</span><br><br>
 
 <div class="input-group">
+  <div class="col-md-4 mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος</span>
   </div>
   <textarea class="form-control" aria-label="Περιγραφή προβλήματος" name="comment"></textarea>
+  </div>
 </div><br>
->>>>>>> d1b7d3e139740a72d6a8e3dd618af699550bca66
 
 
   
