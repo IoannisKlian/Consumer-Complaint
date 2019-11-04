@@ -14,7 +14,7 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="exampleFormControlInput1">Όνομα</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Όνομα" name="name">S
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Όνομα" name="name">
     </div>
 
   
@@ -37,7 +37,7 @@
   </div>
 
   <div class="form-row">
-    <div class="col-md-4 mb-3">S
+    <div class="col-md-4 mb-3">
     <label for="exampleFormControlInput1">Τηλέφωνο επικοινωνίας</label>
     <input type="numbers" class="form-control" id="exampleFormControlInput1" placeholder="Τηλέφωνο" name="phone">
     </div>
