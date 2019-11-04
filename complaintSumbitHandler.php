@@ -1,5 +1,4 @@
 <?php
-if(isset($_POST['submit'])) {
 	if(isset($_POST['company_name']) && isset($_POST['company_address']) && isset($_POST['company_phone']) && 
 		isset($_POST['company_taxId'])) {
 		include ("connect.php");
@@ -74,7 +73,6 @@ if(isset($_POST['submit'])) {
 	else {
 	echo "Something went wrong";
 	}
-}
 
 
 ?>
