@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-<?php  
-  include ("connect.php");
-  include ("modals/modal_form_anonymous_check.php");
-  include ("modals/modal_form_communication_alert.php");
-?>
-||||||| merged common ancestors
 
-=======
 <?php  
   include ("connect.php");
   include ("modals/modal_form_anonymous_check.php");
   include ("modals/modal_form_communication_alert.php");
 ?>
 
->>>>>>> 87a131a3e6ffc7219d12fe011bae2edeec372787
+
 <HTML>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
