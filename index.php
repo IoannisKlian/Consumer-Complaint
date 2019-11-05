@@ -1,4 +1,8 @@
-
+<?php  
+  include ("connect.php");
+  include ("modals/modal_form_anonymous_check.php");
+  include ("modals/modal_form_communication_alert.php");
+?>
 <HTML>
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -60,11 +64,6 @@ Evidence file(image,audio etc.): Select image to upload:
 <input type="submit" id="submit" name="submit">
 </form>
 </body>
-<script type="text/javascript" src="js/form"></script>
+<script type="text/javascript" src="js/form.js"></script>
 </HTML>
 
-<?php  
-  include ("connect.php");
-  include ("modals/modal_form_anonymous_check.php");
-  include ("modals/modal_form_communication_alert.php");
-?>
