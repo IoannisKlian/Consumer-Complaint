@@ -119,9 +119,3 @@
 </body>
 <script type="text/javascript" src="js/form.js"></script>
 </HTML>
-<?php  
-  include ("connect.php");
-  include ("modals/modal_form_anonymous_check.php");
-  include ("modals/modal_form_communication_alert.php");
-?>
-
