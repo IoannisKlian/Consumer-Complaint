@@ -32,7 +32,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
 		        	mysqli_query($connection,"INSERT INTO file (id, name, complaint_id) 
 	VALUES (DEFAULT, '".$fileName."', '".$complaint_id."')");
 		        	
-		            header("Location: index.php");
+		            header("Location: successFormFilling.php");
 		        }
 		        else{
 		            $errorMessage =  "Something went wrong";
@@ -61,7 +61,7 @@ else{
 
 
 $_SESSION['erroruploadmessage'] = $errorMessage;
-header("Location: index.php");
+header("Location: successFormFilling.php");
 
 
 ?>
