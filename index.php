@@ -48,7 +48,7 @@
  
     <div class="col-md-4 mb-3">
       <label for="email">Email address</label>
-      <input type="text" class="form-control" id="email" placeholder="name@example.com" name="email">
+      <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
     </div>
   </div>
 
@@ -95,22 +95,29 @@
     <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος</span>
   </div>
-  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="text" required></textarea>
+  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το προβλήμα που αντιμετωπίζεται" required></textarea>
   </div>
 </div><br> 
 
 <div style="padding-right:33.6%;">
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="file">Αποδεικτικά στοιχεία</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="file"
-      aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
+	<div class="input-group">
+	  <div class="input-group-prepend">
+	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
+	  </div>
+	  <div class="custom-file">
+	    <input type="file" class="custom-file-input" id="file" name="file" 
+	      aria-describedby="inputGroupFileAddon01">
+	    <label class="custom-file-label" for="inputGroupFile01">Επιλέγξτε αρχείο!</label>
+	  </div>
+	</div>
 </div>
-</div><br>
+<br>
+<script type="text/javascript">
+		$('.custom-file-input').on('change', function() { 
+			   let fileName = $(this).val().split('\\').pop(); 
+			   $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+		});
+</script>
 
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Submit</button>
 
