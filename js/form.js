@@ -1,3 +1,4 @@
+console.log("hello");
 $( document ).ready(function() {
 // var x = document.getElementById("demo");
 // function getLocation() {
