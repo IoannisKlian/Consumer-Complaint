@@ -22,7 +22,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 if(!empty($_FILES["file"]["name"])) {
 
 	//We define the acceptable file types in an array
-    $allowTypes = array('jpg','png','jpeg','pdf');
+    $allowTypes = array('jpg','png','PNG', 'jpeg','pdf');
     if(in_array($fileType, $allowTypes)){
     	if (!file_exists($targetFilePath)) {
 	    	//The 8000000 is equal to 8mb
@@ -32,7 +32,7 @@ if(!empty($_FILES["file"]["name"])) {
 		        	mysqli_query($connection,"INSERT INTO file (id, name, complaint_id) 
 	VALUES (DEFAULT, '".$fileName."', '".$complaint_id."')");
 		        	
-		            header("Location: successFormFilling.php");
+		        	echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
 		        }
 		        else{
 		            $errorMessage =  "Something went wrong";
@@ -61,7 +61,7 @@ else{
 
 
 $_SESSION['erroruploadmessage'] = $errorMessage;
-header("Location: successFormFilling.php");
+echo '<script type="text/javascript">','location.replace("index.php");','</script>';
 
 
 ?>
