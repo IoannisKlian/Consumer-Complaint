@@ -19,7 +19,7 @@ $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
 
 
-if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])) {
+if(!empty($_FILES["file"]["name"])) {
 
 	//We define the acceptable file types in an array
     $allowTypes = array('jpg','png','jpeg','pdf');
