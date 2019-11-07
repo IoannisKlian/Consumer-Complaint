@@ -105,9 +105,9 @@
     <span class="input-group-text" id="file">Αποδεικτικά στοιχεία</span>
   </div>
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="file"
-      aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+    <input type="file" class="custom-file-input" name="file" id="file"
+      aria-describedby="file">
+    <label class="custom-file-label" for="file">Choose file</label>
   </div>
 </div>
 </div><br>
