@@ -99,18 +99,8 @@
   </div>
 </div><br> 
 
+
 <div style="padding-right:33.6%;">
-<<<<<<< HEAD
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="file">Αποδεικτικά στοιχεία</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" name="file" id="file"
-      aria-describedby="file">
-    <label class="custom-file-label" for="file">Choose file</label>
-  </div>
-=======
 	<div class="input-group">
 	  <div class="input-group-prepend">
 	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
@@ -121,7 +111,7 @@
 	    <label class="custom-file-label" for="inputGroupFile01">Επιλέγξτε αρχείο!</label>
 	  </div>
 	</div>
->>>>>>> f58fac0f6fc76eb1ac6f7de60e93f6f6fcdf3e0f
+
 </div>
 <br>
 <script type="text/javascript">
