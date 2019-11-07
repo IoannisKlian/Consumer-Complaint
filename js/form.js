@@ -1,4 +1,3 @@
-console.log("hello");
 $( document ).ready(function() {
 // var x = document.getElementById("demo");
 // function getLocation() {
@@ -41,6 +40,12 @@ $( document ).ready(function() {
 
 		document.getElementById("form").submit();
 	}); 
+
+	// Refresh to name of file selected for upload instead of the default string.
+	$('.custom-file-input').on('change', function() { 
+		   let fileName = $(this).val().split('\\').pop(); 
+		   $(this).next('.custom-file-label').addClass("selected").html(fileName); 
+	});
 
 });
 

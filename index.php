@@ -111,12 +111,6 @@
 
 </div>
 <br>
-<script type="text/javascript">
-		$('.custom-file-input').on('change', function() { 
-			   let fileName = $(this).val().split('\\').pop(); 
-			   $(this).next('.custom-file-label').addClass("selected").html(fileName); 
-		});
-</script>
 
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Submit</button>
 
