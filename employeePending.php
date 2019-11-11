@@ -1,8 +1,8 @@
 <?php
-session_start();
-  if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
-      header("Location: login.php");
-  }
+//session_start();
+  //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
+      //header("Location: login.php");
+  //}
 ?>
 
 <HTML>
@@ -30,7 +30,6 @@ session_start();
 </style>
 </head>
 <body>
-<?php echo  $_SESSION['name']; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -93,7 +92,7 @@ session_start();
       }
       else{
         echo '<div class=container>
-                <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
+                <h2>Δεν υπάρχουν εκκρεμής καταγγελίες</h2>
               </div>';
       }
     ?>
