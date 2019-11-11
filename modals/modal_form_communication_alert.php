@@ -9,10 +9,11 @@
         <h4 class="modal-title">Προσοχή</h4>
       </div>
       <div class="modal-body">
-        <p>Είναι απαραίτητο να καταθέσετε έναν έγκυρο τηλεφωνικό αριθμό, ή μία διεύθυνση ηλεκτρονικού ταχυδρομίου για την σχετική ενημέρωσή σας περί της καταγγελίας.</p>
+        <p>Σας προτείνεται να καταθέσετε έναν έγκυρο τηλεφωνικό αριθμό, ή μία διεύθυνση ηλεκτρονικού ταχυδρομίου για την σχετική ενημέρωσή σας περί της καταγγελίας.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="com-yes"class="btn btn-default" data-dismiss="modal">Θέλω να καταθέσω</button>
+        <button type="button" id="com-no" class="btn btn-default" data-dismiss="modal">Δεν θέλω να καταθέσω</button>
       </div>
     </div>
 
