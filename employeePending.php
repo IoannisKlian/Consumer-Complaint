@@ -24,11 +24,11 @@ session_start();
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="employeeIndex.php">Ανοιχτά<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="employeeIndex.php">Ανοιχτά</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="employeePending.php">Εκκρεμή</a>
+        <a class="nav-link active" href="employeePending.php">Εκκρεμή<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="employeeArchived.php">Αρχειοθετημένα</a>
