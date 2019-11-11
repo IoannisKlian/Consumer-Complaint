@@ -1,70 +1,132 @@
--- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Nov 11, 2019 at 09:02 AM
--- Server version: 5.7.21
--- PHP Version: 7.2.4
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `consumer_complaint`
---
+CREATE TABLE `complaint` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(20) CHARACTER SET latin1 NOT NULL,
+  `phonenumber` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `company_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company_adress` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `company_phone` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `company_taxid` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `description` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `datetime` datetime NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `complaint`
+-- Δομή πίνακα για τον πίνακα `employee_complaint`
 --
 
-DROP TABLE IF EXISTS `complaint`;
-CREATE TABLE IF NOT EXISTS `complaint` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `phonenumber` varchar(50) NOT NULL,
-  `company_name` varchar(100) NOT NULL,
-  `company_adress` varchar(50) NOT NULL,
-  `company_phone` varchar(50) NOT NULL,
-  `company_taxid` varchar(50) NOT NULL,
-  `description` varchar(5000) NOT NULL,
-  `datetime` datetime NOT NULL,
-  `status` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+CREATE TABLE `employee_complaint` (
+  `id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `complaint_id` int(11) NOT NULL,
+  `datetime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `complaint`
+-- Δομή πίνακα για τον πίνακα `file`
 --
 
-INSERT INTO `complaint` (`id`, `name`, `email`, `phonenumber`, `company_name`, `company_adress`, `company_phone`, `company_taxid`, `description`, `datetime`, `status`) VALUES
-(40, 'a a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2019-10-31 17:01:44', 0),
-(41, 'a a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2019-10-31 17:03:36', 0),
-(42, 's ss', 's', 's', 's', 's', 's', 's', 's', '2019-10-31 17:05:46', 0),
-(43, 'd d', 'd', 'd', 'd', 'd', 'd', 'd', 'd', '2019-10-31 17:06:38', 0),
-(44, 'y y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', '2019-10-31 17:11:24', 0),
-(45, 'y y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', '2019-10-31 17:12:43', 0),
-(46, 'j j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', '2019-10-31 17:24:58', 0),
-(47, 'j j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', '2019-10-31 17:26:33', 0),
-(48, 'l l', 'l', 'l', 'l', 'l', 'l', 'l', 'l', '2019-10-31 17:29:47', 0),
-(49, 'g g', 'g', 'g', 'g', 'g', 'g', 'g', 's', '2019-11-04 14:06:44', 0),
-(50, 'empty', 'g', 'g', 'g', 'g', 'g', 'g', 'g', '2019-11-04 14:12:46', 0),
-(51, 'h h', 'empty', 'ws', 'aaaa', 'a', 'a', 'a', 'a', '2019-11-04 14:51:40', 0),
-(52, 'd d', 'd', 'd', 'd', 'd', 'dd', 'd', 'd', '2019-11-04 14:51:52', 0),
-(53, 'j j', 'j', 'j', 'j', 'j', 'j', 'j', 'jj', '2019-11-11 10:59:37', 0);
+CREATE TABLE `file` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `complaint_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `govrn_emp`
+--
+
+CREATE TABLE `govrn_emp` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Ευρετήρια για άχρηστους πίνακες
+--
+
+--
+-- Ευρετήρια για πίνακα `complaint`
+--
+ALTER TABLE `complaint`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Ευρετήρια για πίνακα `employee_complaint`
+--
+ALTER TABLE `employee_complaint`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreign_key_employee_id` (`employee_id`),
+  ADD KEY `foreign_key_complaint_form_id` (`complaint_id`);
+
+--
+-- Ευρετήρια για πίνακα `file`
+--
+ALTER TABLE `file`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `foreign_key_complaint_id` (`complaint_id`);
+
+--
+-- Ευρετήρια για πίνακα `govrn_emp`
+--
+ALTER TABLE `govrn_emp`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT για άχρηστους πίνακες
+--
+
+--
+-- AUTO_INCREMENT για πίνακα `complaint`
+--
+ALTER TABLE `complaint`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT για πίνακα `employee_complaint`
+--
+ALTER TABLE `employee_complaint`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT για πίνακα `file`
+--
+ALTER TABLE `file`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT για πίνακα `govrn_emp`
+--
+ALTER TABLE `govrn_emp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Περιορισμοί για άχρηστους πίνακες
+--
+
+--
+-- Περιορισμοί για πίνακα `employee_complaint`
+--
+ALTER TABLE `employee_complaint`
+  ADD CONSTRAINT `foreign_key_complaint_form_id` FOREIGN KEY (`complaint_id`) REFERENCES `complaint` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `foreign_key_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `govrn_emp` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Περιορισμοί για πίνακα `file`
+--
+ALTER TABLE `file`
+  ADD CONSTRAINT `foreign_key_complaint_id` FOREIGN KEY (`complaint_id`) REFERENCES `complaint` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
