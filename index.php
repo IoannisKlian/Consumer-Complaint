@@ -1,10 +1,6 @@
 <?php  
   header('Content-Type: text/html; charset=utf-8');
-
   include ("connect.php");
-  include ("modals/modal_form_anonymous_check.php");
-  include ("modals/modal_form_communication_alert.php");
-
 ?>
 
 
@@ -42,17 +38,16 @@
       <label for="address">Διεύθυνση</label>
       <input type="text" class="form-control" id="address" placeholder="Διεύθυνση" name="address">
     </div>
- 
-    <div class="col-md-4 mb-3">
-      <label for="email">Email address</label>
-      <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
-    </div>
   </div>
 
   <div class="form-row">
     <div class="col-md-4 mb-3">
     <label for="phone">Τηλέφωνο επικοινωνίας</label>
     <input type="numbers" class="form-control" id="phone" placeholder="Τηλέφωνο" name="phone">
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
     </div>
   </div>
 
@@ -67,8 +62,8 @@
     </div>
 
     <div class="col-md-4 mb-3">
-      <label for="company_address">Διεύθυνση εταιρείας*</label>
-      <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση εταιρείας" name="company_address" required>
+      <label for="company_address">Διεύθυνση εταιρείας</label>
+      <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση εταιρείας" name="company_address">
       <div class="invalid-tooltip">
         Please provide a valid address.
       </div>
@@ -90,7 +85,7 @@
 <div style="padding-right:33.6%;">
   <div class="input-group">
     <div class="input-group-prepend">
-    <span class="input-group-text">Περιγραφή προβλήματος</span>
+    <span class="input-group-text">Περιγραφή προβλήματος*</span>
   </div>
   <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το προβλήμα που αντιμετωπίζεται" required></textarea>
   </div>
@@ -119,3 +114,8 @@
 </body>
 <script type="text/javascript" src="js/form.js"></script>
 </HTML>
+
+<?php   
+  include ("modals/modal_form_anonymous_check.php");
+  include ("modals/modal_form_communication_alert.php"); 
+?>

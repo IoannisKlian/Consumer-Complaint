@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	// If the user confirms that they want an anonymous form, clicking this button on modal_form_anonymous.php will submit the form normally.
 	$("#anon_form_confirm").on( "click", function() {
 
-		document.getElementById("form").submit();
+		submitForm();
 	}); 
 
 	// Refresh to name of file selected for upload instead of the default string.
@@ -44,6 +44,16 @@ $( document ).ready(function() {
 	});
 
 });
+
+function submitForm() {
+	if (document.getElementById("comment").checkValidity() && document.getElementById("company_name").checkValidity()) {
+		document.getElementById("form").submit();
+	}
+	else {
+		document.getElementById("company_name").setCustomValidity("yooooo");
+		document.getElementById("comment").setCustomValidity("yooooo");
+	}
+}
 
 function checkForAnonimity() {
 	// Anonymity Check. In case a name and surname does not exist, a modal will ask the user to confirm anynymous form.
@@ -55,7 +65,7 @@ function checkForAnonimity() {
 
 	// If the above fields are filled, the form will be sumbmited.
 	else {
-		document.getElementById("form").submit();
+		submitForm();
 	}
 };
 
