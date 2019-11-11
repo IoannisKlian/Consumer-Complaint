@@ -61,7 +61,7 @@ else{
 
 
 $_SESSION['erroruploadmessage'] = $errorMessage;
-echo '<script type="text/javascript">','location.replace("index.php");','</script>';
+echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
 
 
 ?>
