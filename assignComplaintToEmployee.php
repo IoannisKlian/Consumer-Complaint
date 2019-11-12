@@ -1,18 +1,20 @@
 <?php
 	session_start();
-	if (!isset($_SESSION['"id"']) && !isset($_SESSION['complaintID'])) {
+	if (!isset($_SESSION['id'])) {
 		header("Location: login.php");
 	}
 	else{
 		$userID=$_SESSION['"id"'];
-		$complaintID = $_SESSION['complaintID'];
+		$complaintID = $_POST['complaintID'];
 	}
-	echo $complaintID;
 
-	/*include ("connect.php");
+	
+	$_SESSION['complaintID'] = $complaintID;
+	include ("connect.php");
 
-	mysqli_query($connection,"INSERT INTO `employee_complaint` (`id`, `employee_id`, `complaint_id`, `datetime`) VALUES (DEFAULT,'".$userID."', '".$complaintID."', now())");
+	echo '<script type="text/javascript">','location.replace("employee/complaint_box.php");','</script>';
 
-*/
+	/*mysqli_query($connection,"INSERT INTO `employee_complaint` (`id`, `employee_id`, `complaint_id`, `datetime`) VALUES (DEFAULT,'".$userID."', '".$complaintID."', now())");
+	*/
 
 ?>
