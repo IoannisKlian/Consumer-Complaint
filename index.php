@@ -112,7 +112,6 @@
 </form>
 </div>
 </body>
-<script type="text/javascript" src="js/form.js"></script>
 </HTML>
 
 <?php   
