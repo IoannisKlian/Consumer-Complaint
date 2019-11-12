@@ -10,9 +10,10 @@
     }
     echo "<h5>"."Όνομα καταγγελέα: ".$nameOfComplainer."</h5>";
     echo "<h5>"."Ημερομηνία καταβολής: ".$row['datetime']."</h5>";
-    
-    echo '<button onclick="post(this.id)" type="button" id="'.$row['id'].'" class="btn btn-secondary"'.'>Άνοιγμα καταγγελίας</button>';
-
+    echo '<form action="assignComplaintToEmployee.php" method="post">';
+    echo '<input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />';
+    echo '<input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">';
+	echo "</form>";
     echo '</div> <hr style="border-width: 2px;color: black;">';
 }
 mysqli_close($connection);
