@@ -8,32 +8,70 @@
   <meta charset="utf-8" />
 </head>
 <body>
-
-
-<div class="accordion" id="accordionExample">
+  <div style="padding-left:0.75%; padding-right:0.75%;">
+  <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
+          Στοιχεία Καταγγελία
         </button>
       </h2>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Στοιχεία Καταγγελέα</h5>
+                  <p class="card-text">Όνομα<br>Επώνυμο<br>Διεύθυνση<br>Τηλέφωνο επικοινωνίας<br>Email address</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Στοιχεία Καταγγελόμενου</h5>
+                  <p class="card-text"> Επωνυμία εταιρείας<br>Διεύθυνση εταιρείας<br>ΑΦΜ εταιρείας<br>Τηλέφωνο επικοινωνίας εταιρείας</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
     </div>
   </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+      </h2>
+    </div>
+  </div>
 
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Περιγραφή προβλήματος</h5>
+                <p class="card-text">bla bla</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div><br>
 
+    
+  <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Ανάθεση</button>
+</div>
 
-
-
-
-
-<?php 
-?>
+  <?php 
+  ?>
 </body>
 </HTML>
