@@ -33,7 +33,7 @@
 
 <?php
 
-	include("employee_nav.php");
+	include("employee/employee_nav.php");
 
     if (isset($_GET['pageno'])) {
         $pageno = $_GET['pageno'];
@@ -53,7 +53,7 @@
     $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
     $res_data = mysqli_query($connection,$sql);
 	if ($total_rows > 0) {
-		include ("complaint_fetcher.php");
+		include ("employee/complaint_fetcher.php");
 	  }
 	else{
 	    echo '<div class=container>
@@ -61,7 +61,7 @@
 	          </div>';
 	}
 
-  include ("employee_pagination.php");
+  include ("employee/employee_pagination.php");
 ?>
 
 
