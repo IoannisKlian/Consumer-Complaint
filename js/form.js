@@ -26,8 +26,8 @@ $( document ).ready(function() {
 
 	}); 
 
+	// Check for anonimity after communication modal
 	$("#com-no").on( "click", function() {
-
 		checkForAnonimity();
 	}); 
 

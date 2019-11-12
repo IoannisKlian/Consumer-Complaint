@@ -54,76 +54,36 @@ session_start();
 
 <?php
 
-        if (isset($_GET['pageno'])) {
-            $pageno = $_GET['pageno'];
-        } else {
-            $pageno = 1;
-        }
-        $no_of_records_per_page = 5;
-        $offset = ($pageno-1) * $no_of_records_per_page;
+  if (isset($_GET['pageno'])) {
+      $pageno = $_GET['pageno'];
+  } else {
+      $pageno = 1;
+  }
+  $no_of_records_per_page = 5;
+  $offset = ($pageno-1) * $no_of_records_per_page;
 
-        include ("connect.php");
+  include ("connect.php");
 
-        $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 2";
-        $result = mysqli_query($connection,$total_pages_sql);
-        $total_rows = mysqli_fetch_array($result)[0];
-        $total_pages = ceil($total_rows / $no_of_records_per_page);
+  $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 2";
+  $result = mysqli_query($connection,$total_pages_sql);
+  $total_rows = mysqli_fetch_array($result)[0];
+  $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        $sql = "SELECT * FROM complaint WHERE 'status' = 2 LIMIT $offset, $no_of_records_per_page";
-        $res_data = mysqli_query($connection,$sql);
-        if ($total_rows > 0) {
-        while($row = mysqli_fetch_array($res_data)){
+  $sql = "SELECT * FROM complaint WHERE 'status' = 2 LIMIT $offset, $no_of_records_per_page";
+  $res_data = mysqli_query($connection,$sql);
+  if ($total_rows > 0) {
+    include ("complaint_fetcher.php");
+  }
+  else{
+    echo '<div class=container>
+            <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
+          </div>';
+  }
+?>
 
-            echo "<div class="."container".">";
-            echo "<h3>"."Ονομασία επιχείρησης: ".$row['company_name']."</h3>";
-            if (strcmp( "empty", $row['name'] ) == 0) {
-              $nameOfComplainer = "-";
-            }
-            else{
-              $nameOfComplainer = $row['name'];
-            }
-            echo "<h5>"."Όνομα καταγγελέα: ".$nameOfComplainer."</h5>";
-            echo "<h5>"."Ημερομηνία καταβολής: ".$row['datetime']."</h5>";
-            
-            echo '<button type="button" class="btn btn-secondary"'.'>Open Form</button>';
-
-            echo '</div> <hr style="border-width: 2px;color: black;">';
-        }
-        mysqli_close($connection);
-      }
-      else{
-        echo '<div class=container>
-                <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
-              </div>';
-      }
-    ?>
-    <ul class="pagination" style="position: relative; margin-top: 10%; left: 60%;">
-        <li><a href="?pageno=1">First</a></li>
-        <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
-        </li>
-        <?php
-          for ($i = 1; $i <= $total_pages; $i++) {
-          echo "<li class=";
-          if($pageno == $i){ echo 'disabled'; }
-          echo "><a href="."?pageno=".$i.">".$i."</a></li>";
-      } 
-        ?>
-        <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
-        </li>
-        <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
-    </ul>
-
-
-
-
-
-
-
-
-
-
+<?php 
+  include ("employee_pagination.php");
+?>
 
 </body>
 </HTML>
