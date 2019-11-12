@@ -1,7 +1,7 @@
 <?php
 //session_start();
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
-     //header("Location: login.php");
+      //header("Location: login.php");
   //}
 ?>
 
@@ -33,9 +33,9 @@
 
 <?php
 
-	include("employee_nav.php");
+  include("employee_nav.php");
 
-    if (isset($_GET['pageno'])) {
+      if (isset($_GET['pageno'])) {
         $pageno = $_GET['pageno'];
     } else {
         $pageno = 1;
@@ -45,27 +45,26 @@
 
     include ("connect.php");
 
-    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 0";
+    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 2";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_pages = ceil($total_rows / $no_of_records_per_page);
 
     $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
     $res_data = mysqli_query($connection,$sql);
-	if ($total_rows > 0) {
-		include ("complaint_fetcher.php");
-	  }
-	else{
-	    echo '<div class=container>
-	            <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
-	          </div>';
-	}
+  if ($total_rows > 0) {
+    include ("complaint_fetcher.php");
+    }
+  else{
+      echo '<div class=container>
+              <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
+            </div>';
+  }
 ?>
 
 <?php 
   include ("employee_pagination.php");
 ?>
-
 
 </body>
 </HTML>
