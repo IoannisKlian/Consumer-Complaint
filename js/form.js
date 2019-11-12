@@ -18,6 +18,8 @@ $( document ).ready(function() {
 
 		// Communication Alert. The user must input at least a phone, or an email. If not a modal will alert. 
 		if(isEmpty($("#email")) && isEmpty($("#phone"))) {
+	console.log("in")
+			
 			$("#communication_modal").modal();
 		}
 		else {
