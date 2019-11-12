@@ -33,7 +33,7 @@
 
 <?php
 
-	include("employee_nav");
+	include("employee_nav.php");
 
     if (isset($_GET['pageno'])) {
         $pageno = $_GET['pageno'];
