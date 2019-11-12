@@ -11,7 +11,7 @@
     echo "<h5>"."Όνομα καταγγελέα: ".$nameOfComplainer."</h5>";
     echo "<h5>"."Ημερομηνία καταβολής: ".$row['datetime']."</h5>";
     
-    echo '<button type="button" id="'.$row['id'].'" class="btn btn-secondary"'.'>Άνοιγμα καταγγελίας</button>';
+    echo '<button onclick="post(this.id)" type="button" id="'.$row['id'].'" class="btn btn-secondary"'.'>Άνοιγμα καταγγελίας</button>';
 
     echo '</div> <hr style="border-width: 2px;color: black;">';
 }

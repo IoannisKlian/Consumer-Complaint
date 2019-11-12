@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav nav-fill w-100">
-      <li class="nav-item active" id="index" style="border-right: solid;  border-color: #a1f8ff;">
+      <li class="nav-item" id="index" style="border-right: solid;  border-color: #a1f8ff;">
         <a class="nav-link" href="employeeIndex.php">Ανοιχτά</a>
       </li>
       <li class="nav-item" id="pending" style="border-right: solid; border-color: #a1f8ff;">
