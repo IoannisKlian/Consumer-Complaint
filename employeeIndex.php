@@ -30,8 +30,21 @@
 </style>
 </head>
 <body>
+	<script type="text/javascript">
+		$(this).on('click', function(e){
+		    var id = $(this).attr('name');
+		    $.ajax({
+        type: 'POST',
+        url: 'assignComplaintToEmployee.php',
+        data: {
+            complaintID: id
+        }
+    }); 
+});
+	</script>
 
 <?php
+
 
 	include("employee/employee_nav.php");
 
