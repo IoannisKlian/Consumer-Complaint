@@ -60,9 +60,7 @@
 	            <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
 	          </div>';
 	}
-?>
 
-<?php 
   include ("employee_pagination.php");
 ?>
 

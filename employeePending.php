@@ -35,34 +35,33 @@
 
   include("employee_nav.php");
 
-      if (isset($_GET['pageno'])) {
-        $pageno = $_GET['pageno'];
-    } else {
-        $pageno = 1;
-    }
-    $no_of_records_per_page = 5;
-    $offset = ($pageno-1) * $no_of_records_per_page;
+  if (isset($_GET['pageno'])) {
+      $pageno = $_GET['pageno'];
+  } else {
+      $pageno = 1;
+  }
+  $no_of_records_per_page = 5;
+  $offset = ($pageno-1) * $no_of_records_per_page;
 
-    include ("connect.php");
+  include ("connect.php");
 
-    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 1";
-    $result = mysqli_query($connection,$total_pages_sql);
-    $total_rows = mysqli_fetch_array($result)[0];
-    $total_pages = ceil($total_rows / $no_of_records_per_page);
+  $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 1";
+  $result = mysqli_query($connection,$total_pages_sql);
+  $total_rows = mysqli_fetch_array($result)[0];
+  $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-    $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
-    $res_data = mysqli_query($connection,$sql);
+  $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
+  $res_data = mysqli_query($connection,$sql);
+
   if ($total_rows > 0) {
     include ("complaint_fetcher.php");
-    }
+  }
   else{
       echo '<div class=container>
-              <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
+              <h2>Δεν υπάρχουν εκκρεμής καταγγελίες</h2>
             </div>';
   }
-?>
-
-<?php 
+ 
   include ("employee_pagination.php");
 ?>
 
