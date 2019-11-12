@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
      //header("Location: login.php");
   //}
@@ -31,19 +31,14 @@
 </head>
 <body>
 	<script type="text/javascript">
-		$(this).on('click', function(e){
-		    var id = $(this).attr('name');
-		    $.ajax({
-        type: 'POST',
-        url: 'assignComplaintToEmployee.php',
-        data: {
-            complaintID: id
-        }
-    }); 
-});
-	</script>
+	function t() {
+		console.log("sss");
+	}
+</script>
 
 <?php
+
+
 
 
 	include("employee/employee_nav.php");
@@ -76,6 +71,8 @@
 
   include ("employee/employee_pagination.php");
 ?>
+
+
 
 
 </body>

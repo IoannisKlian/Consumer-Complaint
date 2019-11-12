@@ -7,11 +7,12 @@
 		$userID=$_SESSION['"id"'];
 		$complaintID = $_SESSION['complaintID'];
 	}
+	echo $complaintID;
 
-
-	include ("connect.php");
+	/*include ("connect.php");
 
 	mysqli_query($connection,"INSERT INTO `employee_complaint` (`id`, `employee_id`, `complaint_id`, `datetime`) VALUES (DEFAULT,'".$userID."', '".$complaintID."', now())");
 
+*/
 
 ?>
