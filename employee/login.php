@@ -7,9 +7,9 @@
 	<div id="login-form">
 			<form action="auth.php" method="POST">
 				<label> Username:</label>
-				<input type="text" name="username" id="username">
+				<input type="text" name="username" id="username" required>
 				<label> Password:</label>
-				<input type="text" name="password" id="password">
+				<input type="text" name="password" id="password" required>
 				<input type="submit" value="Login" id="btn">
 			</form>
 	</div>

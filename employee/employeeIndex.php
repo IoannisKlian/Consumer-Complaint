@@ -1,7 +1,7 @@
 <?php
-//session_start();
+session_start();
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
-      //header("Location: login.php");
+     //header("Location: login.php");
   //}
 ?>
 
@@ -14,6 +14,9 @@
   <script type="text/javascript" src="js/employee.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style type="text/css">
     .pagination{
   position: fixed;
@@ -27,12 +30,20 @@
 </style>
 </head>
 <body>
+	<script type="text/javascript">
+	function t() {
+		console.log("sss");
+	}
+</script>
 
 <?php
 
-  include("employee/employee_nav.php");
 
-      if (isset($_GET['pageno'])) {
+
+
+	include("employee_nav.php");
+
+    if (isset($_GET['pageno'])) {
         $pageno = $_GET['pageno'];
     } else {
         $pageno = 1;
@@ -40,28 +51,29 @@
     $no_of_records_per_page = 5;
     $offset = ($pageno-1) * $no_of_records_per_page;
 
-    include ("connect.php");
+    include ("../connect.php");
 
-    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 2";
+    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 0";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-    $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
+    $sql = "SELECT * FROM complaint WHERE status = 0 LIMIT $offset, $no_of_records_per_page";
     $res_data = mysqli_query($connection,$sql);
-  if ($total_rows > 0) {
-    include ("employee/complaint_fetcher.php");
-    }
-  else{
-      echo '<div class=container>
-              <h2>Δεν υπάρχουν αρχειοθετημένες καταγγελίες</h2>
-            </div>';
-  }
+	if ($total_rows > 0) {
+		include ("complaint_fetcher.php");
+	  }
+	else{
+	    echo '<div class=container>
+	            <h2>Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
+	          </div>';
+	}
+
+  include ("employee_pagination.php");
 ?>
 
-<?php 
-  include ("employee/employee_pagination.php");
-?>
+
+
 
 </body>
 </HTML>

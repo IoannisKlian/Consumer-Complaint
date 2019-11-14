@@ -1,6 +1,6 @@
 <?php  
 
-	include ("connect.php");
+	include ("../connect.php");
 
 	$username = stripslashes($_POST['username']);
 	$password = stripslashes($_POST['password']);
@@ -11,7 +11,8 @@
 	$result = mysqli_query($connection, "SELECT * FROM govrn_emp WHERE username = '$username' AND password = '$password'");
 	$row = mysqli_fetch_array($result);
 	
-	if ($row['username'] == $username && $row['password'] == $password && mysqli_fetch_array($result)) {
+	
+	if ($row['username'] == $username && $row['password'] == $password ) {
 		session_start();
 		$_SESSION["user"] = true;
 		$_SESSION["id"] = $row['id'];

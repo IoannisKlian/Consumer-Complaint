@@ -15,7 +15,7 @@
         <a class="nav-link" id="archived" href="employeeArchived.php">Αρχειοθετημένα</a>
       </li>
       <li class="nav-item" style="text-align: right;">
-        <a href="#" class="btn btn-info btn-sm">
+        <a href="logout.php" class="btn btn-info btn-sm">
           <span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση
         </a>
       </li>
