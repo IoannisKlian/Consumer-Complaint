@@ -80,8 +80,10 @@
         </div>
     </div><br>
 
-    
-  <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Ανάθεση</button>
+    <form action="assignComplaintToEmployee.php" method="post">
+      <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
+    </form>
+
 </div>
 
   <?php 

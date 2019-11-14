@@ -45,12 +45,12 @@
 
     include ("../connect.php");
 
-    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE 'status' = 2";
+    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows = mysqli_fetch_array($result)[0];
     $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-    $sql = "SELECT * FROM complaint WHERE 'status' = 0 LIMIT $offset, $no_of_records_per_page";
+    $sql = "SELECT * FROM complaint WHERE status = 2 LIMIT $offset, $no_of_records_per_page";
     $res_data = mysqli_query($connection,$sql);
   if ($total_rows > 0) {
     include ("complaint_fetcher.php");
