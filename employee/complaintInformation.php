@@ -1,5 +1,5 @@
 <?php 
-	include ("connect.php");
+	include ("../connect.php");
 
 	$result = mysqli_query($connection, "SELECT * FROM complaint WHERE id = '".$_SESSION['complaintID']."'");
 	$row = mysqli_fetch_array($result);
@@ -30,8 +30,8 @@
 		else{
 			$company_name = "-";
 		}
-		if (!(strcmp($row['company_address'],"empty")==0)) {
-			$company_address = $row['$company_address'];
+		if (!(strcmp($row['company_adress'],"empty")==0)) {
+			$company_address = $row['company_adress'];
 		}
 		else{
 			$company_address = "-";
@@ -42,17 +42,17 @@
 		else{
 			$company_phone = "-";
 		}
-		if (!(strcmp($row['company_taxId'],"empty")==0)) {
-			$company_taxId =  $row['company_taxId'];
+		if (!(strcmp($row['company_taxid'],"empty")==0)) {
+			$company_taxId =  $row['company_taxid'];
 		}
 		else{
 			$company_taxId = "-";
 		}
 		
 		
-		if (!(strcmp($row['company_taxId'],"empty")==0)) {
+		if (!(strcmp($row['description'],"empty")==0)) {
 		    // Escape any html characters
-		    $comment = $row['company_taxId'];
+		    $comment = $row['description'];
 		}
 		else{
 			$comment = "Χωρίς περιγραφή!";

@@ -2,6 +2,8 @@
   session_start();
   $complaintID = $_POST['complaintID'];
   $_SESSION['complaintID'] = $complaintID;
+
+  include("complaintInformation.php");
 ?>
 <HTML>
 <head>
@@ -19,7 +21,7 @@
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Στοιχεία Καταγγελία
+          Στοιχεία Καταγγελίας
         </button>
       </h2>
     </div>
@@ -33,11 +35,10 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Στοιχεία Καταγγελέα </h5>
-                  <p class="card-text">Όνομα<br>
-                    Επώνυμο<br>
-                    Διεύθυνση<br>
-                    Τηλέφωνο επικοινωνίας<br>
-                  Email address</p>
+                  <p class="card-text">
+                    Ονομ/νυμο: <?php echo $fullname; ?><br>
+                    Τηλέφωνο επικοινωνίας: <?php echo $phone; ?><br>
+                    Email address: <?php echo $email; ?></p>
                 </div>
               </div>
             </div>
@@ -45,7 +46,10 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Στοιχεία Καταγγελόμενου</h5>
-                  <p class="card-text"> Επωνυμία εταιρείας<br>Διεύθυνση εταιρείας<br>ΑΦΜ εταιρείας<br>Τηλέφωνο επικοινωνίας εταιρείας</p>
+                  <p class="card-text"> Επωνυμία εταιρείας: <?php echo $company_name; ?><br>
+                                        Διεύθυνση εταιρείας: <?php echo $company_address; ?><br>
+                                        ΑΦΜ εταιρείας: <?php echo $company_taxId; ?><br>
+                                        Τηλέφωνο επικοινωνίας εταιρείας: <?php echo $company_phone; ?></p>
                 </div>
               </div>
             </div>
@@ -69,7 +73,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Περιγραφή προβλήματος</h5>
-                <p class="card-text">bla bla</p>
+                <p class="card-text"> <?php echo $comment; ?></p>
               </div>
             </div>
           </div>
