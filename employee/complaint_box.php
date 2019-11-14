@@ -80,6 +80,7 @@
         </div>
     </div><br>
 
+<<<<<<< HEAD
   <button type="button" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Star
   </button>
@@ -88,6 +89,12 @@
 
     
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Ανάθεση</button>
+=======
+    <form action="assignComplaintToEmployee.php" method="post">
+      <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
+    </form>
+
+>>>>>>> 0430df4891bb0043aaedbd3c41243be31e667cf2
 </div>
 
   <?php 
