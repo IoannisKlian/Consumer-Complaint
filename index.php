@@ -45,6 +45,15 @@
     </div>
   </div>
 
+  <div style="padding-right:33.6%;">
+  <hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 10;
+    border-top: 1px solid #eeeeee;
+      }>
+    </div>
+
 
   <div class="form-row">
     <div class="col-md-4 mb-3">

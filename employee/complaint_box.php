@@ -80,6 +80,12 @@
         </div>
     </div><br>
 
+  <button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Star
+  </button>
+
+
+
     
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Ανάθεση</button>
 </div>
