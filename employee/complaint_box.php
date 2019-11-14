@@ -80,9 +80,38 @@
         </div>
     </div><br>
 
-    <form action="assignComplaintToEmployee.php" method="post">
-      <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
-    </form>
+    <?php
+
+
+      //This checks whether the complaint has assign to someone or not
+      $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 1 AND id = '".$complaintID."'";
+      $result = mysqli_query($connection,$total_pages_sql);
+      $total_rows = mysqli_fetch_array($result)[0];
+
+      if ($total_rows == 0) {
+        echo '
+         <form action="assignComplaintToEmployee.php" method="post">
+          <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
+        </form>
+              ';
+       } 
+       else{
+        $employee_id = "SELECT * FROM employee_complaint WHERE complaint_id = '".$complaintID."'";
+        $result_of_employee_id = mysqli_query($connection,$employee_id);
+        $row_employee_id = mysqli_fetch_array($result_of_employee_id);
+
+        $employee_name = "SELECT * FROM govrn_emp WHERE id = '".$row_employee_id['employee_id']."'";
+        $result_of_employee_name = mysqli_query($connection,$employee_name);
+        $row_employee_name = mysqli_fetch_array($result_of_employee_name);
+        echo '
+          <form action="" method="">
+            <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" disabled/> 
+          </form>
+              ';
+         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee_name['name']." στις ".$row_employee_id['datetime'];    
+       }
+      ?>
+    
 
 </div>
 
