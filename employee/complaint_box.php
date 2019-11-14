@@ -96,19 +96,19 @@
               ';
        } 
        else{
-        $employee_id = "SELECT * FROM employee_complaint WHERE complaint_id = '".$complaintID."'";
-        $result_of_employee_id = mysqli_query($connection,$employee_id);
-        $row_employee_id = mysqli_fetch_array($result_of_employee_id);
-
-        $employee_name = "SELECT * FROM govrn_emp WHERE id = '".$row_employee_id['employee_id']."'";
-        $result_of_employee_name = mysqli_query($connection,$employee_name);
-        $row_employee_name = mysqli_fetch_array($result_of_employee_name);
+        $query = "SELECT govrn_emp.name ,employee_complaint.datetime 
+                      FROM employee_complaint,complaint,govrn_emp 
+                      WHERE employee_complaint.employee_id = govrn_emp.id 
+                      AND complaint.id = employee_complaint.complaint_id";
+        $result_of_query = mysqli_query($connection,$query);
+        $row_employee = mysqli_fetch_array($result_of_query);
+        
         echo '
           <form action="" method="">
             <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" disabled/> 
           </form>
               ';
-         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee_name['name']." στις ".$row_employee_id['datetime'];    
+         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee['name']." στις ".$row_employee['datetime'];    
        }
       ?>
     
