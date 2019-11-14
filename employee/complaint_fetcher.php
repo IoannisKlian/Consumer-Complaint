@@ -10,7 +10,7 @@
     }
     echo "<h5>"."Όνομα καταγγελέα: ".$nameOfComplainer."</h5>";
     echo "<h5>"."Ημερομηνία καταβολής: ".$row['datetime']."</h5>";
-    echo '<form action="employee/complaint_box.php" method="post">';
+    echo '<form action="complaint_box.php" method="post">';
     echo '<input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />';
     echo '<input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">';
 	echo "</form>";

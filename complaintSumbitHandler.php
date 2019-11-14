@@ -13,12 +13,6 @@
 		if (!empty($_POST['name']) && !empty($_POST['surname'])){
 			$fullname = $fname." ".$lname;
 		}
-		if (!empty($_POST['adress'])) {
-			$adress = mysqli_real_escape_string($connection,$_POST['adress']);
-		}
-		else{
-			$adress = "empty";
-		}
 		if (!empty($_POST['email'])) {
 			$email = mysqli_real_escape_string($connection,$_POST['email']);
 		}

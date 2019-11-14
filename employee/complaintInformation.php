@@ -24,35 +24,35 @@
 		else{
 			$phone = "-";
 		}
-		if ($row[]) {
-			$company_name = mysqli_real_escape_string($connection,$_POST['company_name']);
+		if (!(strcmp($row['company_name'],"empty")==0)) {
+			$company_name = $row['company_name'];
 		}
 		else{
 			$company_name = "-";
 		}
-		if ($row[]) {
-			$company_address = mysqli_real_escape_string($connection,$_POST['company_address']);
+		if (!(strcmp($row['company_address'],"empty")==0)) {
+			$company_address = $row['$company_address'];
 		}
 		else{
 			$company_address = "-";
 		}
-		if ($row[]) {
-			$company_phone = mysqli_real_escape_string($connection,$_POST['company_phone']);
+		if (!(strcmp($row['company_phone'],"empty")==0)) {
+			$company_phone = $row['company_phone'];
 		}
 		else{
 			$company_phone = "-";
 		}
-		if ($row[]) {
-			$company_taxId = mysqli_real_escape_string($connection,$_POST['company_taxId']);
+		if (!(strcmp($row['company_taxId'],"empty")==0)) {
+			$company_taxId =  $row['company_taxId'];
 		}
 		else{
 			$company_taxId = "-";
 		}
 		
 		
-		if ($row[]) {
+		if (!(strcmp($row['company_taxId'],"empty")==0)) {
 		    // Escape any html characters
-		    $comment = htmlentities(mysqli_real_escape_string($connection,$_POST['comment']));
+		    $comment = $row['company_taxId'];
 		}
 		else{
 			$comment = "Χωρίς περιγραφή!";
