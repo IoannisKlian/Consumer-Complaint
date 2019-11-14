@@ -1,6 +1,6 @@
 <?php  
 
-	include ("connect.php");
+	include ("../connect.php");
 
 	$username = stripslashes($_POST['username']);
 	$password = stripslashes($_POST['password']);
@@ -19,7 +19,7 @@
 		$_SESSION["user_name"] = $row['username'];
 		$_SESSION["name"] = $row['name'];
 		
-		header("Location: employee/employeeIndex.php");
+		header("Location: employeeIndex.php");
 	}
 	else {
 		session_start();
