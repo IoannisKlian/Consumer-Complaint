@@ -33,12 +33,6 @@
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="address">Διεύθυνση</label>
-      <input type="text" class="form-control" id="address" placeholder="Διεύθυνση" name="address">
-    </div>
-  </div>
 
   <div class="form-row">
     <div class="col-md-4 mb-3">
