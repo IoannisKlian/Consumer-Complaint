@@ -40,7 +40,7 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Στοιχεία Καταγγελέα </h5>
+                  <h5 class="card-title">Στοιχεία Καταγγελέα  </h5>
                   <p class="card-text">
                     Ονομ/νυμο: <?php echo $fullname; ?><br>
                     Τηλέφωνο επικοινωνίας: <?php echo $phone; ?><br>
@@ -84,7 +84,23 @@
             </div>
           </div>
         </div>
+    </div>
+
+    <div class="card-body">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Αποδεικτικά στοιχεία</h5>
+                <p class="card-text"> <?php echo "test"; ?></p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div><br>
+
+
+
 
     <?php
       if(isset($_SESSION['id'])){
