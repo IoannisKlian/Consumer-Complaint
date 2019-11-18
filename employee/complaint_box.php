@@ -1,7 +1,13 @@
 <?php 
   session_start();
-  $complaintID = $_POST['complaintID'];
-  $_SESSION['complaintID'] = $complaintID;
+  if (isset($_GET["complaint_GET_ID"])) {
+    $_SESSION['complaintID'] = $_GET["complaint_GET_ID"];
+    $complaintID = $_SESSION['complaintID'];
+  }
+  else{
+    $complaintID = $_POST['complaintID'];
+    $_SESSION['complaintID'] = $complaintID;
+  }
 
   include("complaintInformation.php");
 ?>
@@ -81,7 +87,7 @@
     </div><br>
 
     <?php
-
+      if(isset($_SESSION['id'])){
 
       //This checks whether the complaint has assign to someone or not
       $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 1 AND id = '".$complaintID."'";
@@ -99,7 +105,7 @@
         $query = "SELECT govrn_emp.name ,employee_complaint.datetime 
                       FROM employee_complaint,complaint,govrn_emp 
                       WHERE employee_complaint.employee_id = govrn_emp.id 
-                      AND complaint.id = employee_complaint.complaint_id";
+                      AND ".$complaintID." = employee_complaint.complaint_id";
         $result_of_query = mysqli_query($connection,$query);
         $row_employee = mysqli_fetch_array($result_of_query);
         
@@ -108,8 +114,10 @@
             <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" disabled/> 
           </form>
               ';
-         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee['name']." στις ".$row_employee['datetime'];    
+         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee['name']." στις ".$row_employee['datetime'];   
        }
+
+     }
       ?>
     
 
