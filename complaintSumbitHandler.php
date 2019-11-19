@@ -65,7 +65,7 @@
 		include('upload.php');
 	} 
 	else {
-	echo "Something went wrong";
+		echo "Something went wrong";
 	}
 
 
