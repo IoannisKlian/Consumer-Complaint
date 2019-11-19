@@ -8,8 +8,14 @@
       <li class="nav-item active" id="index" style="border-right: solid;  border-color: #a1f8ff;">
         <a class="nav-link" href="employeeIndex.php">Ανοιχτά<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" id="pending" style="border-right: solid; border-color: #a1f8ff;">
-        <a class="nav-link" href="employeePending.php">Εκκρεμή</a>
+      <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
+       <a class="nav-link dropdown-toggle" href="employeePending.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Εκκρεμή
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="archived" href="employeeArchived.php">Αρχειοθετημένα</a>
@@ -22,3 +28,14 @@
     </ul>
   </div>
 </nav>
+
+<!--<li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
+       <a class="nav-link dropdown-toggle" href="employeePending.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Εκκρεμή
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>
+      </li>
+      -->

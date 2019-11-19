@@ -24,8 +24,9 @@ session_start();
   left: 50%;
   -webkit-transform: translate(-0%, -50%);
   transform: translate(-90%, -50%);
-  
 
+  
+  
 }
 </style>
 </head>
