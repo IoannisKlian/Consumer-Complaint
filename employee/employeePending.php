@@ -1,5 +1,5 @@
 <?php
-//session_start();
+  session_start();
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
       //header("Location: login.php");
   //}
@@ -44,14 +44,36 @@
   $offset = ($pageno-1) * $no_of_records_per_page;
 
   include ("../connect.php");
+  if (isset($_GET["page_id"])) {
+    $_SESSION['pageID'] = $_GET["page_id"];
+  }
+  else{
+    $_SESSION['pageID'] = 1;
+  }
 
-  $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 1 ";
-  $result = mysqli_query($connection,$total_pages_sql);
-  $total_rows = mysqli_fetch_array($result)[0];
-  $total_pages = ceil($total_rows / $no_of_records_per_page);
+  if ($_SESSION['pageID'] == 1) {
 
-  $sql = "SELECT * FROM complaint WHERE status = 1 LIMIT $offset, $no_of_records_per_page";
-  $res_data = mysqli_query($connection,$sql);
+    $userID=$_SESSION['id'];
+
+    $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
+    WHERE employee_complaint.employee_id = ".$userID." AND complaint.id = employee_complaint.complaint_id";
+    $result = mysqli_query($connection,$total_pages_sql);
+    $total_rows = mysqli_fetch_array($result)[0];
+    $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+    $sql = "SELECT * FROM complaint,employee_complaint 
+    WHERE employee_complaint.employee_id = ".$userID." AND complaint.id = employee_complaint.complaint_id LIMIT $offset, $no_of_records_per_page";
+    $res_data = mysqli_query($connection,$sql);
+  }
+  else{
+    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 1 ";
+    $result = mysqli_query($connection,$total_pages_sql);
+    $total_rows = mysqli_fetch_array($result)[0];
+    $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+    $sql = "SELECT * FROM complaint WHERE status = 1 LIMIT $offset, $no_of_records_per_page";
+    $res_data = mysqli_query($connection,$sql);
+  }
 
   if ($total_rows > 0) {
     include ("complaint_fetcher.php");
