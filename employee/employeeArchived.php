@@ -1,5 +1,6 @@
 <?php
-//session_start();
+session_start();
+include ("time_out_session.php");
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
       //header("Location: login.php");
   //}

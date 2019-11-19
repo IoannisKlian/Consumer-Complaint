@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  include ("time_out_session.php");
   if (isset($_GET["complaint_GET_ID"])) {
     $_SESSION['complaintID'] = $_GET["complaint_GET_ID"];
     $complaintID = $_SESSION['complaintID'];
