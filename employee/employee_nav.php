@@ -13,8 +13,8 @@
           Εκκρεμή
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="employeePending.php?page_id=1">Τα δικά μου</a>
+          <a class="dropdown-item" href="employeePending.php?page_id=2">Όλα</a>
         </div>
       </li>
       <li class="nav-item">
