@@ -48,15 +48,15 @@
 
 <div class="login-form">
     <form action="auth.php" method="POST">
-        <h2 class="text-center">Log in</h2>       
+        <h2 class="text-center">Είσοδος</h2>       
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="required">
+            <input type="text" class="form-control" placeholder="Όνομα Χρήστη" name="username" id="username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="required">
+            <input type="password" class="form-control" placeholder="Κωδικός" name="password" id="password" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block" value="Login" id="btn">Log in</button>
+            <button type="submit" class="btn btn-primary btn-block" value="Login" id="btn">Είσοδος</button>
         </div>       
     </form>
 </div>
