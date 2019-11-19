@@ -12,10 +12,10 @@
         <a class="nav-link dropdown-toggle" href="employeePending.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Εκκρεμή
         </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-          </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="employeePending.php?page_id=1">Τα δικά μου</a>
+          <a class="dropdown-item" href="employeePending.php?page_id=2">Όλα</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="archived" href="employeeArchived.php">Αρχειοθετημένα</a>
