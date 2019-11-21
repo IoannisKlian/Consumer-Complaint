@@ -23,7 +23,7 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="name">Όνομα</label>
-      <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name">
+      <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name" >
     </div>
 
   
@@ -112,6 +112,9 @@
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Submit</button>
 
 </form>
+</div>
+<div>
+  <p>Τα πεδία που περιέχουν * είναι αναγκαίο να συμπληρωθούν</p>
 </div>
 </body>
 </HTML>

@@ -27,16 +27,19 @@
   <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <h2 class="col-sm">
+        <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Στοιχεία Καταγγελίας <i class="fa fa-angle-down" style="font-size:20px"></i>
         </button>
+
+        
       </h2>
+      
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
           <div class="row">
             <div class="col-sm-6">
@@ -70,8 +73,7 @@
   </div>
   <div class="card">
     <div class="card-header" id="headingTwo">
-      <h2 class="mb-0">
-      </h2>
+      <h6 class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo "Ημερομηνία καταβολής: ".$date_added; ?></h6>
     </div>
   </div>
 

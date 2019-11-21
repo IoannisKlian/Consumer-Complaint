@@ -12,7 +12,7 @@ $( document ).ready(function() {
 //   x.innerHTML = "Latitude: " + position.coords.latitude +
 //   "<br>Longitude: " + position.coords.longitude;
 // }
-
+		
 	
 
 	// Check on the submit button in the form
@@ -77,6 +77,9 @@ function checkForAnonimity() {
 function isEmpty( el ){
       return el.val() == "";
   }
+
+
+  
 
 
 

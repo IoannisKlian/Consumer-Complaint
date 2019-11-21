@@ -10,40 +10,43 @@
 		if (!empty($_POST['surname'])) {
 			$lname = mysqli_real_escape_string($connection,$_POST['surname']);
 		}
-		if (!empty($_POST['name']) && !empty($_POST['surname'])){
+		if ((!empty($_POST['name']) && !strlen(trim($_POST['name'])) == 0)|| ( !empty($_POST['surname']) && !strlen(trim($_POST['surname'])) == 0)){
 			$fullname = $fname." ".$lname;
 		}
-		if (!empty($_POST['email'])) {
+		else{
+			$fullname = "empty";
+		}
+		if (!empty($_POST['email']) && !strlen(trim($_POST['email'])) == 0) {
 			$email = mysqli_real_escape_string($connection,$_POST['email']);
 		}
 		else{
 			$email = "empty";
 		}
-		if (!empty($_POST['phone'])) {
+		if (!empty($_POST['phone']) && !strlen(trim($_POST['phone'])) == 0) {
 			$phone = mysqli_real_escape_string($connection,$_POST['phone']);
 		}
 		else{
 			$phone = "empty";
 		}
-		if (!empty($_POST['company_name'])) {
+		if (!empty($_POST['company_name']) && !strlen(trim($_POST['company_name'])) == 0) {
 			$company_name = mysqli_real_escape_string($connection,$_POST['company_name']);
 		}
 		else{
 			$company_name = "empty";
 		}
-		if (!empty($_POST['company_address'])) {
+		if (!empty($_POST['company_address']) && !strlen(trim($_POST['company_address'])) == 0) {
 			$company_address = mysqli_real_escape_string($connection,$_POST['company_address']);
 		}
 		else{
 			$company_address = "empty";
 		}
-		if (!empty($_POST['company_phone'])) {
+		if (!empty($_POST['company_phone']) && !strlen(trim($_POST['company_phone'])) == 0) {
 			$company_phone = mysqli_real_escape_string($connection,$_POST['company_phone']);
 		}
 		else{
 			$company_phone = "empty";
 		}
-		if (!empty($_POST['company_taxId'])) {
+		if (!empty($_POST['company_taxId']) && !strlen(trim($_POST['company_taxId'])) == 0) {
 			$company_taxId = mysqli_real_escape_string($connection,$_POST['company_taxId']);
 		}
 		else{
@@ -51,7 +54,7 @@
 		}
 		
 		
-		if (isset($_POST['comment'])) {
+		if (isset($_POST['comment']) && !strlen(trim($_POST['comment'])) == 0) {
 		    // Escape any html characters
 		    $comment = htmlentities(mysqli_real_escape_string($connection,$_POST['comment']));
 		}
