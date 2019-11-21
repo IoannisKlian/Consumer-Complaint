@@ -54,7 +54,6 @@
       }>
     </div>
 
-
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="company_name">Επωνυμία εταιρείας*</label>
@@ -90,7 +89,7 @@
     <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος*</span>
   </div>
-  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το προβλήμα που αντιμετωπίζεται" required></textarea>
+  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
   </div>
 </div><br> 
 
@@ -103,7 +102,7 @@
 	  <div class="custom-file">
 	    <input type="file" class="custom-file-input" id="file" name="file" 
 	      aria-describedby="inputGroupFileAddon01">
-	    <label class="custom-file-label" for="inputGroupFile01">Επιλέγξτε αρχείο!</label>
+	    <label class="custom-file-label" for="inputGroupFile01">Επιλέξτε αρχείο...</label>
 	  </div>
 	</div>
 
