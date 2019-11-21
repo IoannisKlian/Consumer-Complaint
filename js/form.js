@@ -13,8 +13,11 @@ $( document ).ready(function() {
 //   "<br>Longitude: " + position.coords.longitude;
 // }
 
+	
+
 	// Check on the submit button in the form
 	$("#submit-btn").on( "click", function() {
+		
 
 		// Communication Alert. The user must input at least a phone, or an email. If not a modal will alert. 
 		if(isEmpty($("#email")) && isEmpty($("#phone"))) {
@@ -74,3 +77,6 @@ function checkForAnonimity() {
 function isEmpty( el ){
       return el.val() == "";
   }
+
+
+
