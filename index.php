@@ -15,8 +15,8 @@
 
 </head>
 
-<body style="background-color: #d6d6c2;">
-<div style="padding-left:0.75%;">
+<body style="background-color:#f7f7f7;">
+<div  style="padding-left:0.75%;">
 
 <form action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
 
