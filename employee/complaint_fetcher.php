@@ -1,5 +1,5 @@
 <?php 
-    echo '<table class="table table-striped">
+    echo '<table class="table table-hover">
     <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
@@ -26,7 +26,7 @@
       <td>'.$row["company_name"].'</td>
       <td>'.$nameOfComplainer.'</td>
       <td>'.$row['datetime'].'</td>
-      <td><form action="complaint_box.php" method="post">
+      <td><form action="complaint_box.php" method="post"  style="text-align: right;">
         <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" formtarget="_blank" />
         <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
         </form>
