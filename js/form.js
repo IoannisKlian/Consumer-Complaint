@@ -86,7 +86,7 @@ function isEmpty( el ){
   	var id = input;
 
 		if(!id[0].checkValidity()){
-			id.tooltip("show");
+			id.attr('data-original-title', 'new text').tooltip("show");
 			return;
 		}
 		else{
