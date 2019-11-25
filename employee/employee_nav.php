@@ -25,10 +25,10 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav nav-fill w-100">
       <li class="nav-item active" id="index" style="border-right: solid;  border-color: #a1f8ff;">
-        <a class="nav-link" href="employeeIndex.php">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?><span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="employee-open" href="employeeIndex.php">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
-        <a class="nav-link dropdown-toggle" href="employeePending.php" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="employeePending.php" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Εκκρεμή
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -37,7 +37,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="archived" href="employeeArchived.php">Αρχειοθετημένα<?php echo "(".$total_rows_closed.")"; ?></a>
+        <a class="nav-link" id="employee-archived" href="employeeArchived.php">Αρχειοθετημένα<?php echo "(".$total_rows_closed.")"; ?></a>
       </li>
       <li class="nav-item" style="text-align: right;">
         <a href="logout.php" class="btn btn-info btn-sm">
