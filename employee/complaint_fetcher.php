@@ -1,22 +1,27 @@
-<?php while($row = mysqli_fetch_array($res_data)){
+<?php 
+  $counter = 0;
 
-    echo "<div class="."container".">";
-    echo "<h3>"."Ονομασία επιχείρησης: ".$row['company_name']."</h3>";
+  while($row = mysqli_fetch_array($res_data)){
+        $counter++;
     if (strcmp( "empty", $row['name'] ) == 0) {
       $nameOfComplainer = "-";
     }
     else{
       $nameOfComplainer = $row['name'];
     }
-    echo "<h5>"."Όνομα καταγγελέα: ".$nameOfComplainer."</h5>";
-    echo "<h5>"."Ημερομηνία καταβολής: ".$row['datetime']."</h5>";
-    echo '<form action="complaint_box.php" method="post">';
-    echo '<input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" formtarget="_blank" />';
-    echo '<input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">';
-	echo "</form>";
-    echo '</div> <hr style="border-width: 2px;color: black;">';
+   echo' <tr>
+      <th scope="row">'.$counter.'</th>
+      <td>'.$row["company_name"].'</td>
+      <td>'.$nameOfComplainer.'</td>
+      <td>'.$row['datetime'].'</td>
+      <td><form action="complaint_box.php" method="post"  style="text-align: right;">
+        <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" formtarget="_blank" />
+        <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
+        </form>
+      </td>
+    </tr>';
+    
 }
-
 mysqli_close($connection);
 
 ?>

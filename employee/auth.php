@@ -19,7 +19,7 @@
 		$_SESSION["user_name"] = $row['username'];
 		$_SESSION["name"] = $row['name'];
 		
-		header("Location: employeeIndex.php");
+		header("Location: employee_index.php");
 	}
 	else {
 		session_start();
