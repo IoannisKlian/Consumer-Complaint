@@ -13,7 +13,7 @@
 
   $counter = 0;
 
-    while($row = mysqli_fetch_array($res_data)){
+  while($row = mysqli_fetch_array($res_data)){
         $counter++;
     if (strcmp( "empty", $row['name'] ) == 0) {
       $nameOfComplainer = "-";
