@@ -18,6 +18,11 @@ $( document ).ready(function() {
 	// Check on the submit button in the form
 	$("#submit-btn").on( "click", function() {
 		
+		
+		checkValidInput($("email"));
+		checkValidInput($("phone"));
+		checkValidInput($("phonecompany_taxId"));
+		checkValidInput($("company_phone"));
 
 		// Communication Alert. The user must input at least a phone, or an email. If not a modal will alert. 
 		if(isEmpty($("#email")) && isEmpty($("#phone"))) {
@@ -76,6 +81,19 @@ function checkForAnonimity() {
 
 function isEmpty( el ){
       return el.val() == "";
+  }
+
+
+  function checkValidInput(input) {
+  	var id = input;
+
+		if(!id[0].checkValidity()){
+			id.tooltip("show");
+			return;
+		}
+		else{
+			id.tooltip("hide");
+		}
   }
 
 
