@@ -1,5 +1,10 @@
 $( document ).ready(function() {
-console.log("w");
+
+
+		$('.nav-link').click(function(){
+			$(".active").removeClass("active");
+			$(this).;
+		});
 });
 
 

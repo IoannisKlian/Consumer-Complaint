@@ -15,15 +15,15 @@
 
 </head>
 
-<body>
-<div style="padding-left:0.75%;">
+<body style="background-color:#f7f7f7;">
+<div  style="padding-left:0.75%;">
 
 <form action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
 
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="name">Όνομα</label>
-      <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name">
+      <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name" >
     </div>
 
   
@@ -45,6 +45,14 @@
     </div>
   </div>
 
+  <div style="padding-right:33.6%;">
+  <hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 10;
+    border-top: 1px solid #eeeeee;
+      }>
+    </div>
 
   <div class="form-row">
     <div class="col-md-4 mb-3">
@@ -81,7 +89,7 @@
     <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος*</span>
   </div>
-  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το προβλήμα που αντιμετωπίζεται" required></textarea>
+  <textarea class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
   </div>
 </div><br> 
 
@@ -94,7 +102,7 @@
 	  <div class="custom-file">
 	    <input type="file" class="custom-file-input" id="file" name="file" 
 	      aria-describedby="inputGroupFileAddon01">
-	    <label class="custom-file-label" for="inputGroupFile01">Επιλέγξτε αρχείο!</label>
+	    <label class="custom-file-label" for="inputGroupFile01">Επιλέξτε αρχείο...</label>
 	  </div>
 	</div>
 
@@ -104,6 +112,9 @@
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Submit</button>
 
 </form>
+</div>
+<div>
+  <p>Τα πεδία που περιέχουν * είναι αναγκαίο να συμπληρωθούν</p>
 </div>
 </body>
 </HTML>

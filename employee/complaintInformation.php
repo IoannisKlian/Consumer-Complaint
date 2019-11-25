@@ -58,4 +58,6 @@
 			$comment = "Χωρίς περιγραφή!";
 		}
 
+		$date_added = $row['datetime'];
+
 ?>

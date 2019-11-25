@@ -1,5 +1,6 @@
 <?php
 session_start();
+include ("time_out_session.php");
   //if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
      //header("Location: login.php");
   //}
@@ -24,9 +25,12 @@ session_start();
   left: 50%;
   -webkit-transform: translate(-0%, -50%);
   transform: translate(-90%, -50%);
-  
 
+  
+  
 }
+
+
 </style>
 </head>
 <body>

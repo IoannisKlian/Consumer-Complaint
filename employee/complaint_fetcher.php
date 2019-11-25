@@ -16,6 +16,7 @@
 	echo "</form>";
     echo '</div> <hr style="border-width: 2px;color: black;">';
 }
+
 mysqli_close($connection);
 
 ?>
