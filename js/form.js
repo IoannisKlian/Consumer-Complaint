@@ -18,11 +18,14 @@ $( document ).ready(function() {
 	// Check on the submit button in the form
 	$("#submit-btn").on( "click", function() {
 		
-		
-		checkValidInput($("#email"));
-		checkValidInput($("#phone"));
-		checkValidInput($("#company_taxId"));
-		checkValidInput($("#company_phone"));
+		if(checkValidInput($("#email"),"Λάθος email!"))
+			return;
+		else if (checkValidInput($("#phone"),"Λαθός τηλεφωνο!"))
+			return;
+		else if (checkValidInput($("#company_taxId"),"Λάθος αριθμός ΑΦΜ!"))
+			return;
+		else if (checkValidInput($("#company_phone"),"Λάθος αριθμός τηλεφώνου!"))
+			return;
 
 		// Communication Alert. The user must input at least a phone, or an email. If not a modal will alert. 
 		if(isEmpty($("#email")) && isEmpty($("#phone"))) {
@@ -58,8 +61,8 @@ function submitForm() {
 		document.getElementById("form").submit();
 	}
 	else {
-		document.getElementById("company_name").setCustomValidity("yooooo");
-		document.getElementById("comment").setCustomValidity("yooooo");
+		document.getElementById("company_name").setCustomValidity("Παρακαλώ συμπληρώστε το πεδίο!");
+		document.getElementById("comment").setCustomValidity("Παρακαλώ συμπληρώστε το πεδίο!");
 	}
 }
 
@@ -82,15 +85,16 @@ function isEmpty( el ){
   }
 
 
-  function checkValidInput(input) {
+  function checkValidInput(input,text) {
   	var id = input;
 
 		if(!id[0].checkValidity()){
-			id.attr('data-original-title', 'new text').tooltip("show");
-			return;
+			id.tooltip('dispose').tooltip({title: text }); 
+			return true;
 		}
 		else{
 			id.tooltip("hide");
+			return false;
 		}
   }
 
