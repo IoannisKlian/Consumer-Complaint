@@ -12,6 +12,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/form.js"></script>
   <meta charset="utf-8" />
+  <style type="text/css">
+    input[type="number"] {
+      -webkit-appearance: textfield;
+         -moz-appearance: textfield;
+              appearance: textfield;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none;
+    }
+  </style>
 
 </head>
 
@@ -37,11 +48,11 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
     <label for="phone">Τηλέφωνο επικοινωνίας</label>
-    <input type="number" class="form-control" id="phone" title="Λαθός τηλεφωνο!" placeholder="Τηλέφωνο" name="phone">
+    <input type="number" class="form-control" id="phone" data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="phone">
     </div>
     <div class="col-md-4 mb-3">
       <label for="email">Email address</label>
-      <input type="email" data-toggle="tooltip" title="Λαθός email!" data-placement="right" class="form-control" id="email" placeholder="name@example.com" name="email">
+      <input type="email" data-original-title="" data-placement="right" class="form-control" id="email" placeholder="name@example.com" name="email">
     </div>
   </div>
 
@@ -75,12 +86,12 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="company_taxId">ΑΦΜ εταιρείας</label>
-      <input type="number" class="form-control" id="company_taxId" title="Λαθός αριθμός ΑΦΜ!" placeholder="ΑΦΜ" name="company_taxId">
+      <input type="number" class="form-control" id="company_taxId" data-original-title="" data-placement="right" placeholder="ΑΦΜ" name="company_taxId">
     </div>
  
     <div class="col-md-4 mb-3">
       <label for="company_phone">Τηλέφωνο επικοινωνίας εταιρείας</label>
-      <input type="number" class="form-control" id="company_phone" title="Λαθός αριθμός!" placeholder="Τηλέφωνο" name="company_phone">
+      <input type="number" class="form-control" id="company_phone"data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="company_phone">
     </div>
   </div>
 
