@@ -58,6 +58,6 @@
 			$comment = "Χωρίς περιγραφή!";
 		}
 
-		$date_added = $row['datetime'];
+		$date_added = $row['subdate'];
 
 ?>
