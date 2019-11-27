@@ -60,9 +60,12 @@ else{
     $_SESSION['errorupload'] = true;
 }
 
-include ("employee/emailNotification.php");
-$_SESSION['erroruploadmessage'] = $errorMessage;
-echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
+if (!(strcmp($errorMessage, "") == 0)) {
+	include ("employee/emailNotification.php");
+	$_SESSION['erroruploadmessage'] = $errorMessage;
+	echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
+}
+
 
 
 ?>

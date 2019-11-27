@@ -13,7 +13,7 @@
       <th scope="row">'.$counter.'</th>
       <td>'.$row["company_name"].'</td>
       <td>'.$nameOfComplainer.'</td>
-      <td>'.$row['datetime'].'</td>
+      <td>'.$row['subdate'].'</td>
       <td><form action="complaint_box.php" method="post"  style="text-align: right;">
         <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" formtarget="_blank" />
         <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">

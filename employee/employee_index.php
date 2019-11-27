@@ -47,7 +47,9 @@ include ("time_out_session.php");
 
         $pageno = 1;
     }
+
     $no_of_records_per_page = 10;
+
     $offset = ($pageno-1) * $no_of_records_per_page;
 
     include ("../connect.php");
@@ -77,7 +79,7 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT * FROM complaint,employee_complaint 
+      $sql = "SELECT complaint.id,name,email,phonenumber,company_name,company_adress,company_phone,company_taxid,description,subdate,status FROM complaint,employee_complaint 
       WHERE employee_complaint.employee_id = ".$userID." AND complaint.id = employee_complaint.complaint_id LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
     }
