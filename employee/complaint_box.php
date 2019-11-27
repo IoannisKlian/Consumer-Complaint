@@ -116,7 +116,9 @@
 
 
 
-
+<div class="card-body">
+    <div class="row">
+      <div class="col-sm-4">
     <?php
       if(isset($_SESSION['id'])){
 
@@ -145,14 +147,22 @@
             <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" disabled/> 
           </form>
               ';
+
+      ?>
+    </div>
+      <div class="col-sm-4">
+      <?php        
          echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee['name']." στις ".$row_employee['datetime'];   
        }
+       ?>
 
+        </div>
+
+        <div class="col-sm-4" style="text-align: right;">
+        <?php
        // Enable/Disable "Close Case" Button depending on the employee's ID.
-       $query = "SELECT COUNT(*) 
-                  FROM employee_complaint 
-                  WHERE employee_complaint.employee_id = '".$_SESSION['id']."' AND employee_complaint.complaint_id = '".$complaintID."'";
-        $result = mysqli_query($connection,$total_pages_sql);
+       $query_close_button = "SELECT * FROM `employee_complaint` WHERE `employee_id` = '".$_SESSION['id']."' AND `complaint_id` = '".$complaintID."'"; 
+        $result = mysqli_query($connection,$query_close_button);
         $total= mysqli_fetch_array($result)[0];
 
         if ($total == 0) {
@@ -169,6 +179,7 @@
 
 
       ?>
+    </div></div></div>
     
 
 </div>

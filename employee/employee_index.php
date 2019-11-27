@@ -109,20 +109,33 @@ include ("time_out_session.php");
     // If there are results from the query
     if ($total_rows > 0) {
 
-      include ("complaint_table_header.php");
-      include ("complaint_fetcher.php");
-      include ("complaint_table_footer.php");
+      	include ("complaint_table_header.php");
+      	include ("complaint_fetcher.php");
+      	include ("complaint_table_footer.php");
+    	include ("employee_pagination.php");
+
     }
 
     // If there are no results from the query
     else {
 
-        echo '<div class=container>
-                <h2>Δεν υπάρχουν εκκρεμείς καταγγελίες</h2>
+    	if ($_SESSION['pageID'] == 0) {
+    		echo '<div class=container>
+                <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
               </div>';
+    	}
+    	if ($_SESSION['pageID'] == 1 || $_SESSION['pageID'] == 2) {
+    		echo '<div class=container>
+                <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν εκκρεμείς καταγγελίες</h2>
+              </div>';
+    	}
+    	if ($_SESSION['pageID'] == 3) {
+    		echo '<div class=container>
+                <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν αρχειοθετημένες καταγγελίες</h2>
+              </div>';
+    	}
     }
 
-    include ("employee_pagination.php");
   ?>
 
   </body>

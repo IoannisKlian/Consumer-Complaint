@@ -11,8 +11,8 @@
         <p>Σας προτείνεται να καταθέσετε έναν έγκυρο τηλεφωνικό αριθμό, ή μία διεύθυνση ηλεκτρονικού ταχυδρομίου για την σχετική ενημέρωσή σας περί της καταγγελίας.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="com-yes"class="btn btn-default" data-dismiss="modal">Θέλω να καταθέσω</button>
-        <button type="button" id="com-no" class="btn btn-default" data-dismiss="modal">Δεν θέλω να καταθέσω</button>
+        <button type="button" id="com-yes"class="btn btn-default" data-dismiss="modal">Ακύρωση Κατάθεσης</button>
+        <button type="button" id="com-no" class="btn btn-default" data-dismiss="modal">Συνέχεια χωρίς Κατάθεση</button>
       </div>
     </div>
 

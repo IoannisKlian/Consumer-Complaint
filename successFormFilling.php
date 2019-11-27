@@ -10,7 +10,7 @@
 
 <div class="jumbotron text-center">
   <h1 class="display-3">Ευχαριστούμε!</h1>
-  <p class="lead"><strong>Η κατταγελία καταχωρήθηκε!</strong> Αν έχεται καταχωρήσει email θα ενημερωθείτε για την συνέχεια της καταγγελίας </p>
+  <p class="lead"><strong>Η κατταγελία καταχωρήθηκε!</strong> Αν έχετε καταχωρήσει email θα ενημερωθείτε για την συνέχεια της καταγγελίας </p>
   <hr>
   
   <p class="lead">
