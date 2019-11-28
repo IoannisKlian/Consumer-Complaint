@@ -1,4 +1,6 @@
 
+
+--
 -- Βάση δεδομένων: `consumer_complaint`
 --
 
@@ -105,7 +107,8 @@ CREATE TABLE `govrn_emp` (
 
 INSERT INTO `govrn_emp` (`id`, `username`, `password`, `email`, `name`) VALUES
 (1, 'giannisK', '1234', 'iklian@athtech.gr', 'Giannis Klian'),
-(3, 'dimosPan', '1234', 'dpanagiotars@athtech.gr', 'Dimos Panagiotaras');
+(3, 'dimosPan', '1234', 'dpanagiotars@athtech.gr', 'Dimos Panagiotaras'),
+(4, 'akanakis', 'akanakis', 'kanaxbusiness@gmail.com', 'Alexandros Kanakis');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -163,7 +166,7 @@ ALTER TABLE `file`
 -- AUTO_INCREMENT για πίνακα `govrn_emp`
 --
 ALTER TABLE `govrn_emp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Περιορισμοί για άχρηστους πίνακες
@@ -182,4 +185,5 @@ ALTER TABLE `employee_complaint`
 ALTER TABLE `file`
   ADD CONSTRAINT `foreign_key_complaint_id` FOREIGN KEY (`complaint_id`) REFERENCES `complaint` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
+
 
