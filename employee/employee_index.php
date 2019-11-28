@@ -85,7 +85,7 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT complaint.*, username FROM complaint,employee_complaint,govrn_emp 
+      $sql = "SELECT complaint.*, govrn_emp.name FROM complaint,employee_complaint,govrn_emp 
       			WHERE employee_complaint.employee_id = ".$userID." 
       			AND complaint.id = employee_complaint.complaint_id
       			AND employee_complaint.employee_id = govrn_emp.id
@@ -102,7 +102,7 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT complaint.*, username 
+      $sql = "SELECT complaint.*, govrn_emp.name 
       			FROM complaint, employee_complaint, govrn_emp
       			WHERE status = 1 
       			AND complaint.id = employee_complaint.complaint_id
@@ -124,7 +124,7 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT complaint.*, username
+      $sql = "SELECT complaint.*, govrn_emp.name
       			FROM complaint,employee_complaint,govrn_emp 
       			WHERE employee_complaint.employee_id != ".$userID." 
       			AND complaint.id = employee_complaint.complaint_id 
@@ -142,7 +142,7 @@ include ("time_out_session.php");
         $total_rows = mysqli_fetch_array($result)[0];
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        $sql = "SELECT complaint.*, username 
+        $sql = "SELECT complaint.*, govrn_emp.name 
         		FROM complaint, employee_complaint, govrn_emp 
         		WHERE status = 2 
         		AND complaint.id = employee_complaint.complaint_id 
