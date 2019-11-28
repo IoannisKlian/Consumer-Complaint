@@ -31,7 +31,7 @@ if(!empty($_FILES["file"]["name"])) {
 		        if(move_uploaded_file($_FILES["file"]["tmp_name"],$targetFilePath )){
 		        	mysqli_query($connection,"INSERT INTO file (id, name, complaint_id) 
 	VALUES (DEFAULT, '".$fileName."', '".$complaint_id."')");
-		        	include ("employee/emailNotification.php");
+		        	include ("employee/email_notification.php");
 		        	
 		        	echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
 		        }
@@ -61,7 +61,7 @@ else{
 }
 
 if (!(strcmp($errorMessage, "") == 0)) {
-	include ("employee/emailNotification.php");
+	include ("employee/email_notification.php");
 	$_SESSION['erroruploadmessage'] = $errorMessage;
 	echo '<script type="text/javascript">','location.replace("successFormFilling.php");','</script>';
 }

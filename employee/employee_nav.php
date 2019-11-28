@@ -13,11 +13,17 @@
   $result = mysqli_query($connection,$total_pages_sql);
   $total_rows_pending_all = mysqli_fetch_array($result)[0];
 
-  // Calculating for employee's assigned pending compalaints
+  // Calculating for current employee's assigned pending compalaints
   $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
                       WHERE employee_complaint.employee_id = ".$_SESSION['id']." AND complaint.id = employee_complaint.complaint_id";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows_my_pending = mysqli_fetch_array($result)[0];
+
+  // Calculating for All pending except current employee's
+  $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
+                      WHERE employee_complaint.employee_id != ".$_SESSION['id']." AND complaint.id = employee_complaint.complaint_id";
+    $result = mysqli_query($connection,$total_pages_sql);
+    $total_rows_others_pending = mysqli_fetch_array($result)[0];
 
   // Calculating for closed complaints
   $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2";
@@ -38,15 +44,16 @@
       </li>
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
         <a class="nav-link dropdown-toggle" href="employee_index.php" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Εκκρεμεί
+          Εκκρεμή
         </a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="employee_index.php?page_id=1">Τα δικά μου<?php echo " (".$total_rows_my_pending .")"; ?></a>
           <a class="dropdown-item" href="employee_index.php?page_id=2">Όλα<?php echo " (".$total_rows_pending_all.")"; ?></a>
+          <a class="dropdown-item" href="employee_index.php?page_id=3">Άλλων<?php echo " (".$total_rows_others_pending.")"; ?></a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="employee-archived" href="employee_index.php?page_id=3.php">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
+        <a class="nav-link" id="employee-archived" href="employee_index.php?page_id=4.php">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
       </li>
       <li class="nav-item" style="text-align: right;">
         <a href="logout.php" class="btn btn-info btn-sm">

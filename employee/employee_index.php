@@ -10,6 +10,12 @@ include ("time_out_session.php");
   else{
     $_SESSION['pageID'] = 0;
   }
+  if (isset($_GET["sort_by"])) {
+    $_SESSION['sort_by'] = $_GET["sort_by"];
+  }
+  else{
+    $sort = "id ASC";
+  }
 ?>
 
 <HTML>
@@ -64,7 +70,7 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT * FROM complaint WHERE status = 0 LIMIT $offset, $no_of_records_per_page";
+      $sql = "SELECT * FROM complaint WHERE status = 0 ORDER BY $sort LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
     }
 
@@ -79,8 +85,12 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT complaint.id,name,email,phonenumber,company_name,company_adress,company_phone,company_taxid,description,subdate,status FROM complaint,employee_complaint 
-      WHERE employee_complaint.employee_id = ".$userID." AND complaint.id = employee_complaint.complaint_id LIMIT $offset, $no_of_records_per_page";
+      $sql = "SELECT complaint.*, username FROM complaint,employee_complaint,govrn_emp 
+      			WHERE employee_complaint.employee_id = ".$userID." 
+      			AND complaint.id = employee_complaint.complaint_id
+      			AND employee_complaint.employee_id = govrn_emp.id
+      			ORDER BY $sort 
+      			LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
     }
 
@@ -92,30 +102,60 @@ include ("time_out_session.php");
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-      $sql = "SELECT * FROM complaint WHERE status = 1 LIMIT $offset, $no_of_records_per_page";
+      $sql = "SELECT complaint.*, username 
+      			FROM complaint, employee_complaint, govrn_emp
+      			WHERE status = 1 
+      			AND complaint.id = employee_complaint.complaint_id
+      			AND employee_complaint.employee_id = govrn_emp.id
+      			ORDER BY $sort
+      			LIMIT $offset, $no_of_records_per_page
+      			";
+      $res_data = mysqli_query($connection,$sql);
+    }
+
+    // If in Others' Pending Category
+    else if ($_SESSION['pageID'] == 3) {
+
+      $userID=$_SESSION['id'];
+
+      $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
+      WHERE employee_complaint.employee_id != ".$userID." AND complaint.id = employee_complaint.complaint_id";
+      $result = mysqli_query($connection,$total_pages_sql);
+      $total_rows = mysqli_fetch_array($result)[0];
+      $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+      $sql = "SELECT complaint.*, username
+      			FROM complaint,employee_complaint,govrn_emp 
+      			WHERE employee_complaint.employee_id != ".$userID." 
+      			AND complaint.id = employee_complaint.complaint_id 
+      			AND employee_complaint.employee_id = govrn_emp.id
+      			ORDER BY $sort 
+      			LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
     }
 
     // If in Archived Category
-    else if ($_SESSION['pageID'] == 3) {
+    else if ($_SESSION['pageID'] == 4) {
 
       $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2";
         $result = mysqli_query($connection,$total_pages_sql);
         $total_rows = mysqli_fetch_array($result)[0];
         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-        $sql = "SELECT * FROM complaint WHERE status = 2 LIMIT $offset, $no_of_records_per_page";
+        $sql = "SELECT complaint.*, username 
+        		FROM complaint, employee_complaint, govrn_emp 
+        		WHERE status = 2 
+        		AND complaint.id = employee_complaint.complaint_id 
+      			AND employee_complaint.employee_id = govrn_emp.id
+      			ORDER BY $sort 
+        		LIMIT $offset, $no_of_records_per_page";
         $res_data = mysqli_query($connection,$sql);
     }
 
     // If there are results from the query
     if ($total_rows > 0) {
-
-      	include ("complaint_table_header.php");
-      	include ("complaint_fetcher.php");
-      	include ("complaint_table_footer.php");
+      	include ("complaint_table.php");
     	include ("employee_pagination.php");
-
     }
 
     // If there are no results from the query
@@ -126,12 +166,12 @@ include ("time_out_session.php");
                 <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν ανοιχτές καταγγελίες</h2>
               </div>';
     	}
-    	if ($_SESSION['pageID'] == 1 || $_SESSION['pageID'] == 2) {
+    	if ($_SESSION['pageID'] == 1 || $_SESSION['pageID'] == 2 || $_SESSION['pageID'] == 3) {
     		echo '<div class=container>
                 <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν εκκρεμείς καταγγελίες</h2>
               </div>';
     	}
-    	if ($_SESSION['pageID'] == 3) {
+    	if ($_SESSION['pageID'] == 4) {
     		echo '<div class=container>
                 <h2 style="text-align: center; padding-top: 8%;">Δεν υπάρχουν αρχειοθετημένες καταγγελίες</h2>
               </div>';

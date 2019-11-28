@@ -10,7 +10,7 @@
     $_SESSION['complaintID'] = $complaintID;
   }
 
-  include("complaintInformation.php");
+  include("complaint_information.php");
 ?>
 <HTML>
 <head>
@@ -129,7 +129,7 @@
 
       if ($total_rows == 0) {
         echo '
-         <form action="assignComplaintToEmployee.php" method="post">
+         <form action="assign_complaint_to_employee.php" method="post">
           <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
         </form>
               ';
