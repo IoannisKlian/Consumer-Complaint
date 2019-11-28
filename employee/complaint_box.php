@@ -10,6 +10,12 @@
     $_SESSION['complaintID'] = $complaintID;
   }
 
+  // Get company name
+  include("../connect.php");
+  $company_name_query = "SELECT company_name, status FROM complaint WHERE id = '".$complaintID."'";
+  $result = mysqli_query($connection,$company_name_query);
+  $complaint_navigation = mysqli_fetch_array($result);
+
   include("complaint_information.php");
 ?>
 <HTML>
@@ -22,7 +28,27 @@
   <meta charset="utf-8" />
 </head>
 <body>
-  <div style="padding-left:0.75%; padding-right:0.75%;">
+
+  <?php
+    include("employee_nav.php");
+  ?>
+
+  <div style="background-color: #B0F2F1;">
+    <div style="padding: 1%; padding-left: 4%;"> 
+      <b><?php 
+            if ($complaint_navigation["status"] == 0) {
+              echo "Ανοιχτά / ";
+            }
+            else if ($complaint_navigation["status"] == 1) {
+              echo "Eκκρεμή / ";
+            }
+            else if ($complaint_navigation["status"] == 2) {
+              echo "Αρχειοθετημένα / ";
+            }
+            echo $complaint_navigation["company_name"];?>
+      </b> 
+    </div>  
+  </div>
   <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -95,19 +121,6 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Αποδεικτικά στοιχεία</h5>
-                <?php 
-                $query = 'SELECT * FROM file 
-                      WHERE complaint_id = '.$complaintID;
-                      $result_of_query = mysqli_query($connection,$query);
-                      $file = mysqli_fetch_array($result_of_query);
-                      $total_rows = mysqli_fetch_array($result_of_query)[0];
-                      if (mysqli_num_rows($result_of_query)==0) {
-                        echo '<p class="card-text"> Δεν υπάρχει συνημμένο αρχείο!</p>';
-                      }
-                      else{
-                        echo '<p class="card-text"><a target="_blank" href="../uploads/'.$file['name'].'">Πατήστε εδώ για να δείτε το αρχείο!</a></p>';
-                      }
-                ?>
               </div>
             </div>
           </div>
