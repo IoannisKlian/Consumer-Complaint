@@ -64,6 +64,12 @@
 		
 		mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now() ,0)");
 		$complaint_id = mysqli_insert_id($connection);
+		date_default_timezone_set('Europe/Athens');
+
+
+		$log = "Καταχώρηση καταγγελίας - ".date('Y-m-d H:i:s');
+
+		mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
 
 		include('upload.php');
 	} 

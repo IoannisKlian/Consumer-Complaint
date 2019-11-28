@@ -5,8 +5,8 @@
 	$row = mysqli_fetch_array($result);
 
 
-		if (!(strcmp($row['name'],"empty")==0)){
-			$fullname = $row['name'];
+		if (!(strcmp($row['complainant_name'],"empty")==0)){
+			$fullname = $row['complainant_name'];
 		}
 		else{
 			$fullname = "-";
