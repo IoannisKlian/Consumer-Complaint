@@ -11,7 +11,7 @@ include ("time_out_session.php");
     $_SESSION['pageID'] = 0;
   }
   if (isset($_GET["sort_by"])) {
-    $_SESSION['sort_by'] = $_GET["sort_by"];
+    $sort = $_GET["sort_by"];
   }
   else{
     $sort = "id ASC";
