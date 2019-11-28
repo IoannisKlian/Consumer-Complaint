@@ -38,7 +38,7 @@
 			</div>
 			<div class="col-sm-3">
 				<form action="input_log.php" id="form" method="post" enctype="multipart/form-data">
-				<textarea style="resize: none;" rows="4" cols="4" class="form-control" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" >
+				<textarea style="resize: none;" rows="4" cols="4" class="form-control" id="comment" name="comment" >
 					
 				</textarea>
 				<button type="submit" class="btn btn-secondary" value="Submit" id="submit-btn" >Προσθήκη</button>
