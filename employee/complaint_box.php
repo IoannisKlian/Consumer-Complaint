@@ -1,13 +1,24 @@
+<!-- Get Sessions -->
 <?php 
   session_start();
   include ("time_out_session.php");
-  if (isset($_GET["complaint_GET_ID"])) {
-    $_SESSION['complaintID'] = $_GET["complaint_GET_ID"];
+  if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
+     header("Location: login.php");
+  }
+
+  if (isset($_POST["complaintID"])) {
+    $_SESSION['complaintID'] = $_POST["complaintID"];
     $complaintID = $_SESSION['complaintID'];
   }
   else{
-    $complaintID = $_POST['complaintID'];
-    $_SESSION['complaintID'] = $complaintID;
+    $complaintID = $_SESSION['complaintID'];
+  }
+
+  if(isset($_GET["tab"])) {
+    $_SESSION["tab"] = $_GET["tab"];
+  }
+  else {
+    $_SESSION["tab"] = 0;
   }
 
   // Get company name
@@ -18,6 +29,8 @@
 
   include("complaint_information.php");
 ?>
+
+<!-- Main HTML -->
 <HTML>
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,15 +39,20 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <meta charset="utf-8" />
+
 </head>
 <body>
 
+  <!-- Navigation bar -->
   <?php
     include("employee_nav.php");
   ?>
 
-  <div style="background-color: #B0F2F1;">
-    <div style="padding: 1%; padding-left: 4%;"> 
+  <!-- Index of Complaint -->
+  <div class="row" style="background-color: #B0F2F1; margin: auto;">
+    <div class="col-sm-2">
+
+      <!-- Determine Category  -->
       <b><?php 
             if ($complaint_navigation["status"] == 0) {
               echo "Ανοιχτά / ";
@@ -48,7 +66,28 @@
             echo $complaint_navigation["company_name"];?>
       </b> 
     </div>  
+
+    <!-- Empty Space -->
+    <div class="col-sm-6"> 
+    </div> 
+
+    <!-- Button for First Tab -->
+    <div class="col-sm-2" style="padding-right: 0;"> 
+      <button class="btn btn-secondary float-right" type="button" style="width: 100%; background-color: #f7f7f7; border-bottom: none;">
+          <a href="complaint_box.php?tab=0">Πληροφορίες</a> <i style="font-size:20px"></i>
+      </button>
+    </div> 
+
+    <!-- Button of Second Tab -->
+    <div class="col-sm-2" style="padding-right: 0; padding-left: 0;"> 
+      <button class="btn btn-secondary float-right" type="button" style="width: 100%;">
+          <a href="complaint_box.php?tab=1">Αρχείο Καταγραφής</a> <i style="font-size:20px"></i>
+      </button>
+
+    </div>
   </div>
+
+  <!-- Complaint Info -->
   <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
