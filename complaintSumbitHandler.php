@@ -3,6 +3,7 @@
 		isset($_POST['company_taxId'])) {
 		include ("connect.php");
 		$fullname= "empty";
+		$name_check= "No";
 	
 		if (!empty($_POST['name'])) {
 			$fname = mysqli_real_escape_string($connection,$_POST['name']);
@@ -10,8 +11,17 @@
 		if (!empty($_POST['surname'])) {
 			$lname = mysqli_real_escape_string($connection,$_POST['surname']);
 		}
+		if (!empty($_POST['checkbox'])) {
+			$name_check = mysqli_real_escape_string($connection,$_POST['checkbox']);
+			if ($name_check == "Yes") {
+				$name_check = "(Επώνυμη)";
+			}
+			else {
+				$name_check = "(Ανώνυμη)";
+			}
+		}
 		if ((!empty($_POST['name']) && !strlen(trim($_POST['name'])) == 0)|| ( !empty($_POST['surname']) && !strlen(trim($_POST['surname'])) == 0)){
-			$fullname = $fname." ".$lname;
+			$fullname = $fname." ".$lname." ".$name_check;
 		}
 		else{
 			$fullname = "empty";
