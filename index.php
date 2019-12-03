@@ -42,6 +42,12 @@
       <label for="surname">Επώνυμο</label>
       <input type="text" class="form-control" id="surname" placeholder="Επώνυμο" name="surname">
     </div>
+
+    <div class="form-check">
+      <br><br>
+    <input type="checkbox" class="form-check-input" id="checkbox" value="Yes">
+    <label class="form-check-label" for="exampleCheck1">Επιλογή επώνυμης καταγγελίας</label>
+  </div>
   </div>
 
 
