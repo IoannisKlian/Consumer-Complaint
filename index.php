@@ -126,7 +126,7 @@
 </div>
 <br>
 
-  <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Submit</button>
+  <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
 
 </form>
 <div>
