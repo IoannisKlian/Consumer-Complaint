@@ -15,13 +15,17 @@
 
   // Calculating for current employee's assigned pending compalaints
   $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
-                      WHERE employee_complaint.employee_id = ".$_SESSION['id']." AND complaint.id = employee_complaint.complaint_id";
+                      WHERE employee_complaint.employee_id = ".$_SESSION['id']." 
+                      AND complaint.id = employee_complaint.complaint_id  
+                      AND complaint.status = 1";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows_my_pending = mysqli_fetch_array($result)[0];
 
   // Calculating for All pending except current employee's
   $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
-                      WHERE employee_complaint.employee_id != ".$_SESSION['id']." AND complaint.id = employee_complaint.complaint_id";
+                      WHERE employee_complaint.employee_id != ".$_SESSION['id']." 
+                      AND complaint.id = employee_complaint.complaint_id
+                      AND complaint.status = 1";
     $result = mysqli_query($connection,$total_pages_sql);
     $total_rows_others_pending = mysqli_fetch_array($result)[0];
 

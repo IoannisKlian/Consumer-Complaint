@@ -135,11 +135,17 @@
 		      $total_rows = mysqli_fetch_array($result)[0];
 
 		      if ($total_rows == 0) {
-		        echo '
-		         <form action="assign_complaint_to_employee.php" method="post">
-		          <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
-		        </form>
-		              ';
+		      	//This checks whether the complaint has closed
+				    $total_pages_sql_of_closed_complaints = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
+				    $result = mysqli_query($connection,$total_pages_sql_of_closed_complaints);
+				    $total_rows_of_closed_complaints = mysqli_fetch_array($result)[0];
+				    if ($total_rows_of_closed_complaints == 0) {
+				    	echo '
+					         <form action="assign_complaint_to_employee.php" method="post">
+					          <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
+					        </form>
+					              ';
+				    }
 		       } 
 		       else{
 		        $query = "SELECT govrn_emp.name ,employee_complaint.datetime 
@@ -173,18 +179,44 @@
 		        $total= mysqli_fetch_array($result)[0];
 
 		        if ($total == 0) {
-
+		        	//This checks whether the complaint has closed for an employee that has not assigned this complaint
+				    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
+				    $result = mysqli_query($connection,$total_pages_sql);
+				    $total_rows = mysqli_fetch_array($result)[0];
+				    if ($total_rows != 0) {
+				    	$query = "SELECT govrn_emp.name ,employee_complaint.datetime 
+		                      FROM employee_complaint,complaint,govrn_emp 
+		                      WHERE employee_complaint.employee_id = govrn_emp.id 
+		                      AND ".$complaintID." = employee_complaint.complaint_id";
+		        		$result_of_query = mysqli_query($connection,$query);
+		        		$row_employee = mysqli_fetch_array($result_of_query);
+				    	echo "Η καταγγελία έχει αρχειοθετηθεί απο ".$row_employee['name'];
+				    }
+			        	
 		        }
 		        else {
-		          echo '
-		          <form action="" method="">
-		            <input type="submit" name="Ανάληψη καταγγελίας" value="Κλείσιμο καταγγελίας" class="btn btn-secondary"> 
-		          </form>
-		              ';
+		        	//This checks whether the complaint has closed
+				    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
+				    $result = mysqli_query($connection,$total_pages_sql);
+				    $total_rows = mysqli_fetch_array($result)[0];
+				    if ($total_rows == 0) {
+					      	echo '
+				          <form action="complaint_close.php" method="post">
+				            <input type="submit" name="Ανάληψη καταγγελίας" value="Κλείσιμο καταγγελίας" class="btn btn-secondary"> 
+				          </form>
+				              ';
+				    }
+				    else{
+				    	$query = "SELECT govrn_emp.name ,employee_complaint.datetime 
+		                      FROM employee_complaint,complaint,govrn_emp 
+		                      WHERE employee_complaint.employee_id = govrn_emp.id 
+		                      AND ".$complaintID." = employee_complaint.complaint_id";
+		        		$result_of_query = mysqli_query($connection,$query);
+		        		$row_employee = mysqli_fetch_array($result_of_query);
+				    	echo "Η καταγγελία έχει αρχειοθετηθεί απο ".$row_employee['name'];
+				    }			          
 		        }
 		     }
-
-
 		      ?>
 		    </div></div></div>
 		    

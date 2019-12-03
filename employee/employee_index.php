@@ -80,7 +80,9 @@ include ("time_out_session.php");
       $userID=$_SESSION['id'];
 
       $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
-      WHERE employee_complaint.employee_id = ".$userID." AND complaint.id = employee_complaint.complaint_id";
+                          WHERE employee_complaint.employee_id = ".$userID." 
+                          AND complaint.id = employee_complaint.complaint_id
+                          AND complaint.status = 1";
       $result = mysqli_query($connection,$total_pages_sql);
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
@@ -89,6 +91,7 @@ include ("time_out_session.php");
       			WHERE employee_complaint.employee_id = ".$userID." 
       			AND complaint.id = employee_complaint.complaint_id
       			AND employee_complaint.employee_id = govrn_emp.id
+            AND complaint.status = 1
       			ORDER BY $sort 
       			LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
@@ -119,7 +122,9 @@ include ("time_out_session.php");
       $userID=$_SESSION['id'];
 
       $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
-      WHERE employee_complaint.employee_id != ".$userID." AND complaint.id = employee_complaint.complaint_id";
+                          WHERE employee_complaint.employee_id != ".$userID." 
+                          AND complaint.id = employee_complaint.complaint_id
+                          AND complaint.status = 1";
       $result = mysqli_query($connection,$total_pages_sql);
       $total_rows = mysqli_fetch_array($result)[0];
       $total_pages = ceil($total_rows / $no_of_records_per_page);
@@ -129,6 +134,7 @@ include ("time_out_session.php");
       			WHERE employee_complaint.employee_id != ".$userID." 
       			AND complaint.id = employee_complaint.complaint_id 
       			AND employee_complaint.employee_id = govrn_emp.id
+            AND complaint.status = 1
       			ORDER BY $sort 
       			LIMIT $offset, $no_of_records_per_page";
       $res_data = mysqli_query($connection,$sql);
