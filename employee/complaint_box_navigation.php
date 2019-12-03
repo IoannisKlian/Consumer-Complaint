@@ -8,7 +8,7 @@
 ?>
 
 <div class="row" style="background-color: #B0F2F1; margin: auto;">
-  <div class="col-sm-2">
+  <div class="col-sm-4">
 
     <!-- Determine Category  -->
     <b><?php 
@@ -26,7 +26,7 @@
   </div>  
 
   <!-- Empty Space -->
-  <div class="col-sm-6"> 
+  <div class="col-sm-4"> 
   </div> 
 
   <!-- Button for First Tab -->
