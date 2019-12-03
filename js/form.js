@@ -44,7 +44,7 @@ $( document ).ready(function() {
 
 	// If the user confirms that they want an anonymous form, clicking this button on modal_form_anonymous.php will submit the form normally.
 	$("#anon_form_confirm").on( "click", function() {
-
+		document.getElementById("checkbox").checked = false;
 		submitForm();
 	}); 
 
@@ -68,10 +68,8 @@ function submitForm() {
 
 function checkForAnonimity() {
 	// Anonymity Check. In case a name and surname does not exist, a modal will ask the user to confirm anynymous form.
-	if(isEmpty($("#name")) || isEmpty($("#surname"))) {
-
+	if(isEmpty($("#name")) && isEmpty($("#surname")) && document.getElementById("checkbox").checked) {
 		$("#anonymous_modal").modal();
-
 	}
 
 	// If the above fields are filled, the form will be sumbmited.

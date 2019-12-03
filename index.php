@@ -45,7 +45,7 @@
 
     <div class="form-check">
       <br><br>
-    <input type="checkbox" class="form-check-input" id="checkbox" value="Yes">
+    <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" value="Yes">
     <label class="form-check-label" for="exampleCheck1">Επιλογή επώνυμης καταγγελίας</label>
   </div>
   </div>
