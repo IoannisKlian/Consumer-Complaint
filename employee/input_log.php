@@ -17,7 +17,7 @@ if (isset($_POST['comment']) && !strlen(trim($_POST['comment'])) == 0) {
     }
     date_default_timezone_set('Europe/Athens');
 
-    $data_to_update.= "\n".$comment." - ".date('Y-m-d H:i:s');
+    $data_to_update.= "\n &#x25C8 ".$comment." - ".date('Y-m-d H:i:s');
     mysqli_query($connection,'UPDATE complaint_log SET log = "'.$data_to_update.'" WHERE complaint_id ="'.$complaintID.'"');
     echo '<script type="text/javascript">','location.replace("log.php");','</script>';
 }

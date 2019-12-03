@@ -34,12 +34,11 @@
     // Complaint Path and tabs
     include("complaint_box_navigation.php");
   ?>
+<div style="margin: 10px;">
+	<div class="row" style="width: 100%;">
+			<div class="col-sm-8">
 
-	<div class="container" align="center">
-		<div class="row">
-			<div class="col-sm-9">
-
-				<textarea disabled="true" style="resize: none;" rows="20" cols="100"  id="none" name="none" placeholder="" >
+				<textarea disabled="true" style="resize: none; width: 100%;" rows=20; id="none" name="none" placeholder="" >
 					<?php
 						$complaintID = $_SESSION['complaintID'];
 					 	$sql = "SELECT * FROM complaint_log WHERE complaint_id = ".$complaintID." ";
@@ -56,17 +55,14 @@
 				</textarea>
 
 			</div>
-			<div class="col-sm-3">
-				<form action="input_log.php" id="form" method="post" enctype="multipart/form-data">
-				<textarea style="resize: none;" rows="4" cols="4" class="form-control" id="comment" name="comment" >
-					
-				</textarea>
+			<div class="col-sm-4" style=" padding: 0; margin: 0;">
+				<form action="input_log.php" id="form" method="post" enctype="multipart/form-data" style="position:absolute; bottom: 0; width: 100%;">
+				<textarea style="resize: none;" wrap="physical" rows="5" class="form-control" id="comment" name="comment" ></textarea>
 				<button type="submit" class="btn btn-secondary" value="Submit" id="submit-btn" >Προσθήκη</button>
 				</form>
 	
 			</div>
 		</div>
-	</div>
-
+</div>
 </body>
 </html>

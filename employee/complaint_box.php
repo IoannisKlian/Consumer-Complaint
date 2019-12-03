@@ -39,9 +39,6 @@
 	    include("complaint_box_navigation.php");
 	  ?>
 
-	  <!-- Index of Complaint -->
-
-
 	  <!-- Complaint Info -->
 	  <div class="accordion" id="accordionExample" style="z-index: 5">
 		  <div class="card">

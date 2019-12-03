@@ -77,7 +77,7 @@
 		date_default_timezone_set('Europe/Athens');
 
 
-		$log = "\nΚαταχώρηση καταγγελίας - ".date('Y-m-d H:i:s');
+		$log = "\n&#x25C8 1. Καταχώρηση καταγγελίας - ".date('Y-m-d H:i:s');
 
 		mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
 

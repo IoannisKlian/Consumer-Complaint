@@ -26,7 +26,7 @@
     }
     date_default_timezone_set('Europe/Athens');
 		
-    $data_to_update.= "\nΈγινε ανάληψη από ".$_SESSION["name"]." στις ".date('Y-m-d H:i:s');
+    $data_to_update.= "\n&#x25C8 2. Έγινε ανάληψη από ".$_SESSION["name"]." - ".date('Y-m-d H:i:s');
     mysqli_query($connection,'UPDATE complaint_log SET log = "'.$data_to_update.'" WHERE complaint_id ="'.$complaintID.'"');
 
 	mysqli_query($connection,'UPDATE complaint SET status = 1 WHERE id ="'.$complaintID.'"');
