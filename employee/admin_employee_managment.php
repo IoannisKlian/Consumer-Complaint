@@ -20,6 +20,25 @@
 			mysqli_query($connection,"DELETE FROM govrn_emp WHERE id =".$selected_val."");
 			echo '<script type="text/javascript">','location.replace("employee_managment.php");','</script>';
 		}
+		else if (isset($_POST['btnGen'])) {
+
+			$selected_val = $_POST['user_to_generate'];
+
+			$result = mysqli_query($connection,"SELECT * FROM govrn_emp WHERE id = ".$selected_val."");
+			
+			$row = mysqli_fetch_array($result);
+			echo $row['password'];
+			header('Location:./employee_managment.php?un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
+		}
+		else if(isset($_POST['btnUpd'])){
+			$selected_val = $_POST['user_to_generate'];
+			$username = mysqli_real_escape_string($connection,$_POST['username_update']);
+			$password = mysqli_real_escape_string($connection,$_POST['password_update']);
+			$email = mysqli_real_escape_string($connection,$_POST['email_update']);
+			$name = mysqli_real_escape_string($connection,$_POST['name_update']);
+			mysqli_query($connection,'UPDATE govrn_emp SET username ="'.$username.'" , password ="'.$password.'" , email ="'.$email.'" , name ="'.$name.'"  WHERE id = '.$selected_val.'');
+			echo '<script type="text/javascript">','location.replace("employee_managment.php");','</script>';
+		}
 	}
 	
 ?>	
