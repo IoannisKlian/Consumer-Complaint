@@ -14,10 +14,10 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <?php 
-          echo '<a class="dropdown-item" href="employee_index.php?page_id='.$_SESSION['pageID'].'&sort_by=id ASC">Νεότερα</a>
-                <a class="dropdown-item" href="employee_index.php?page_id='.$_SESSION['pageID'].'&sort_by=id DESC">Παλαιότερα</a>
-                <a class="dropdown-item" href="employee_index.php?page_id='.$_SESSION['pageID'].'&sort_by=name ASC">Ανα Υπάλληλο (Αυξουσα Σειρά)
-                <a class="dropdown-item" href="employee_index.php?page_id='.$_SESSION['pageID'].'&sort_by=name DESC">Ανα Υπάλληλο (Φθήνουσα Σειρά)
+          echo '<a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=id DESC">Νεότερα</a>
+                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=id ASC">Παλαιότερα</a>
+                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name ASC">Ανα Υπάλληλο (Αυξουσα Σειρά)
+                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name DESC">Ανα Υπάλληλο (Φθήνουσα Σειρά)
                 </a>'; 
           ?>
         </div>
@@ -48,7 +48,7 @@
           <td>'.$nameOfComplainer.'</td>
           <td>'.$row['subdate'].'</td>
           <td>'.$row['name'].'</td>
-          <td><form action="complaint_box.php" method="post"  style="text-align: right;">
+          <td><form action="../complaint-box/" method="post"  style="text-align: right;">
             <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />
             <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
             </form>

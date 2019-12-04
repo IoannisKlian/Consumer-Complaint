@@ -1,5 +1,5 @@
 <?php 
-	include ("../connect.php");
+	include ("../../connect.php");
 
 	$result = mysqli_query($connection, "SELECT * FROM complaint WHERE id = '".$_SESSION['complaintID']."'");
 	$row = mysqli_fetch_array($result);

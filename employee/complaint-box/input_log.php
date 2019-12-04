@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ("../connect.php");
+include ("../../connect.php");
 
 if (isset($_POST['comment']) && !strlen(trim($_POST['comment'])) == 0) {
 

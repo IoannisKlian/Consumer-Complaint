@@ -1,7 +1,7 @@
 <!-- Get Sessions -->
 <?php 
   session_start();
-  include ("time_out_session.php");
+  include ("../time_out_session.php");
   if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
      header("Location: login.php");
   }
@@ -33,7 +33,7 @@
 	  <?php
 
 	  	// Navigation Bar
-	    include("employee_nav.php");
+	    include("../employee_nav.php");
 
 	    // Complaint Path and tabs
 	    include("complaint_box_navigation.php");

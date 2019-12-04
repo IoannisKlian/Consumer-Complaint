@@ -1,5 +1,5 @@
 <?php
-  include("../connect.php");
+  include("../../connect.php");
 
   // Calculating total complaints for each category
 
@@ -43,25 +43,42 @@
     </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav nav-fill w-100">
+
+      <!-- Open -->
       <li class="nav-item" id="index" style="border-right: solid;  border-color: #a1f8ff;">
-        <a class="nav-link" id="employee-open" href="employee_index.php?page_id=0">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?><span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="employee-open" href="../complaint-list/?page_id=0">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?><span class="sr-only">(current)</span></a>
       </li>
+
+      <!-- Pending -->
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
-        <a class="nav-link dropdown-toggle" href="employee_index.php" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="../complaint-list/" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Εκκρεμή
         </a>
+
+        <!-- Pending Subcategories -->
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="employee_index.php?page_id=1">Τα δικά μου<?php echo " (".$total_rows_my_pending .")"; ?></a>
-          <a class="dropdown-item" href="employee_index.php?page_id=2">Όλα<?php echo " (".$total_rows_pending_all.")"; ?></a>
-          <a class="dropdown-item" href="employee_index.php?page_id=3">Άλλων<?php echo " (".$total_rows_others_pending.")"; ?></a>
+
+          <!-- Logged Employee's -->
+          <a class="dropdown-item" href="../complaint-list/?page_id=1">Τα δικά μου<?php echo " (".$total_rows_my_pending .")"; ?></a>
+
+          <!-- All -->
+          <a class="dropdown-item" href="../complaint-list/?page_id=2">Όλα<?php echo " (".$total_rows_pending_all.")"; ?></a>
+
+          <!-- All - Logged Employee's -->
+          <a class="dropdown-item" href="../complaint-list/?page_id=3">Άλλων<?php echo " (".$total_rows_others_pending.")"; ?></a>
         </div>
       </li>
+
+      <!-- Archived -->
       <li class="nav-item">
-        <a class="nav-link" id="employee-archived" href="employee_index.php?page_id=4.php">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
+        <a class="nav-link" id="employee-archived" href="../complaint-list/?page_id=4.php">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
       </li>
+
+      <!-- Log Out Button and Employee Name -->
       <li class="nav-item" style="text-align: right;">
-        <?php echo $_SESSION["name"]?>
-        <a href="logout.php" class="btn btn-info btn-sm">
+        <div class="btn"><?php echo $_SESSION["name"]?></div>       
+        
+        <a href="../logout.php" class="btn btn-info btn-sm btn-dark">
           <span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση
         </a>
       </li>
