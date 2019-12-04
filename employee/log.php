@@ -24,8 +24,9 @@
 
 	    <style type="text/css">
 	    	html , body{height: 100%;}
-	    	body{background-color: #f7f7f7;}
+	    	body{background-color: #f7f7f7; display: none;}
 	    	tr:nth-child(even){background-color: #f2f2f2;}
+	    	tr:nth-child(odd){background-color: white;}
 	    	th{padding-bottom: 15px; padding-top: 15px;}
 	    	table{width: 100%;}
 	    </style>
@@ -42,9 +43,9 @@
 		    include("complaint_box_navigation.php");
 		  ?>
 		  </div>
-		<div id="main-log" style=" overflow-x: hidden; z-index: 10; position: relative; height: 500px;">
+		<div id="main-log" style=" overflow-x: hidden; z-index: 10; position: relative;">
 			<div class="row" style="height: 100%;">
-				<div class="col-sm-8" style=" background-color: white; padding-right: 0; margin-right: 0; height: 100%; overflow:auto;">
+				<div class="col-sm-8" style=" padding-right: 0; margin-right: 0; height: 100%; overflow:auto; border-right: solid #B0F2F1 1px;">
 					<table>
 					<?php
 							$complaintID = $_SESSION['complaintID'];
@@ -102,6 +103,8 @@
 
 <script type="text/javascript">
 	$( document ).ready(function() {
-	$("#main-log").height($(document).height() - $("#nav-container").height());
+		console.log( $("#nav-container").height())
+		$("#main-log").height($(window).height() - $("#nav-container").height());
+		$("body").css("display", "block");
 	});
 </script>
