@@ -7,7 +7,7 @@
   $complaint_navigation = mysqli_fetch_array($result);
 ?>
 
-<div class="row" style="background-color: #B0F2F1; margin: auto;">
+<div class="row" style="background-color: #B0F2F1; margin: auto; flex-grow: 1;">
   <div class="col-sm-4">
 
     <!-- Determine Category  -->
@@ -34,14 +34,14 @@
 
     <?php if (strpos( $_SERVER['PHP_SELF'], "complaint_box.php") !== false){ ?>
 
-        <a class="btn btn-info" role="button" style="width: 100%; background-color: #f7f7f7; border: none; bottom: -10px; position: relative; color: black; z-index: 7">Πληροφορίες</a> 
+        <a class="btn btn-info" role="button" style="width: 100%; background-color: #f7f7f7; border: none; bottom: -6px; position: relative; color: black; z-index: 7;">Πληροφορίες</a> 
 
     <?php 
       } 
       else if (strpos( $_SERVER['PHP_SELF'], "log.php") !== false){ 
     ?>
 
-        <a class="btn btn-info" role="button" href="complaint_box.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 7">Πληροφορίες</a> 
+        <a class="btn btn-info" role="button" href="complaint_box.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 7;">Πληροφορίες</a> 
 
     <?php } ?>
 
@@ -51,14 +51,14 @@
   <div class="col-sm-2" style="padding-right: 0; padding-left: 0;"> 
     <?php if (strpos( $_SERVER['PHP_SELF'], "log.php") !== false) { ?>
 
-        <a class="btn btn-info" role="button" href="" style="width: 100%; background-color: white; border: none; bottom: -10px; position: relative; color: black; z-index: 7">Αρχείο Καταγραφής</a> 
+        <a class="btn btn-info" role="button" href="" style="width: 100%; background-color: #f7f7f7; border: none; bottom: -6px; position: relative; color: black; z-index: 8;">Αρχείο Καταγραφής</a> 
 
     <?php 
       } 
       else if (strpos( $_SERVER['PHP_SELF'], "complaint_box.php") !== false) { 
     ?>
 
-        <a class="btn btn-info" role="button" href="log.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 7">Αρχείο Καταγραφής</a> 
+        <a class="btn btn-info" role="button" href="log.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 8;">Αρχείο Καταγραφής</a> 
         
     <?php } ?>
   </div>
