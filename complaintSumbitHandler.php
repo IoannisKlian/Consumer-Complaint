@@ -1,4 +1,5 @@
 <?php
+session_start();
 	if(isset($_POST['company_name']) && isset($_POST['company_address']) && isset($_POST['company_phone']) && 
 		isset($_POST['company_taxId'])) {
 		include ("connect.php");
@@ -72,14 +73,7 @@
 			$comment = "empty";
 		}
 		
-		mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now() ,0)");
-		$complaint_id = mysqli_insert_id($connection);
-		date_default_timezone_set('Europe/Athens');
-
-
-		$log = "1. <log_id> Καταχώρηση καταγγελίας <date_of_log> - ".date('Y-m-d H:i:s');
-
-		mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
+		
 
 		include('upload.php');
 	} 

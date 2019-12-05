@@ -53,7 +53,7 @@ include ("../time_out_session.php");
           $pageno = 1;
       }
 
-      $no_of_records_per_page = 10;
+      $no_of_records_per_page = 5;
 
       $offset = ($pageno-1) * $no_of_records_per_page;
 
