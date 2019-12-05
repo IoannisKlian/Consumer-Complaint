@@ -37,14 +37,10 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-bottom: 0; margin-bottom: 0;">
-  <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav nav-fill w-100">
       <li class="nav-item" id="index" style="border-right: solid;  border-color: #a1f8ff;">
-        <a class="nav-link" id="employee-open" href="employee_index.php?page_id=0">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?><span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="employee-open" href="employee_index.php?page_id=0">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?></a>
       </li>
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
         <a class="nav-link dropdown-toggle" href="employee_index.php" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,9 +52,14 @@
           <a class="dropdown-item" href="employee_index.php?page_id=3">Άλλων<?php echo " (".$total_rows_others_pending.")"; ?></a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" id="employee-archived" href="employee_index.php?page_id=4.php">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
+      <li class="nav-item" id="archived">
+        <a class="nav-link" id="employee-archived" href="employee_index.php?page_id=4">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
       </li>
+      <?php if($_SESSION['id']==1){?>
+          <li class="nav-item" style="border-left: solid; border-color: #a1f8ff;" id="admin_page">
+            <a class="nav-link" id="admin" href="employee_managment.php?page_id=5">Επεξεργασία χρηστών</a>
+          </li>
+      <?php } ?>
       <li class="nav-item" style="text-align: right;">
         <?php echo $_SESSION["name"]?>
         <a href="logout.php" class="btn btn-info btn-sm">
@@ -75,22 +76,36 @@
   echo "<script>$('#employee-open').css('color', 'gray')</script>";
   echo "<script>$('#employee-pending').css('color', 'gray')</script>";
   echo "<script>$('#employee-archived').css('color', 'gray')</script>";
+  if ($_SESSION['id']==1) {
+    echo "<script>$('#admin').css('color', 'gray')</script>";
+  }
 
   // Highlighting active page by checking the pageId
 
   // If on Open Category
   if ($_SESSION['pageID'] == 0) {
-   echo "<script>$('#employee-open').css('color', 'black')</script>";
+   echo "<script>$('#employee-open').css('color', 'white')</script>";
+   echo "<script>$('#index').css('background-color', 'black')</script>";
   }
 
   // If on Pending Category
-  else if ($_SESSION['pageID'] == 1 || $_SESSION['pageID'] == 2) {
-   echo "<script>$('#employee-pending').css('color', 'black')</script>"; 
+  else if ($_SESSION['pageID'] == 1 || $_SESSION['pageID'] == 2 || $_SESSION['pageID'] == 3) {
+   echo "<script>$('#employee-pending').css('color', 'white')</script>";
+   echo "<script>$('#pending').css('background-color', 'black')</script>";
+
   }
 
   // If on Archived Category
-  else if ($_SESSION['pageID'] == 3) {
-    echo "<script>$('#employee-archived').css('color', 'black')</script>"; 
+  else if ($_SESSION['pageID'] == 4) {
+    echo "<script>$('#employee-archived').css('color', 'white')</script>";
+    echo "<script>$('#archived').css('background-color', 'black')</script>"; 
   }
+
+  //If admin configuration
+  else if ($_SESSION['pageID'] == 5) {
+    echo "<script>$('#admin').css('color', 'white')</script>";
+    echo "<script>$('#admin_page').css('background-color', 'black')</script>"; 
+  }
+
 
 ?>

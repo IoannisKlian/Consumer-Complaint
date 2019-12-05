@@ -7,6 +7,7 @@
 
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		//Add new user in system
 		if (isset($_POST['btnAdd'])) {
 			$username = mysqli_real_escape_string($connection,$_POST['username']);
 			$password = mysqli_real_escape_string($connection,$_POST['password']);
@@ -15,11 +16,13 @@
 			mysqli_query($connection,"INSERT INTO govrn_emp VALUES ( DEFAULT,'".$username."','".$password."','".$email."','".$name."')");
 			echo '<script type="text/javascript">','location.replace("employee_managment.php");','</script>';
 		}
+		//Delete user
 		else if (isset($_POST['btnDel'])) {
 			$selected_val = $_POST['user_to_delete'];
 			mysqli_query($connection,"DELETE FROM govrn_emp WHERE id =".$selected_val."");
 			echo '<script type="text/javascript">','location.replace("employee_managment.php");','</script>';
 		}
+		//Returns the query containing information for the desired employee 
 		else if (isset($_POST['btnGen'])) {
 
 			$selected_val = $_POST['user_to_generate'];
@@ -30,6 +33,7 @@
 			echo $row['password'];
 			header('Location:./employee_managment.php?un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
 		}
+		//Updates the user information
 		else if(isset($_POST['btnUpd'])){
 			$selected_val = $_POST['user_to_generate'];
 			$username = mysqli_real_escape_string($connection,$_POST['username_update']);

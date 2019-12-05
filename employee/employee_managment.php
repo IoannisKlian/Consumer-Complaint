@@ -5,6 +5,12 @@
      header("Location: login.php");
   }
   include ("../connect.php");
+  if (isset($_GET["page_id"])) {
+    $_SESSION['pageID'] = $_GET["page_id"];
+  }
+  else{
+    $_SESSION['pageID'] = 0;
+  }
 ?>
 <html>
 <head>
@@ -16,6 +22,7 @@
 	  <meta charset="utf-8" />
 </head>
 <body>
+	<?php include("employee_nav.php");?>
 	<div class="container">
 		<div class="row" style="padding-top: 2%;">
 		    <div class="col">
