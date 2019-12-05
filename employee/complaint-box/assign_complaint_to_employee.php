@@ -10,7 +10,7 @@
 
 	$userID=$_SESSION['id'];
 	$complaintID = $_SESSION['complaintID'];
-	include ("../connect.php");
+	include ("../../connect.php");
 
 	
 
@@ -32,7 +32,7 @@
 	mysqli_query($connection,'UPDATE complaint SET status = 1 WHERE id ="'.$complaintID.'"');
 
 
-	echo '<script type="text/javascript">','location.replace("employee_index.php");','</script>';
+	echo '<script type="text/javascript">','location.replace("../complaint-list");','</script>';
 
 	
 	
