@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -8,12 +11,12 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h2 class="display-4">Η καταγγελία καταχωρήθηκε με αριθμό #<?php  if (isset($_GET['cid'])&&!empty($_GET['cid'])){echo $_GET['cid'];}?> </h2>
-  <p class="lead"><strong><?php if (isset($_GET['em'])&&!empty($_GET['em'])){if($_GET['em']){echo "Θα ενημερωθείτε για την συνέχεια της καταγγελίας με email!";}}?></strong> </p>
+  <h3 class="display-4"><?php echo $_SESSION['erroruploadmessage'];$_SESSION['erroruploadmessage']="" ?> </h3>
+
   <hr>
   
   <p class="lead">
-    <a class="btn btn-primary btn-sm" href="index.php" role="button">Συνέχεια στην αρχική!</a>
+    <button class="btn btn-primary btn-sm" onclick="window.history.back()">Επιστροφή στην φόρμα</button>
   </p>
 </div>
 
