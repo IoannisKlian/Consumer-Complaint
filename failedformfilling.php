@@ -16,7 +16,7 @@ session_start();
   <hr>
   
   <p class="lead">
-    <button class="btn btn-primary btn-sm" onclick="window.history.back()">Επιστροφή στην φόρμα</button>
+    <button class="btn btn-primary btn-sm" onclick="window.history.back()">Πατήστε εδώ για να επιστρέψετε στην φόρμα!</button>
   </p>
 </div>
 

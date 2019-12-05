@@ -112,6 +112,19 @@
 	        <div class="card">
 	            <div class="card-body">
 	                <h5 class="card-title">Αποδεικτικά στοιχεία</h5>
+	                <?php 
+                		$query = 'SELECT * FROM file 
+                      WHERE complaint_id = '.$complaintID;
+                      $result_of_query = mysqli_query($connection,$query);
+                      $file = mysqli_fetch_array($result_of_query);
+                      $total_rows = mysqli_fetch_array($result_of_query)[0];
+                      if (mysqli_num_rows($result_of_query)==0) {
+                        echo '<p class="card-text"> Δεν υπάρχει συνημμένο αρχείο!</p>';
+                      }
+                      else{
+                        echo '<p class="card-text"><a target="_blank" href="../../uploads/'.$file['name'].'">Πατήστε εδώ για να δείτε το αρχείο!</a></p>';
+                      }
+                ?>
 	              </div>
 	            </div>
 	          </div>
