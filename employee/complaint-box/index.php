@@ -3,7 +3,7 @@
   session_start();
   include ("../time_out_session.php");
   if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
-     header("Location: login.php");
+     header("Location: ../login.php");
   }
 
   if (isset($_POST["complaintID"])) {
@@ -132,7 +132,8 @@
 		      $total_rows = mysqli_fetch_array($result)[0];
 
 		      if ($total_rows == 0) {
-		      	//This checks whether the complaint has closed
+
+		      		//This checks whether the complaint has closed
 				    $total_pages_sql_of_closed_complaints = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
 				    $result = mysqli_query($connection,$total_pages_sql_of_closed_complaints);
 				    $total_rows_of_closed_complaints = mysqli_fetch_array($result)[0];
@@ -170,12 +171,14 @@
 
 		        <div class="col-sm-4" style="text-align: right;">
 		        <?php
+
 		       // Enable/Disable "Close Case" Button depending on the employee's ID.
 		       $query_close_button = "SELECT * FROM `employee_complaint` WHERE `employee_id` = '".$_SESSION['id']."' AND `complaint_id` = '".$complaintID."'"; 
 		        $result = mysqli_query($connection,$query_close_button);
 		        $total= mysqli_fetch_array($result)[0];
 
 		        if ($total == 0) {
+
 		        	//This checks whether the complaint has closed for an employee that has not assigned this complaint
 				    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
 				    $result = mysqli_query($connection,$total_pages_sql);
@@ -192,6 +195,7 @@
 			        	
 		        }
 		        else {
+
 		        	//This checks whether the complaint has closed
 				    $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 2 AND id = '".$complaintID."'";
 				    $result = mysqli_query($connection,$total_pages_sql);

@@ -32,13 +32,13 @@
   <!-- Button for First Tab -->
   <div class="col-sm-2" style="padding-right: 0; padding-left: 0;"> 
 
-    <?php if (strpos( $_SERVER['PHP_SELF'], "index.php") !== false){ ?>
+    <?php if (current_page("index.php")){ ?>
 
         <a class="btn" role="button" style="width: 100%; background-color: #f7f7f7; border: none; bottom: -6px; position: relative; color: black; z-index: 7;">Πληροφορίες</a> 
 
     <?php 
       } 
-      else if (strpos( $_SERVER['PHP_SELF'], "log.php") !== false){ 
+      else if (current_page("log.php")){ 
     ?>
 
         <a class="btn" role="button" href="./" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 7;">Πληροφορίες</a> 
@@ -49,13 +49,13 @@
 
   <!-- Button of Second Tab -->
   <div class="col-sm-2" style="padding-right: 0; padding-left: 0;"> 
-    <?php if (strpos( $_SERVER['PHP_SELF'], "log.php") !== false) { ?>
+    <?php if (current_page("log.php")) { ?>
 
         <a class="btn" role="button" href="" style="width: 100%; background-color: #f7f7f7; border: none; bottom: -6px; position: relative; color: black; z-index: 8;">Αρχείο Καταγραφής</a> 
 
     <?php 
       } 
-      else if (strpos( $_SERVER['PHP_SELF'], "index.php") !== false) { 
+      else if (current_page("index.php")) { 
     ?>
 
         <a class="btn" role="button" href="log.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 8;">Αρχείο Καταγραφής</a> 
@@ -63,3 +63,13 @@
     <?php } ?>
   </div>
 </div>
+
+
+<?php 
+
+  function current_page ($name) 
+  {
+    return strpos( $_SERVER['PHP_SELF'], $name) !== false;
+  }
+
+?>

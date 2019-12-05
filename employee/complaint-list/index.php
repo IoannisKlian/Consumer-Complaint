@@ -2,7 +2,7 @@
 session_start();
 include ("../time_out_session.php");
   if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
-     header("Location: login.php");
+     header("Location: ../login.php");
   }
   if (isset($_GET["page_id"])) {
     $_SESSION['pageID'] = $_GET["page_id"];
