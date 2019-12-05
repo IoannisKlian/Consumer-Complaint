@@ -1,5 +1,5 @@
 <div class="col">
-	<h3 style="text-align: center;padding-bottom: 1%;">Ανανέωση χρήστη</h3>
+	<h3 style="text-align: center;padding-bottom: 1%;">Ανανέωση Στοιχείων Χρήστη</h3>
   <form class="form-horizontal" action="admin_employee_managment.php" id="form" method="post" enctype="multipart/form-data">
 	  	<div class="form-row">
 		    <div class="col-md-4 mb-3">

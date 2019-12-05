@@ -9,7 +9,7 @@
     $_SESSION['pageID'] = $_GET["page_id"];
   }
   else{
-    $_SESSION['pageID'] = 0;
+    $_SESSION['pageID'] = 6;
   }
 ?>
 <html>
@@ -22,18 +22,22 @@
 	  <meta charset="utf-8" />
 </head>
 <body>
+	<!-- Nav -->
 	<?php include("../employee_nav.php");?>
+
+	<!-- Admin Nav -->
+	<?php include("admin_nav.php");?>
+
+	<!-- Main -->
 	<div class="container">
-		<div class="row" id="add-user" style="padding-top: 2%;">
-		    <?php include("admin_add_user"); ?>
+		<div class="row" id="add-user" style="padding-top: 2%; display: none">
+		    <?php include("admin_add_user.php"); ?>
 		</div>
-		<hr>
-		<div class="row" id="remove-user" style="padding-top: 3%;padding-bottom: 3%;">
-		    <?php include("admin_remove_user"); ?>
+		<div class="row" id="remove-user" style="padding-top: 3%;padding-bottom: 3%; display: none">
+		    <?php include("admin_remove_user.php"); ?>
 		</div>
-		<hr>
-		<div class="row" id="update-user" style="padding-top: 3%;padding-bottom: 3%;">
-			<?php include("admin_update_user"); ?>
+		<div class="row" id="update-user" style="padding-top: 3%;padding-bottom: 3%; display: none">
+			<?php include("admin_update_user.php"); ?>
 		</div>
 		
 	</div>
