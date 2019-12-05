@@ -55,7 +55,7 @@
 
     <?php 
       } 
-      else if (current_page("index.php")) { 
+      else if (current_page("index.php") && !complaint_is_open($complaint_navigation["status"]) && employee_is_assigned_or_admin()) { 
     ?>
 
         <a class="btn" role="button" href="log.php" style="width: 100%; color: white; border: none; bottom: -1px; position: relative; z-index: 8;">Αρχείο Καταγραφής</a> 
@@ -70,6 +70,25 @@
   function current_page ($name) 
   {
     return strpos( $_SERVER['PHP_SELF'], $name) !== false;
+  }
+
+  function complaint_is_open ($status) 
+  {
+    return $status == 0;
+  }
+
+  function employee_is_assigned_or_admin () {
+    include("../../connect.php");
+
+    $assigned_user_query = "SELECT COUNT(*) FROM employee_complaint 
+                            WHERE employee_id = '".$_SESSION['id']."' 
+                            AND complaint_id = '".$_SESSION['complaintID']."'";
+    $result = mysqli_query($connection,$assigned_user_query);
+    $total_rows = mysqli_fetch_array($result)[0];
+
+
+    return $total_rows != 0 || $_SESSION['id'] == 1;
+
   }
 
 ?>
