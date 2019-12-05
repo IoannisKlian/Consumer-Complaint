@@ -1,4 +1,4 @@
-<ul class="pagination" >
+<ul class="pagination">
     <li><a class="page-link" href="?pageno=1">First</a></li>
     <li class="<?php if($pageno <= 1){ echo 'page-item disabled'; } ?>">
         <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>

@@ -7,6 +7,7 @@
 
 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
 		//Add new user in system
 		if (isset($_POST['btnAdd'])) {
 			$username = mysqli_real_escape_string($connection,$_POST['username']);
@@ -16,12 +17,14 @@
 			mysqli_query($connection,"INSERT INTO govrn_emp VALUES ( DEFAULT,'".$username."','".$password."','".$email."','".$name."')");
 			echo '<script type="text/javascript">','location.replace("./index.php?page_id=5");','</script>';
 		}
+
 		//Delete user
 		else if (isset($_POST['btnDel'])) {
 			$selected_val = $_POST['user_to_delete'];
 			mysqli_query($connection,"DELETE FROM govrn_emp WHERE id =".$selected_val."");
 			echo '<script type="text/javascript">','location.replace("./index.php?page_id=5");','</script>';
 		}
+
 		//Returns the query containing information for the desired employee 
 		else if (isset($_POST['btnGen'])) {
 
@@ -33,6 +36,7 @@
 			echo $row['password'];
 			header('Location:./index.php?page_id=5&un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
 		}
+		
 		//Updates the user information
 		else if(isset($_POST['btnUpd'])){
 			$selected_val = $_POST['user_to_generate'];
