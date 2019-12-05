@@ -1,10 +1,10 @@
 <?php 
   session_start();
-  include ("time_out_session.php");
+  include ("../time_out_session.php");
   if (!isset($_SESSION['user']) || $_SESSION['user'] == false || $_SESSION['id'] != 1) {
      header("Location: login.php");
   }
-  include ("../connect.php");
+  include ("../../connect.php");
   if (isset($_GET["page_id"])) {
     $_SESSION['pageID'] = $_GET["page_id"];
   }
@@ -22,7 +22,7 @@
 	  <meta charset="utf-8" />
 </head>
 <body>
-	<?php include("employee_nav.php");?>
+	<?php include("../employee_nav.php");?>
 	<div class="container">
 		<div class="row" style="padding-top: 2%;">
 		    <div class="col">

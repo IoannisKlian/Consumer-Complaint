@@ -19,7 +19,7 @@
 		$_SESSION["user_name"] = $row['username'];
 		$_SESSION["name"] = $row['name'];
 		
-		header("Location: employee_index.php");
+		header("Location: complaint-list/");
 	}
 	else {
 		session_start();

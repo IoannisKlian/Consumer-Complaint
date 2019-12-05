@@ -3,7 +3,7 @@
 		isset($_POST['company_taxId'])) {
 		include ("connect.php");
 		$fullname= "empty";
-		$name_check= "No";
+		$name_check= "(Ανώνυμη)";
 	
 		if (!empty($_POST['name'])) {
 			$fname = mysqli_real_escape_string($connection,$_POST['name']);
@@ -77,7 +77,7 @@
 		date_default_timezone_set('Europe/Athens');
 
 
-		$log = "\n&#x25C8 1. Καταχώρηση καταγγελίας - ".date('Y-m-d H:i:s');
+		$log = "1. <log_id> Καταχώρηση καταγγελίας <date_of_log> - ".date('Y-m-d H:i:s');
 
 		mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
 

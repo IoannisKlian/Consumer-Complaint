@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['errorinput'])) {
+    if ($_SESSION['errorinput']) {
+        echo '<script>alert("Λάθος όνομα χρήστη ή λαθός κωδικός!\nΠαρακαλώ δώστε ένα έγκυρο όνομα χρήστη και κωδικό!")</script>';
+        $_SESSION['errorinput'] = false;
+    }
+ } 
+    ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,17 +43,6 @@
 </style>
 </head>
 <body>
-	<!--
-	<div id="login-form">
-			<form action="auth.php" method="POST">
-				<label> Username:</label>
-				<input type="text" name="username" id="username" required>
-				<label> Password:</label>
-				<input type="text" name="password" id="password" required>
-				<input type="submit" value="Login" id="btn">
-			</form>
-	</div>
--->
 
 <div class="login-form">
     <form action="auth.php" method="POST">
