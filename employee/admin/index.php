@@ -9,7 +9,13 @@
     $_SESSION['pageID'] = $_GET["page_id"];
   }
   else{
-    $_SESSION['pageID'] = 6;
+    $_SESSION['pageID'] = 5;
+  }
+  if (isset($_GET["admin_id"])) {
+    $admin_id = $_GET["admin_id"];
+  }
+  else{
+   	$admin_id = 0;
   }
 ?>
 <html>
@@ -21,26 +27,46 @@
 	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	  <meta charset="utf-8" />
 </head>
-<body>
-	<!-- Nav -->
-	<?php include("../employee_nav.php");?>
+	<body>
+		<!-- Nav -->
+		<?php include("../employee_nav.php");?>
 
-	<!-- Admin Nav -->
-	<?php include("admin_nav.php");?>
+		<!-- Admin Nav -->
+		<?php include("admin_nav.php");?>
 
-	<!-- Main -->
-	<div class="container">
-		<div class="row" id="add-user" style="padding-top: 2%; display: none">
-		    <?php include("admin_add_user.php"); ?>
+		<!-- Main -->
+		<div class="container">
+			
+			<?php
+	
+				if($admin_id == 0) 
+				{
+					?> 
+						<div class="row" id="add-user-content" style="padding-top: 2%;">
+						    <?php include("admin_add_user.php"); ?>
+						</div>
+					<?php
+				}
+				elseif ($admin_id == 1) 
+				{
+					?> 
+						<div class="row" id="remove-user-content" style="padding-top: 3%;padding-bottom: 3%;">
+						    <?php include("admin_remove_user.php"); ?>
+						</div>
+					<?php
+				}
+				elseif ($admin_id == 2) 
+				{
+					?> 
+						<div class="row" id="update-user-content" style="padding-top: 3%;padding-bottom: 3%;">
+							<?php include("admin_update_user.php"); ?>
+						</div>
+					<?php
+				}
+			?>
+			
 		</div>
-		<div class="row" id="remove-user" style="padding-top: 3%;padding-bottom: 3%; display: none">
-		    <?php include("admin_remove_user.php"); ?>
-		</div>
-		<div class="row" id="update-user" style="padding-top: 3%;padding-bottom: 3%; display: none">
-			<?php include("admin_update_user.php"); ?>
-		</div>
-		
-	</div>
 
-</body>
+	</body>
 </html>
+

@@ -6,10 +6,10 @@
 
 <?php
     
-  // Get company name and category
-  $company_name_query = "SELECT company_name, status FROM complaint WHERE id = '".$_SESSION['complaintID']."'";
-  $result = mysqli_query($connection,$company_name_query);
-  $complaint_navigation = mysqli_fetch_array($result);
+  // Get category
+  $status_query = "SELECT status FROM complaint WHERE id = '".$_SESSION['complaintID']."'";
+  $result = mysqli_query($connection,$status_query);
+  $status = mysqli_fetch_array($result)[0];
 ?>
 
 <!DOCTYPE html>
@@ -79,13 +79,26 @@
 						?>
 						</table>
 					</div>
-					<div class="col-sm-4" style="height: 100%; padding: 0; margin: 0; height:100%;">
-						<form action="input_log.php" id="form" method="post" enctype="multipart/form-data" style="position:absolute; bottom: 0; width: 100%;">
-						<textarea style="resize: none;" wrap="physical" rows="5" class="form-control" id="comment" name="comment" style="" ></textarea>
-						<button type="submit" class="btn btn-secondary" value="Submit" id="submit-btn" style="height: 15%;">Προσθήκη</button>
-						</form>
-			
-					</div>
+
+					<!-- Log Text Box -->
+					<?php
+
+						// If complaint is closed, text box will not appear.
+						if ($status != 2) {
+							?> 
+								<div class="col-sm-4" style="height: 100%; padding: 0; margin: 0; height:100%;">
+									<form action="input_log.php" id="form" method="post" enctype="multipart/form-data" style="position:absolute; bottom: 0; width: 100%;">
+									<textarea style="resize: none;" wrap="physical" rows="5" class="form-control" id="comment" name="comment" style="" ></textarea>
+									<button type="submit" class="btn btn-secondary" value="Submit" id="submit-btn" style="height: 15%;">Προσθήκη</button>
+									</form>
+						
+								</div>
+
+							<?php
+						}
+
+					?>
+
 				</div>
 			</div>
 		</div>
@@ -104,10 +117,3 @@
 
 ?>
 
-<script type="text/javascript">
-	$( document ).ready(function() {
-		// console.log( $("#nav-container").height());
-		// $("#main-log").height($(document).height() - $("#nav-container").height() - 36);
-		// $("body").css("display", "block");
-	});
-</script>

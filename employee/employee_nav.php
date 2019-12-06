@@ -71,7 +71,7 @@
 
       <?php if($_SESSION['id']==1){?>
           <li class="nav-item" style="border-left: solid; border-color: #a1f8ff;" id="admin_page">
-            <a class="nav-link" id="admin" href="../admin/?page_id=5">Επεξεργασία χρηστών</a>
+            <a class="nav-link" id="admin" href="../admin/?page_id=5&&admin_id=0">Επεξεργασία χρηστών</a>
           </li>
       <?php } ?>
 
