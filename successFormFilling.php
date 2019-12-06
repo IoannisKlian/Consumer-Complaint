@@ -13,7 +13,7 @@
   <hr>
   
   <p class="lead">
-    <a class="btn btn-primary btn-sm" href="index.php" role="button">Συνέχεια στην αρχική!</a>
+    <a class="btn btn-primary btn-sm" href="form.php" role="button">Συνέχεια στην αρχική!</a>
   </p>
 </div>
 
