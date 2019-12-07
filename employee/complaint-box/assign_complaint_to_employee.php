@@ -8,6 +8,10 @@
 		$complaintID = $_SESSION['complaintID'];
 	}
 
+	if (isset($_POST["session_ID"])) {
+    	$userID = $_POST["session_ID"];
+  	}
+
 	$userID=$_SESSION['id'];
 	$complaintID = $_SESSION['complaintID'];
 	include ("../../connect.php");

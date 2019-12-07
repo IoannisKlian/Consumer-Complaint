@@ -45,9 +45,10 @@
           <td>'.$nameOfComplainer.'</td>
           <td>'.$row['subdate'].'</td>
           <td>'.$row['name'].'</td>
-          <td><form action="../complaint-box/" method="post"  style="text-align: right;">
+          <td ><form action="../complaint-box/" method="post"  style="text-align: right;">
             <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />
             <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
+            <input type="hidden" id="session_ID" name="session_ID" value="'.$_SESSION['id'].'">
             </form>
           </td>
         </tr>';
