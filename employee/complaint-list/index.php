@@ -53,7 +53,7 @@ include ("../time_out_session.php");
           $pageno = 1;
       }
 
-      $no_of_records_per_page = 5;
+      $no_of_records_per_page = 10;
 
       $offset = ($pageno-1) * $no_of_records_per_page;
 
@@ -159,8 +159,17 @@ include ("../time_out_session.php");
 
       // If there are results from the query
       if ($total_rows > 0) {
-        	include ("complaint_table.php");
-      	include ("employee_pagination.php");
+          include ("complaint_table.php");
+
+          ?>
+
+          <div>
+            <hr>
+          <?php include ("employee_pagination.php"); ?>
+            <hr>
+          
+        </div>
+        <?php
       }
 
       // If there are no results from the query

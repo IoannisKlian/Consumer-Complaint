@@ -36,7 +36,7 @@
 ?>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-bottom: 0; margin-bottom: 0;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-bottom: 0; margin-bottom: 0; padding-left: 0; margin-left: 0;">
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav nav-fill w-100">
 
