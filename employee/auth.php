@@ -16,8 +16,7 @@
 			
 			
 			if ($row['username'] == $username && $row['password'] == $password ) {
-				echo $row['username'];
-				echo $username;
+				session_start();
 				$_SESSION["user"] = true;
 				$_SESSION['id'] = $row['id'];
 				$_SESSION["user_name"] = $row['username'];
@@ -34,7 +33,6 @@
 	}
 	else {
 		session_start();
-		$_SESSION['errorinput'] = true;
 		header("Location: login.php");
 
 	}
