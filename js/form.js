@@ -13,7 +13,7 @@ $( document ).ready(function() {
 //   "<br>Longitude: " + position.coords.longitude;
 // }
 		
-	
+			
 
 	// Check on the submit button in the form
 	$("#submit-btn").on( "click", function() {
@@ -55,6 +55,8 @@ $( document ).ready(function() {
 	});
 
 });
+
+		
 
 function submitForm() {
 	if (document.getElementById("comment").checkValidity() && document.getElementById("company_name").checkValidity()) {

@@ -123,7 +123,19 @@
 	  </div>
 	</div>
 
+  <!--
+<div style="padding-right:33.6%;">
+      <input type="file" name="img[]" class="file" accept="image/pdf*">
+        <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
+        <div class="input-group-append">
+          <button type="button" id="testtt" class="browse btn btn-primary">Browse...</button>
+      </div>
+  <div class="ml-2 col-sm-6">
+    <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
+  </div>
+
 </div>
+-->
 <br>
 
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
