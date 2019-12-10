@@ -1,4 +1,4 @@
-<ul class="pagination">
+<ul class="pagination justify-content-end" style="position: relative; margin: auto auto; bottom: -15px;">
     <li><a class="page-link" href="?pageno=1">First</a></li>
     <li class="<?php if($pageno <= 1){ echo 'page-item disabled'; } ?>">
         <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
@@ -15,3 +15,11 @@
     </li>
     <li><a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
 </ul>
+
+
+<script type="text/javascript">
+    
+    $( document ).ready(function() {
+        // $(".pagination").css("left", $(window).width());
+    });
+</script>
