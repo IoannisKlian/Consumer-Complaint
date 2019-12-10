@@ -15,14 +15,14 @@
 			$email = mysqli_real_escape_string($connection,$_POST['email']);
 			$name = mysqli_real_escape_string($connection,$_POST['name']);
 			mysqli_query($connection,"INSERT INTO govrn_emp VALUES ( DEFAULT,'".$username."','".$password."','".$email."','".$name."')");
-			echo '<script type="text/javascript">','location.replace("./index.php?page_id=5");','</script>';
+			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=0");','</script>';
 		}
 
 		//Delete user
 		else if (isset($_POST['btnDel'])) {
 			$selected_val = $_POST['user_to_delete'];
 			mysqli_query($connection,"DELETE FROM govrn_emp WHERE id =".$selected_val."");
-			echo '<script type="text/javascript">','location.replace("./index.php?page_id=5");','</script>';
+			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=1");','</script>';
 		}
 
 		//Returns the query containing information for the desired employee 
@@ -34,7 +34,7 @@
 			
 			$row = mysqli_fetch_array($result);
 			echo $row['password'];
-			header('Location:./index.php?page_id=5&un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
+			header('Location:./index.php?admin_id=2&un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
 		}
 		
 		//Updates the user information
@@ -45,7 +45,7 @@
 			$email = mysqli_real_escape_string($connection,$_POST['email_update']);
 			$name = mysqli_real_escape_string($connection,$_POST['name_update']);
 			mysqli_query($connection,'UPDATE govrn_emp SET username ="'.$username.'" , password ="'.$password.'" , email ="'.$email.'" , name ="'.$name.'"  WHERE id = '.$selected_val.'');
-			echo '<script type="text/javascript">','location.replace("./index.php?page_id=5");','</script>';
+			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=2");','</script>';
 		}
 	}
 	
