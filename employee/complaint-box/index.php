@@ -86,7 +86,11 @@
 		                        echo '<p class="card-text"> Δεν υπάρχει συνημμένο αρχείο!</p>';
 		                      }
 		                      else{
-		                        echo '<p class="card-text"><a target="_blank" href="../../uploads/'.$file['name'].'">Πατήστε εδώ για να δείτε το αρχείο!</a></p>';
+		                        echo '<p class="card-text">
+		                        		<a target="_blank" href="../../uploads/'.$file['name'].'">
+		                        			<img src="../../uploads/'.$file['name'].'" alt="'.$file['name'].'" style="width:200px;height:200px;">
+				                        </a>
+				                      </p>';
 		                      }
 		               		?>
 		              	</div>

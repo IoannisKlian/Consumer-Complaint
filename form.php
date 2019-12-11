@@ -10,6 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="js/form.js"></script>
   <meta charset="utf-8" />
   <style type="text/css">
@@ -22,11 +25,21 @@
     input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none;
     }
+    .main-section{
+  margin:0 auto;
+  padding: 20px;
+  margin-top: 100px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px #c1c1c1;
+}
+.fileinput-upload{
+  display: none;
+}
   </style>
 
 </head>
 
-<body style="background-color:#f7f7f7;overflow: hidden;">
+<body style="background-color:#f7f7f7;">
 <div  style="padding-left:5%;padding-top: 2%;">
 
 <form class="form-horizontal" action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
@@ -116,26 +129,35 @@
 	  <div class="input-group-prepend">
 	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
 	  </div>
-	  <div class="custom-file">
-	    <input type="file" class="custom-file-input" id="file" name="file" 
-	      aria-describedby="inputGroupFileAddon01">
-	    <label class="custom-file-label" for="inputGroupFile01">Επιλέξτε αρχείο...(εικόνα ή PDF)</label>
-	  </div>
+    <div class="file-loading">
+          <input id="file" name="file" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
+     </div>
 	</div>
-
-  <!--
-<div style="padding-right:33.6%;">
-      <input type="file" name="img[]" class="file" accept="image/pdf*">
-        <input type="text" class="form-control" disabled placeholder="Upload File" id="file">
-        <div class="input-group-append">
-          <button type="button" id="testtt" class="browse btn btn-primary">Browse...</button>
-      </div>
-  <div class="ml-2 col-sm-6">
-    <img src="https://placehold.it/80x80" id="preview" class="img-thumbnail">
-  </div>
-
 </div>
--->
+<script type="text/javascript">
+  $("#file").fileinput({
+    theme: 'fa',
+    browseLabel: "Αναζήτηση",
+    removeLabel: "Διαγραφή",
+    initialCaption: " ",
+    hideThumbnailContent:false,
+    viewDetails:false,
+    showZoom:false,
+    allowedFileExtensions: ['jpg', 'png', 'gif','pdf','PDF'],
+    overwriteInitial: false,
+    maxFileSize:2000,
+    maxFilesNum: 10,
+    fileActionSettings: {
+                        showRemove: true,
+                        showUpload: false,
+                        showZoom: false,
+                        showDrag: false},
+    slugCallback: function (filename) {
+        return filename.replace('(', '_').replace(']', '_');
+    }
+});
+</script>
+
 <br>
 
   <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
