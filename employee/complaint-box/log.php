@@ -51,30 +51,24 @@
 						<table>
 						<?php
 								$complaintID = $_SESSION['complaintID'];
-							 	$sql = "SELECT * FROM complaint_log WHERE complaint_id = ".$complaintID." ";
+							 	$sql = "SELECT * FROM log WHERE complaint_id = ".$complaintID." ORDER BY id ASC";
 							    $res_data = mysqli_query($connection,$sql);
-							    $data_to_show ="";
 
+							    $count = 1;
 							    while($row = mysqli_fetch_array($res_data)){
-
-							    	$data_to_show = $row['log'];
-							    }
-
-							    $array_to_show = explode("<end_of_log>", $data_to_show);
-
-							    foreach ($array_to_show as $log) {
-							    	
-							    	$log_parts = get_log_parts($log);?>
+									?>
 							    	
 							    	<tr style="border-bottom: 1px solid #f7f7f7; font-family: 'Times New Roman'">
 				
-							    		<th style="width: 5%;"><?php echo $log_parts[0];?></th>
-							    		<th style="width: 75%;"><?php echo $log_parts[1];?></th>
-							    		<th style="width: 20%;"><?php echo $log_parts[2];?></th>
+							    		<th style="width: 5%;"><?php echo $count ?></th>
+							    		<th style="width: 75%;"><?php echo $row["description"];?></th>
+							    		<th style="width: 20%;"><?php echo $row["datetime"];?></th>
 
 							    	</tr>
 
 							    	<?php
+
+							    	$count = $count + 1;
 							    }
 						?>
 						</table>
