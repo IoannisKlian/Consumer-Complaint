@@ -14,11 +14,15 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <?php 
+
           echo '<a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=id DESC">Νεότερα</a>
-                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=id ASC">Παλαιότερα</a>
-                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name ASC">Ανα Υπάλληλο (Αυξουσα Σειρά)
-                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name DESC">Ανα Υπάλληλο (Φθήνουσα Σειρά)
-                </a>'; 
+                <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=id ASC">Παλαιότερα</a>'; 
+          if ($_SESSION['pageID'] != 0) {
+            echo '<a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name ASC">Ανα Υπάλληλο (Αυξουσα Σειρά)
+                  <a class="dropdown-item" href="?page_id='.$_SESSION['pageID'].'&sort_by=name DESC">Ανα Υπάλληλο (Φθήνουσα Σειρά)
+                  </a>'; 
+          }
+
           ?>
         </div>
       </th>
