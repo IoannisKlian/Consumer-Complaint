@@ -12,7 +12,23 @@ $( document ).ready(function() {
 //   x.innerHTML = "Latitude: " + position.coords.latitude +
 //   "<br>Longitude: " + position.coords.longitude;
 // }
+	
+
+	// Fill the form with random data
+	$("#test-btn").on( "click", function() {
 		
+		$("#name").val(setRandomString(8));
+		$("#surname").val(setRandomString(8))
+		$("#email").val(setRandomString(8) + "@" + "gmail" + ".com")
+		$("#phone").val(setRandomInt(8))
+		$("#company_name").val(setRandomString(8))
+		$("#company_address").val(String(setRandomString(8) + " " + setRandomInt(3)));
+		$("#company_taxId").val(setRandomInt(8))
+		$("#company_phone").val(setRandomInt(8))
+		$("#comment").val(setRandomString(100))
+			
+
+	});	
 			
 
 	// Check on the submit button in the form
@@ -157,7 +173,24 @@ function isEmpty( el ){
   }
 
 
-  
+ function setRandomString (num) {
+ 	var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < num; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+ }
 
+  function setRandomInt (num) {
+ 	var result           = '';
+   var characters       = '1234567890';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < num; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return parseInt(result);
+ }
 
 

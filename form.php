@@ -160,7 +160,14 @@
 
 <br>
 
-  <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-secondary" value="Submit" id="test-btn" >Test (Temp)</button>
+    </div>
+  </div>
 
 </form>
 <div>

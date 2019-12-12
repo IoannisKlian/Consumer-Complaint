@@ -40,10 +40,10 @@ if(!empty($_FILES["file"]["name"])) {
 					$complaint_id = mysqli_insert_id($connection);
 					date_default_timezone_set('Europe/Athens');
 
+					$log = "Καταχώρηση καταγγελίας";
+					mysqli_query($connection,"INSERT INTO log (`description`, `datetime`, `complaint_id`) 
+									VALUES ('".$log."','".date('Y-m-d H:i:s')."','".$complaint_id."')");
 
-					$log = "1. <log_id> Καταχώρηση καταγγελίας <date_of_log> - ".date('Y-m-d H:i:s');
-
-					mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
 		        	mysqli_query($connection,"INSERT INTO file (id, name, complaint_id) 
 												VALUES (DEFAULT, '".$fileName."', '".$complaint_id."')");
 		        	include ("employee/email_notification.php");
@@ -73,8 +73,10 @@ else{
 	mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now() ,0)");
 		$complaint_id = mysqli_insert_id($connection);
 		date_default_timezone_set('Europe/Athens');
-		$log = "1. <log_id> Καταχώρηση καταγγελίας <date_of_log> - ".date('Y-m-d H:i:s');
-		mysqli_query($connection,"INSERT INTO complaint_log VALUES ( '".$complaint_id."','".$log."')");
+		$log = "Καταχώρηση καταγγελίας";
+		mysqli_query($connection,"INSERT INTO log (`description`, `datetime`, `complaint_id`) 
+									VALUES ('".$log."','".date('Y-m-d H:i:s')."','".$complaint_id."')");
+
 		include ("employee/email_notification.php");
 		echo '<script type="text/javascript">','location.replace("successFormFilling.php?cid='.$complaint_id.'&em='.$emailExist.'");','</script>';
 }
@@ -84,7 +86,5 @@ if (!(strcmp($errorMessage, "") == 0)) {
 	echo '<script type="text/javascript">','location.replace("failedformfilling.php");','</script>';
 	echo '<button onclick="window.history.back()">fefef</button>';
 }
-
-
 
 ?>
