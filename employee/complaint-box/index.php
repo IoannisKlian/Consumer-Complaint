@@ -1,4 +1,3 @@
-<!-- Get Sessions -->
 <?php 
   session_start();
   include ("../time_out_session.php");
