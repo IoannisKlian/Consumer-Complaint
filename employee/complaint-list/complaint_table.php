@@ -1,3 +1,11 @@
+<?php
+include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
+
+?>
+
 <table class="table table-hover">
     <thead class="thead-dark">
     <tr>

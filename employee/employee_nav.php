@@ -1,6 +1,12 @@
 <?php
   include("../../connect.php");
 
+	include ("../time_out_session.php");
+	if (!isset($_SESSION['user_id'])) {
+		header("Location: ../login.php");
+	}
+
+
   // Calculating total complaints for each category
 
   // Calculating for Open complaints

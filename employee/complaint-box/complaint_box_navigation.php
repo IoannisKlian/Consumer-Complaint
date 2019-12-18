@@ -1,5 +1,9 @@
 <?php
-    
+  include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
+
   // Get company name and category
   include("../../connect.php");
   $company_name_query = "SELECT company_name, status FROM complaint WHERE id = '".$_SESSION['complaintID']."'";
