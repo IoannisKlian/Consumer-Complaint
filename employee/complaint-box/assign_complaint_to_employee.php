@@ -1,10 +1,10 @@
 <?php
 	session_start();
-	if (!isset($_SESSION['id'])) {
+	if (!isset($_SESSION['user_id'])) {
 		header("Location: login.php");
 	}
 	else{
-		$userID=$_SESSION['id'];
+		$userID=$_SESSION['user_id'];
 		$complaintID = $_SESSION['complaintID'];
 	}
 
@@ -12,7 +12,7 @@
     	$userID = $_POST["session_ID"];
   	}
 
-	$userID=$_SESSION['id'];
+	$userID=$_SESSION['user_id'];
 	$complaintID = $_SESSION['complaintID'];
 	include ("../../connect.php");
 

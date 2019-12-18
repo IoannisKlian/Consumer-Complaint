@@ -44,7 +44,7 @@
 
 <form class="form-horizontal" action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
 
-  <div class="form-row">
+  <div class="form-row" style="padding: 0; margin:0;">
     <div class="col-md-4 mb-3">
       <label for="name">Όνομα</label>
       <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name" >
@@ -56,7 +56,7 @@
       <input type="text" class="form-control" id="surname" placeholder="Επώνυμο" name="surname">
     </div>
 
-    <div class="form-check">
+    <div class=" form-check">
       <br><br>
     <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" value="Yes">
     <label class="form-check-label" for="exampleCheck1">Επιλογή επώνυμης καταγγελίας</label>
@@ -64,7 +64,7 @@
   </div>
 
 
-  <div class="form-row">
+  <div class=" form-row" style="padding: 0; margin:0;">
     <div class="col-md-4 mb-3">
     <label for="phone">Τηλέφωνο επικοινωνίας</label>
     <input type="number" class="form-control" id="phone" data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="phone">
@@ -75,7 +75,7 @@
     </div>
   </div>
 
-  <div style="padding-right:33.6%;">
+  <div style="">
   <hr {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -84,7 +84,7 @@
       }>
     </div>
 
-  <div class="form-row">
+  <div class="form-row" style="padding: 0; margin:0;">
     <div class="col-md-4 mb-3">
       <label for="company_name">Επωνυμία εταιρείας*</label>
       <input type="text" class="form-control" id="company_name" placeholder="Επωνυμία εταιρείας" name="company_name" required>
@@ -102,7 +102,7 @@
     </div>
   </div>
 
-  <div class="form-row">
+  <div class="form-row" style="padding: 0; margin:0;">
     <div class="col-md-4 mb-3">
       <label for="company_taxId">ΑΦΜ εταιρείας</label>
       <input type="number" class="form-control" id="company_taxId" data-original-title="" data-placement="right" placeholder="ΑΦΜ" name="company_taxId">
@@ -114,8 +114,8 @@
     </div>
   </div>
 
-<div style="padding-right:33.6%;">
-  <div class="input-group">
+<div class="form-row" style="padding: 0; margin:0;">
+  <div class="input-group col-md-8">
     <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος*</span>
   </div>
@@ -124,7 +124,7 @@
 </div><br> 
 
 
-<div style="padding-right:33.6%;">
+<div class="form-row" style="padding: 0; margin:0;">
 	<div class="input-group">
 	  <div class="input-group-prepend">
 	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
@@ -160,11 +160,11 @@
 
 <br>
 
-  <div class="row">
-    <div class="col">
+  <div class="row" style="padding:0; margin: 0;">
+    <div class="col-sm-4">
       <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
     </div>
-    <div class="col">
+    <div class="col-sm-4">
       <button type="button" class="btn btn-secondary" value="Submit" id="test-btn" >Test (Temp)</button>
     </div>
   </div>
