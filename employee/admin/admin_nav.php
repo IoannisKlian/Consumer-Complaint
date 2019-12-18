@@ -1,5 +1,8 @@
 <?php
-
+include ("../time_out_session.php");
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
 if (isset($_GET["admin_id"])) {
     $admin_id = $_GET["admin_id"];
   }

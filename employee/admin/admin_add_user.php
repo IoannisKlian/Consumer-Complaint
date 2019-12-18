@@ -1,3 +1,10 @@
+<?php
+	include ("../time_out_session.php");
+	if (!isset($_SESSION['user_id'])) {
+		header("Location: ../login.php");
+	}
+?>
+
 <div class="col">
 	<h3 style="text-align: center;padding-bottom: 1%;">Προσθήκη χρήστη</h3>
 	<form class="form-horizontal" action="admin_employee_managment.php" id="form" method="post" enctype="multipart/form-data">

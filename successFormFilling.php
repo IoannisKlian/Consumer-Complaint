@@ -9,7 +9,7 @@
 
 <div class="jumbotron text-center">
   <h2 class="display-4">Η καταγγελία καταχωρήθηκε με αριθμό #<?php  if (isset($_GET['cid'])&&!empty($_GET['cid'])){echo $_GET['cid'];}?> </h2>
-  <p class="lead"><strong><?php if (isset($_GET['em'])&&!empty($_GET['em'])){if($_GET['em']){echo "Θα ενημερωθείτε για την συνέχεια της καταγγελίας με email!";}}?></strong> </p>
+  <p class="lead"><strong><?php if (isset($_GET['em'])&&!empty($_GET['em'])){if($_GET['em']){echo "Θα ενημερωθείτε για την συνέχεια της καταγγελίας με email!";$email_address = $_GET['email'];  $maill = mail($email_address,'=?UTF-8?B?' . base64_encode('Η καταγγελία σας καταχωρήθηκε!'). '?=', 'Η καταγγελία σας καταχωρήθηκε με αριθμό #'.$_GET['cid'], "From:"." giannisklian@gmail.com");}}?></strong> </p>
   <hr>
   
   <p class="lead">
