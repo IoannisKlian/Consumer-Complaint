@@ -1,5 +1,5 @@
 <?php  
-	
+	session_start();	
 
 	include ("../connect.php");
 
@@ -16,16 +16,14 @@
 			
 			
 			if ($row['username'] == $username && $row['password'] == $password ) {
-				session_start();
-				$_SESSION["user"] = true;
-				$_SESSION['id'] = $row['id'];
-				$_SESSION["user_name"] = $row['username'];
-				$_SESSION["name"] = $row['name'];
+				$_SESSION['user'] = true;
+				$_SESSION['user_id'] = $row['id'];
+				$_SESSION['user_name'] = $row['username'];
+				$_SESSION['name'] = $row['name'];
 				
 				header("Location: complaint-list/");
 			}
 			else {
-				session_start();
 				$_SESSION['errorinput'] = true;
 				header("Location: login.php");
 			}

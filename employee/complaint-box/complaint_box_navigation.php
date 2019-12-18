@@ -81,13 +81,13 @@
     include("../../connect.php");
 
     $assigned_user_query = "SELECT COUNT(*) FROM employee_complaint 
-                            WHERE employee_id = '".$_SESSION['id']."' 
+                            WHERE employee_id = '".$_SESSION['user_id']."' 
                             AND complaint_id = '".$_SESSION['complaintID']."'";
     $result = mysqli_query($connection,$assigned_user_query);
     $total_rows = mysqli_fetch_array($result)[0];
 
 
-    return $total_rows != 0 || $_SESSION['id'] == 1;
+    return $total_rows != 0 || $_SESSION['user_id'] == 1;
 
   }
 

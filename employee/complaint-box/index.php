@@ -1,4 +1,3 @@
-<!-- Get Sessions -->
 <?php 
   session_start();
   include ("../time_out_session.php");
@@ -15,7 +14,7 @@
   }
 
   if (isset($_POST["session_ID"])) {
-    $_SESSION['id'] = $_POST["session_ID"];
+    $_SESSION['user_id'] = $_POST["session_ID"];
   }
 
   include("complaint_information.php");
@@ -106,7 +105,7 @@
 		    <div class="row">
 		      <div class="col-sm-4">
 		    <?php
-		      if(isset($_SESSION['id'])){
+		      if(isset($_SESSION['user_id'])){
 
 			      //This checks whether the complaint has been assigned to someone or not
 			      $total_pages_sql = "SELECT COUNT(*) FROM complaint WHERE status = 1 AND id = '".$complaintID."'";
@@ -123,7 +122,7 @@
 					    	echo '
 						         <form action="assign_complaint_to_employee.php" method="post">
 						          <input type="submit" name="Ανάληψη καταγγελίας" value="Ανάληψη καταγγελίας" class="btn btn-secondary" />
-						          <input type="hidden" id="session_ID" name="session_ID" value="'.$_SESSION['id'].'">
+						          <input type="hidden" id="session_ID" name="session_ID" value="'.$_SESSION['user_id'].'">
 						        </form>
 						              ';
 					    }
@@ -158,7 +157,7 @@
 			        <?php
 
 			       // Enable/Disable "Close Case" Button depending on the employee's ID.
-			       $query_close_button = "SELECT * FROM `employee_complaint` WHERE `employee_id` = '".$_SESSION['id']."' AND `complaint_id` = '".$complaintID."'"; 
+			       $query_close_button = "SELECT * FROM `employee_complaint` WHERE `employee_id` = '".$_SESSION['user_id']."' AND `complaint_id` = '".$complaintID."'"; 
 			        $result = mysqli_query($connection,$query_close_button);
 			        $total= mysqli_fetch_array($result)[0];
 
@@ -189,7 +188,7 @@
 						      	echo '
 					          <form action="complaint_close.php" method="post">
 					            <input type="submit" name="Ανάληψη καταγγελίας" value="Κλείσιμο καταγγελίας" class="btn btn-secondary">
-					            <input type="hidden" id="session_ID" name="session_ID" value="'.$_SESSION['id'].'"> 
+					            <input type="hidden" id="session_ID" name="session_ID" value="'.$_SESSION['user_id'].'"> 
 					          </form>
 					              ';
 					    }

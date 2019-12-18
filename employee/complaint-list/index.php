@@ -16,6 +16,7 @@ include ("../time_out_session.php");
   else{
     $sort = "id ASC";
   }
+
 ?>
 
 <HTML>
@@ -76,7 +77,7 @@ include ("../time_out_session.php");
       // If in Employee Pending Category
       else if ($_SESSION['pageID'] == 1) {
 
-        $userID=$_SESSION['id'];
+        $userID=$_SESSION['user_id'];
 
         $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
                             WHERE employee_complaint.employee_id = ".$userID." 
@@ -118,7 +119,7 @@ include ("../time_out_session.php");
       // If in Others' Pending Category
       else if ($_SESSION['pageID'] == 3) {
 
-        $userID=$_SESSION['id'];
+        $userID=$_SESSION['user_id'];
 
         $total_pages_sql = "SELECT COUNT(*) FROM complaint,employee_complaint 
                             WHERE employee_complaint.employee_id != ".$userID." 
