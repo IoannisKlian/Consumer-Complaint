@@ -58,7 +58,7 @@ include ("../time_out_session.php");
           <td>'.$row['subdate'].'</td>
           <td>'.$row['name'].'</td>
           <td ><form action="../complaint-box/" method="post"  style="text-align: right;">
-            <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />
+            <input type="submit" name="Άνοιγμα καταγγελίας" value="Προβολή καταγγελίας" class="btn btn-secondary" />
             <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
             </form>
           </td>
