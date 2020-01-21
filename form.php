@@ -119,7 +119,7 @@
     <div class="input-group-prepend">
     <span class="input-group-text">Περιγραφή προβλήματος*</span>
   </div>
-  <textarea style="resize: none;" rows="3" class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
+  <textarea style="resize: none;" rows="3" type="text" class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
   </div>
 </div><br> 
 
