@@ -17,7 +17,7 @@
 				    $res_data = mysqli_query($connection,$sql);
 
 				    while($row = mysqli_fetch_array($res_data)){
-				    	if ($row['admin'] == 0 ) {
+				    	if ($row['admin'] == 0) {
 				    		echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
 				    	}
 				    }

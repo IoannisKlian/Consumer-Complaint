@@ -25,12 +25,8 @@ if (isset($_GET["admin_id"])) {
         <a class="nav-link" style="color: white;"  href="?admin_id=1">Διαγραφη Χρήστη</a>
       </li>
       <!-- Update User -->
-      <li class="nav-item" id="update-user" style="border-right: solid; padding-top: 0; margin-top: 0;">
+      <li class="nav-item" id="update-user" style=" padding-top: 0; margin-top: 0;">
         <a class="nav-link" style="color: white;"  href="?admin_id=2">Ανανέωση Στοιχείων Χρήστη</a>
-      </li>
-      <!-- Change Administrator -->
-      <li class="nav-item" id="change-admin" style=" padding-top: 0; margin-top: 0;">
-        <a class="nav-link" style="color: white;"  href="?admin_id=3">Αλλαγή Διαχειριστή</a>
       </li>
     </ul>
   </div>
@@ -44,8 +40,6 @@ if($admin_id == 0)
         $("#add-user").css("background-color", "black");
         $("#remove-user").css("background-color", "inherit");
         $("#update-user").css("background-color", "inherit");
-        $("#update-user").css("background-color", "inherit");
-        $("#change-admin").css("background-color", "inherit");
       </script>
     <?php
   }
@@ -56,7 +50,6 @@ if($admin_id == 0)
         $("#add-user").css("background-color", "inherit");
         $("#remove-user").css("background-color", "black");
         $("#update-user").css("background-color", "inherit");
-        $("#change-admin").css("background-color", "inherit");
       </script>
     <?php
   }
@@ -67,18 +60,6 @@ if($admin_id == 0)
         $("#add-user").css("background-color", "inherit");
         $("#remove-user").css("background-color", "inherit");
         $("#update-user").css("background-color", "black");
-        $("#change-admin").css("background-color", "inherit");
-      </script>
-    <?php
-  }
-  elseif ($admin_id == 3) 
-  {
-    ?> 
-      <script type="text/javascript">
-        $("#add-user").css("background-color", "inherit");
-        $("#remove-user").css("background-color", "inherit");
-        $("#update-user").css("background-color", "inherit");
-        $("#change-admin").css("background-color", "black");
       </script>
     <?php
   }
