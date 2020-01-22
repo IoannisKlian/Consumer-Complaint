@@ -199,7 +199,14 @@
 			                      AND ".$complaintID." = employee_complaint.complaint_id";
 			        		$result_of_query = mysqli_query($connection,$query);
 			        		$row_employee = mysqli_fetch_array($result_of_query);
-					    	echo "Η καταγγελία έχει αρχειοθετηθεί απο ".$row_employee['name'];
+
+			        		if ($row_employee['name']) {
+			        			echo "Η καταγγελία έχει αρχειοθετηθεί απο ".$row_employee['name'];
+			        		}
+			        		else {
+			        			echo "Η καταγγελία έχει αρχειοθετηθεί.";
+			        		}
+					    	
 					    }			          
 			        }
 		    	}

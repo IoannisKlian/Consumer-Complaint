@@ -21,6 +21,7 @@
 		//Delete user
 		else if (isset($_POST['btnDel'])) {
 			$selected_val = $_POST['user_to_delete'];
+			mysqli_query($connection,"DELETE FROM employee_complaint WHERE employee_id =".$selected_val."");
 			mysqli_query($connection,"DELETE FROM govrn_emp WHERE id =".$selected_val."");
 			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=1");','</script>';
 		}
