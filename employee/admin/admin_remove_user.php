@@ -16,12 +16,10 @@
 		      		$sql = "SELECT * FROM govrn_emp ";
 				    $res_data = mysqli_query($connection,$sql);
 				    //This is used in order admin which is first user cannot be deleted
-				    $counter = 0;
 				    while($row = mysqli_fetch_array($res_data)){
 				    	if ($_SESSION['admin'] == 0 ) {
 				    		echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
 				    	}
-				    	$counter++;
 				    }
 		      	?>
 			  </select>
