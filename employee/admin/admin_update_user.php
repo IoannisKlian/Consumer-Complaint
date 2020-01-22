@@ -10,7 +10,7 @@
 				    $res_data = mysqli_query($connection,$sql);
 				   
 				    while($row = mysqli_fetch_array($res_data)){
-				    	if ($_SESSION['admin'] == 0 ) {
+				    	if ($row['admin'] == 0 ) {
 				    		if (isset($_GET['selecval'])&&!empty($_GET['selecval'])&&($row['id']==intval(trim($_GET['selecval'],'"')))) {
 				    			echo '<option value="'.$row['id'].'" selected>'.$row['name'].'</option>';
 				    		}

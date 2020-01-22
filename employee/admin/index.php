@@ -63,6 +63,14 @@
 						</div>
 					<?php
 				}
+				elseif ($admin_id == 3) 
+				{
+					?> 
+						<div class="row" id="change-admin" style="padding-top: 3%;padding-bottom: 3%;">
+							<?php include("admin_change_admin.php"); ?>
+						</div>
+					<?php
+				}
 			?>
 			
 		</div>
