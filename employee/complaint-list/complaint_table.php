@@ -12,8 +12,8 @@ include ("../time_out_session.php");
       <th scope="col">Αριθμός καταγγελίας</th>
       <th scope="col">Ονομασία επιχείρησης</th>
       <th scope="col">Όνομα καταγγελέα</th>
-      <th scope="col">Ημερομηνία καταβολής</th>
-      <th scope="col">Αναλήφθηκε απο</th>
+      <th scope="col">Ημερομηνία υποβολής</th>
+      <th scope="col">Αναλήφθηκε από</th>
 
       <!-- Sorting button -->
       <th scope="col" style="text-align: right;">

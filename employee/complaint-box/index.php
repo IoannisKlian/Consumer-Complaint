@@ -50,7 +50,7 @@
 	  <!-- Date Submitted -->
 	  <div class="card">
 	    <div class="card-header" id="headingTwo">
-	      <h6 class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo "Ημερομηνία καταβολής: ".$date_added; ?></h6>
+	      <h6 class="mb-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo "Ημερομηνία υποβολής: ".$date_added; ?></h6>
 	    </div>
 	  </div>
 

@@ -7,16 +7,13 @@ include ("../time_out_session.php");
 
   <div class="card">
     <div class="card-header" id="headingOne">
-      <h2 class="col-sm">
+      <h2 style="display: inline;" class="col-sm">
         <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Στοιχεία Καταγγελίας <i class="fa fa-angle-down" style="font-size:20px"></i>
-        </button>
-
-        
+        </button> 
       </h2>
-      
+      <h5 style="display: inline;float: right;"><?php echo "Αριθμός καταγγελίας "."#".$_SESSION['complaintID'];?></h5>    
     </div>
-
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 		<div class="card-body">
 	        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -29,7 +26,10 @@ include ("../time_out_session.php");
 			                  <p class="card-text">
 			                    Ονομ/νυμο: <?php echo $fullname; ?><br>
 			                    Τηλέφωνο επικοινωνίας: <?php echo $phone; ?><br>
-			                    Email address: <?php echo $email; ?></p>
+			                    Διεύθυνση e-mail: <?php echo $email; ?>
+			                    <?php if ($email != "-"){ ?>
+			                    	<button class="btn btn-success" style="margin-left: 3%;" onclick="location.href=<?php echo "'mailto:".$email."?subject=Καταγγελία #".$_SESSION['complaintID']."'"; ?>;"><i class="fas fa-envelope"></i>&nbsp;Αποστολή e-mail!</button></p>
+			                    <?php }; ?>
 			                </div>
 			              </div>
 			            </div>

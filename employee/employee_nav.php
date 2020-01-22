@@ -54,7 +54,7 @@
       <!-- Pending -->
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
         <a class="nav-link dropdown-toggle" href="../complaint-list/" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Εκκρεμή
+          Εκκρεμή<?php echo " (".$total_rows_pending_all.")"; ?>
         </a>
 
         <!-- Pending Subcategories -->
