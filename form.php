@@ -15,6 +15,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="js/form.js"></script>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <style type="text/css">
     <style>
     input[type="number"] {
@@ -176,9 +177,9 @@
 </div>
 </div>
 
-<!-- <div id="map" style="height: 100%"></div>
+<!-- <div id="map" style="height: 100%"></div> -->
 
-    <script>
+<!--     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
