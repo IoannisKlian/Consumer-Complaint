@@ -47,6 +47,13 @@
 			mysqli_query($connection,'UPDATE govrn_emp SET username ="'.$username.'" , password ="'.$password.'" , email ="'.$email.'" , name ="'.$name.'"  WHERE id = '.$selected_val.'');
 			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=2");','</script>';
 		}
+
+		//Change Admin
+		else if (isset($_POST['btnChange'])) {
+			$selected_val = $_POST['user_to_change_to_admin'];
+			mysqli_query($connection,'UPDATE govrn_emp SET admin ="1" WHERE id = '.$selected_val.'');
+			mysqli_query($connection,'UPDATE govrn_emp SET admin ="0" WHERE id = '.$_SESSION['user_id'].'');
+		}
 	}
 	
 ?>	
