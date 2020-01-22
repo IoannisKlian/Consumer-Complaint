@@ -1,7 +1,7 @@
 <?php 
   session_start();
   include ("../time_out_session.php");
-  if (!isset($_SESSION['user']) || $_SESSION['user'] == false || $_SESSION['user_id'] != 1) {
+  if (!isset($_SESSION['user']) || $_SESSION['user'] == false || $_SESSION['admin'] != 1) {
      header("Location: ../login.php");
   }
   include ("../../connect.php");
