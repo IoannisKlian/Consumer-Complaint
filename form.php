@@ -147,7 +147,7 @@
     showZoom:false,
     allowedFileExtensions: ['jpg', 'png', 'gif','pdf','PDF'],
     overwriteInitial: false,
-    maxFileSize:2000,
+    maxFileSize:8000,
     maxFilesNum: 10,
     fileActionSettings: {
                         showRemove: true,
