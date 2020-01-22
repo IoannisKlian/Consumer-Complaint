@@ -91,7 +91,7 @@
     $total_rows = mysqli_fetch_array($result)[0];
 
 
-    return $total_rows != 0 || $_SESSION['user_id'] == 1;
+    return $total_rows != 0 || $_SESSION['admin'] == 1;
 
   }
 
