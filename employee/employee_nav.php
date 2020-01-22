@@ -75,7 +75,7 @@
         <a class="nav-link" id="employee-archived" href="../complaint-list/?page_id=4">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
       </li>
 
-      <?php if($_SESSION['user_id']==1){?>
+      <?php if($_SESSION['admin']==1){?>
           <li class="nav-item" style="border-left: solid; border-color: #a1f8ff;" id="admin_page">
             <a class="nav-link" id="admin" href="../admin/?page_id=5&&admin_id=0">Επεξεργασία χρηστών</a>
           </li>
@@ -99,7 +99,7 @@
   echo "<script>$('#employee-open').css('color', 'gray')</script>";
   echo "<script>$('#employee-pending').css('color', 'gray')</script>";
   echo "<script>$('#employee-archived').css('color', 'gray')</script>";
-  if ($_SESSION['user_id']==1) {
+  if ($_SESSION['admin']==1) {
     echo "<script>$('#admin').css('color', 'gray')</script>";
   }
 

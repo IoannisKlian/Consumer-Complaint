@@ -20,6 +20,7 @@
 				$_SESSION['user_id'] = $row['id'];
 				$_SESSION['user_name'] = $row['username'];
 				$_SESSION['name'] = $row['name'];
+				$_SESSION['admin'] = $row['admin'];
 				
 				header("Location: complaint-list/");
 			}

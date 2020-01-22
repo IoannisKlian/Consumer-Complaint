@@ -1,7 +1,7 @@
 <?php 
   session_start();
   include ("../time_out_session.php");
-  if (!isset($_SESSION['user']) || $_SESSION['user'] == false || $_SESSION['user_id'] != 1) {
+  if (!isset($_SESSION['user']) || $_SESSION['user'] == false || $_SESSION['admin'] != 1) {
      header("Location: ../login.php");
   }
   include ("../../connect.php");
@@ -60,6 +60,14 @@
 					?> 
 						<div class="row" id="update-user-content" style="padding-top: 3%;padding-bottom: 3%;">
 							<?php include("admin_update_user.php"); ?>
+						</div>
+					<?php
+				}
+				elseif ($admin_id == 3) 
+				{
+					?> 
+						<div class="row" id="update-user-content" style="padding-top: 3%;padding-bottom: 3%;">
+							<?php include("admin_change_admin.php"); ?>
 						</div>
 					<?php
 				}
