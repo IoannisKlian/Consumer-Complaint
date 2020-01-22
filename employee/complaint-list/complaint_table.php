@@ -1,3 +1,11 @@
+<?php
+include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
+
+?>
+
 <table class="table table-hover">
     <thead class="thead-dark">
     <tr>
@@ -50,7 +58,7 @@
           <td>'.$row['subdate'].'</td>
           <td>'.$row['name'].'</td>
           <td ><form action="../complaint-box/" method="post"  style="text-align: right;">
-            <input type="submit" name="Άνοιγμα καταγγελίας" value="Άνοιγμα καταγγελίας" class="btn btn-secondary" />
+            <input type="submit" name="Άνοιγμα καταγγελίας" value="Προβολή καταγγελίας" class="btn btn-secondary" />
             <input type="hidden" id="complaintID" name="complaintID" value="'.$row['id'].'">
             </form>
           </td>

@@ -39,7 +39,7 @@
 
 </head>
 
-<body style="background-color:#f7f7f7;">
+<body style="background-color:#f7f7f7;padding: 0;margin:0;">
 <div  style="padding-left:5%;padding-top: 2%;">
 
 <form class="form-horizontal" action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">

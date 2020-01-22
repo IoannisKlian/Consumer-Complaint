@@ -1,3 +1,11 @@
+<?php
+include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
+
+?>
+
 <ul class="pagination justify-content-end" style="position: relative; margin: auto auto; bottom: -15px;">
     <li><a class="page-link" href="?pageno=1">First</a></li>
     <li class="<?php if($pageno <= 1){ echo 'page-item disabled'; } ?>">

@@ -1,4 +1,8 @@
 <?php 
+include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
 	include ("../../connect.php");
 
 	$result = mysqli_query($connection, "SELECT * FROM complaint WHERE id = '".$_SESSION['complaintID']."'");

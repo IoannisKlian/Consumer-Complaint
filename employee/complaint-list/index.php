@@ -1,6 +1,9 @@
 <?php
 session_start();
 include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
   if (!isset($_SESSION['user']) || $_SESSION['user'] == false) {
      header("Location: ../login.php");
   }
@@ -16,6 +19,7 @@ include ("../time_out_session.php");
   else{
     $sort = "id ASC";
   }
+
 ?>
 
 <HTML>

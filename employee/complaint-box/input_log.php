@@ -1,5 +1,9 @@
 <?php
 session_start();
+include ("../time_out_session.php");
+if (!isset($_SESSION['user_id'])) {
+   header("Location: ../login.php");
+}
 include ("../../connect.php");
 
 if (isset($_POST['comment']) && !strlen(trim($_POST['comment'])) == 0) {

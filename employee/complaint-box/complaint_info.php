@@ -1,3 +1,10 @@
+<?php
+include ("../time_out_session.php");
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+  }
+  ?>
+
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="col-sm">
