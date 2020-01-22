@@ -65,8 +65,8 @@ if($admin_id == 0)
       <script type="text/javascript">
         $("#add-user").css("background-color", "inherit");
         $("#remove-user").css("background-color", "inherit");
-        $("#update-user").css("background-color", "inherit");
-        $("#change-admin").css("background-color", "black");
+        $("#update-user").css("background-color", "black");
+        $("#change-admin").css("background-color", "inherit");
       </script>
     <?php
   }
@@ -76,7 +76,8 @@ if($admin_id == 0)
       <script type="text/javascript">
         $("#add-user").css("background-color", "inherit");
         $("#remove-user").css("background-color", "inherit");
-        $("#update-user").css("background-color", "black");
+        $("#update-user").css("background-color", "inherit");
+        $("#change-admin").css("background-color", "black");
       </script>
     <?php
   }

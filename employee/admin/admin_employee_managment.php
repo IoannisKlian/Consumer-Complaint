@@ -14,7 +14,7 @@
 			$password = mysqli_real_escape_string($connection,$_POST['password']);
 			$email = mysqli_real_escape_string($connection,$_POST['email']);
 			$name = mysqli_real_escape_string($connection,$_POST['name']);
-			mysqli_query($connection,"INSERT INTO govrn_emp VALUES ( DEFAULT,'".$username."','".$password."','".$email."','".$name."')");
+			mysqli_query($connection,"INSERT INTO govrn_emp VALUES ( DEFAULT,'".$username."','".$password."','".$email."','".$name."',0)");
 			echo '<script type="text/javascript">','location.replace("./index.php?admin_id=0");','</script>';
 		}
 
@@ -33,7 +33,6 @@
 			$result = mysqli_query($connection,"SELECT * FROM govrn_emp WHERE id = ".$selected_val."");
 			
 			$row = mysqli_fetch_array($result);
-			echo $row['password'];
 			header('Location:./index.php?admin_id=2&un="'.$row['username'].'"&selecval="'.$selected_val.'"&pw="'.$row['password'].'"&eml="'.$row['email'].'"&nm="'.$row['name'].'"');
 		}
 		
