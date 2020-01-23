@@ -137,12 +137,16 @@ function submitForm() {
 	document.getElementById("comment").setCustomValidity('');
 	if (document.getElementById("comment").checkValidity() && document.getElementById("company_name").checkValidity()) {
 		document.getElementById("form").submit();
-		console.log("if part");
 	}
 	else {
-		document.getElementById("company_name").setCustomValidity("Παρακαλώ συμπληρώστε το πεδίο!");
-		document.getElementById("comment").setCustomValidity("Παρακαλώ συμπληρώστε το πεδίο!");
-		console.log("else part");
+		if(!document.getElementById("comment").checkValidity()){
+			document.getElementById("comment").setCustomValidity("Παρακαλώ συμπληρώστε την περιγραφή προβλήματος!");
+			document.getElementById("comment").reportValidity();
+		}
+		if(!document.getElementById("company_name").checkValidity()){
+			document.getElementById("company_name").setCustomValidity("Παρακαλώ συμπληρώστε την επωνυμία της εταιρείας!");
+			document.getElementById("company_name").reportValidity();
+		}
 	}
 }
 
