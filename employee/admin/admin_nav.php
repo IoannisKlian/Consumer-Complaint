@@ -21,9 +21,11 @@ if (isset($_GET["admin_id"])) {
       </li>
 
       <!-- Remove User -->
-      <li class="nav-item dropdown" id="remove-user" style="border-right: solid;  padding-top: 0; margin-top: 0;">
-        <a class="nav-link" style="color: white;"  href="?admin_id=1">Διαγραφη Χρήστη</a>
-      </li>
+      	<!--
+	      <li class="nav-item dropdown" id="remove-user" style="border-right: solid;  padding-top: 0; margin-top: 0;">
+	        <a class="nav-link" style="color: white;"  href="?admin_id=1">Διαγραφη Χρήστη</a>
+	      </li>
+  		-->
       <!-- Update User -->
       <li class="nav-item" id="update-user" style="border-right: solid; padding-top: 0; margin-top: 0;">
         <a class="nav-link" style="color: white;"  href="?admin_id=2">Ανανέωση Στοιχείων Χρήστη</a>

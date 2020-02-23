@@ -18,5 +18,14 @@ if (isset($_POST['comment']) && !strlen(trim($_POST['comment'])) == 0) {
 
     echo '<script type="text/javascript">','location.replace("log.php");','</script>';
 }
+else{
+	echo '<script type="text/javascript">','location.replace("log.php");','</script>';
+}
+
+function clean($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+}
 
 ?>
