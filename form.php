@@ -100,7 +100,7 @@
     <div class="col-md-4 mb-3">
       <label for="company_address">Διεύθυνση εταιρείας</label>
       <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση εταιρείας" name="company_address">
-      <button onclick="getLocation()"><i class="fa fa-map-marker-alt" aria-hidden="true"></i></button>
+      <button type="button" id="geolocation_btn"><i class="fa fa-map-marker-alt" aria-hidden="true"></i></button>
       <div class="invalid-tooltip">
         Παρακαλώ εισάγετε σωστή διεύθυνση!.
       </div>
@@ -228,7 +228,11 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfREn8CszbxHdERDcxRDZ7cvJ1Zwe56dE&callback=initMap">
     </script> -->
     <script type="text/javascript">
-    function getLocation() {
+      //Reverse geolocation
+      $("#geolocation_btn").on( "click", function() {
+        getLocation();
+      }); 
+      function getLocation() {
       if (navigator.geolocation) {
             /* Initialise Reverse Geocode API Client */
             var reverseGeocoder=new BDCReverseGeocode();
@@ -236,7 +240,7 @@
             /* Get the current user's location information, based on the coordinates provided by their browser */
             /* Fetching coordinates requires the user to be accessing your page over HTTPS and to allow the location prompt. */
             reverseGeocoder.getClientLocation(function(result) {
-                console.log(result.principalSubdivision +", "+result.locality);
+                //console.log(result.principalSubdivision +", "+result.locality);
                 $("#company_address").val(result.principalSubdivision +", "+result.locality);
 
             });
@@ -249,13 +253,12 @@
 
       } 
       else {
-       console.log("Geolocation is not supported by this browser.");
+       //console.log("Geolocation is not supported by this browser.");
+       alert("Ο εντοπισμός τοποθεσίας δεν υποστηρίζεται!")
       }
     }
-
-
-
-</script>
+      
+    </script>
 
 
 </body>
