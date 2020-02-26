@@ -25,7 +25,7 @@
 				header("Location: complaint-list/");
 			}
 			else {
-				$_SESSION['errorinput'] = true;
+				$_SESSION['errorinput'] = 1;
 				header("Location: login.php");
 			}
 		}

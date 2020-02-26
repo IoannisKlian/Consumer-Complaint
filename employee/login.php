@@ -1,9 +1,13 @@
 <?php
 session_start();
 if (isset($_SESSION['errorinput'])) {
-    if ($_SESSION['errorinput']) {
+    if ($_SESSION['errorinput'] == 1) {
         echo '<script>alert("Λάθος όνομα χρήστη ή λαθός κωδικός!\nΠαρακαλώ δώστε ένα έγκυρο όνομα χρήστη και κωδικό!")</script>';
-        $_SESSION['errorinput'] = false;
+        $_SESSION['errorinput'] = 0;
+    }
+    else if($_SESSION['errorinput'] == 2){
+        echo '<script>alert("Η συνδεσή σας έληξε!\nΠαρακαλώ συνδεθείτε ξανά!!")</script>';
+        $_SESSION['errorinput'] = 0;
     }
  } 
     ?>
@@ -17,7 +21,8 @@ if (isset($_SESSION['errorinput'])) {
 	<title>Bootstrap Simple Login Form</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script> 
 	<style type="text/css">
 	.login-form {
 		width: 340px;
@@ -58,8 +63,5 @@ if (isset($_SESSION['errorinput'])) {
         </div>       
     </form>
 </div>
-
-
-
 </body>
 </html>

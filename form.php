@@ -13,6 +13,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/js/fileinput.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/themes/fa/theme.js" type="text/javascript"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.4.7/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/gh/bigdatacloudapi/js-reverse-geocode-client@latest/bigdatacloud_reverse_geocode.min.js" type="text/javascript"></script> 
   <script type="text/javascript" src="js/form.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -91,15 +93,16 @@
       <label for="company_name">Επωνυμία εταιρείας*</label>
       <input type="text" class="form-control" id="company_name" placeholder="Επωνυμία εταιρείας" name="company_name" required>
       <div class="invalid-tooltip">
-        Please provide a valid city.
+        Παρακαλώ εισάγετε την σωστή επωνυμία.
       </div>
     </div>
 
     <div class="col-md-4 mb-3">
       <label for="company_address">Διεύθυνση εταιρείας</label>
       <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση εταιρείας" name="company_address">
+      <button onclick="getLocation()"><i class="fa fa-map-marker-alt" aria-hidden="true"></i></button>
       <div class="invalid-tooltip">
-        Please provide a valid address.
+        Παρακαλώ εισάγετε σωστή διεύθυνση!.
       </div>
     </div>
   </div>
@@ -138,7 +141,7 @@
 </div>
 <script type="text/javascript">
   $("#file").fileinput({
-    theme: 'fa',
+    theme: '',
     browseLabel: "Αναζήτηση",
     removeLabel: "Διαγραφή",
     initialCaption: " ",
@@ -224,6 +227,35 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfREn8CszbxHdERDcxRDZ7cvJ1Zwe56dE&callback=initMap">
     </script> -->
+    <script type="text/javascript">
+    function getLocation() {
+      if (navigator.geolocation) {
+            /* Initialise Reverse Geocode API Client */
+            var reverseGeocoder=new BDCReverseGeocode();
+            
+            /* Get the current user's location information, based on the coordinates provided by their browser */
+            /* Fetching coordinates requires the user to be accessing your page over HTTPS and to allow the location prompt. */
+            reverseGeocoder.getClientLocation(function(result) {
+                console.log(result.principalSubdivision +", "+result.locality);
+                $("#company_address").val(result.principalSubdivision +", "+result.locality);
+
+            });
+
+            /* You can also set the locality language as needed */
+            reverseGeocoder.localityLanguage='el';
+
+            /* Request the current user's coordinates (requires HTTPS and acceptance of prompt) */
+
+
+      } 
+      else {
+       console.log("Geolocation is not supported by this browser.");
+      }
+    }
+
+
+
+</script>
 
 
 </body>

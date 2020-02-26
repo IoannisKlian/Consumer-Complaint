@@ -60,7 +60,7 @@ if(!empty($_FILES["file"]["name"])) {
 		    }
 		}
 		else{
-			$errorMessage =  "To arxeio yparxei idi!";
+			$errorMessage =  "Το αρχείο υπάρχει ήδη!";
 			$_SESSION['errorupload'] = true;
 		}
     }

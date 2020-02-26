@@ -78,7 +78,7 @@ session_start();
 		include('upload.php');
 	} 
 	else {
-		echo "Something went wrong";
+		echo "Κάτι πήγε στραβά";
 	}
 
 
