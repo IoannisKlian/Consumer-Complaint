@@ -279,9 +279,11 @@
           if (request.status >= 200 && request.status < 400) {
             if(typeof data.address.residential !== "undefined"){
               console.log(data.address.residential+", "+data.address.suburb+", "+data.address.county+", "+data.address.postcode);
+              $("#company_address").val(data.address.residential+", "+data.address.suburb+", "+data.address.county+", "+data.address.postcode);
             }
             else{
               console.log(data.address.suburb+", "+data.address.county+", "+data.address.postcode);
+              $("#company_address").val(data.address.suburb+", "+data.address.county+", "+data.address.postcode);
             }
 
           } else {
