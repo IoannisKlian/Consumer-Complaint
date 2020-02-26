@@ -230,7 +230,7 @@
     <script type="text/javascript">
       //Reverse geolocation
       $("#geolocation_btn").on( "click", function() {
-        getLocation();
+        getLocation2();
       }); 
       function getLocation() {
       if (navigator.geolocation) {
@@ -256,6 +256,40 @@
        //console.log("Geolocation is not supported by this browser.");
        alert("Ο εντοπισμός τοποθεσίας δεν υποστηρίζεται!")
       }
+    }
+
+    function getLocation2() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } 
+      else {
+       //console.log("Geolocation is not supported by this browser.");
+       alert("Ο εντοπισμός τοποθεσίας δεν υποστηρίζεται!")
+      }
+    }
+
+    function showPosition(position) {
+      var request = new XMLHttpRequest()
+
+        request.open('GET', 'https://nominatim.openstreetmap.org/reverse?format=json&lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&zoom=18&addressdetails=1', true)
+        request.onload = function() {
+          // Begin accessing JSON data here
+          var data = JSON.parse(this.response)
+
+          if (request.status >= 200 && request.status < 400) {
+            if(typeof data.address.residential !== "undefined"){
+              console.log(data.address.residential+", "+data.address.suburb+", "+data.address.county+", "+data.address.postcode);
+            }
+            else{
+              console.log(data.address.suburb+", "+data.address.county+", "+data.address.postcode);
+            }
+
+          } else {
+            console.log('error')
+          }
+        }
+
+        request.send()
     }
       
     </script>
