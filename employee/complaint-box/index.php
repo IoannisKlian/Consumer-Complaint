@@ -85,10 +85,17 @@
 		                        echo '<p class="card-text"> Δεν υπάρχει συνημμένο αρχείο!</p>';
 		                      }
 		                      else{
-		                        echo '<p class="card-text">
-		                        		<a target="_blank" href="../../uploads/'.$file['name'].'">
-		                        			<img src="../../uploads/'.$file['name'].'" alt="'.$file['name'].'" style="width:200px;height:200px;">
-				                        </a>
+		                      	echo '<p class="card-text">
+		                        		<a target="_blank" href="../../uploads/'.$file['name'].'">';
+		                      	$info = pathinfo('../../uploads/'.$file['name']);
+								if ($info["extension"] == "pdf" || $info["extension"] == "PDF") {
+									echo '<img src="pdfImg.png" alt="'.$file['name'].'" style="width:200px;height:200px;">';
+								}
+								else{
+									echo '<img src="../../uploads/'.$file['name'].'" alt="'.$file['name'].'" style="width:200px;height:200px;">';
+								}
+
+		                        echo '	</a>
 				                      </p>';
 		                      }
 		               		?>
