@@ -40,7 +40,22 @@ include ("../time_out_session.php");
 				                  <p class="card-text"> Επωνυμία εταιρείας: <?php echo $company_name; ?><br>
 				                                        Διεύθυνση εταιρείας: <?php echo $company_address; ?><br>
 				                                        ΑΦΜ εταιρείας: <?php echo $company_taxId; ?><br>
-				                                        Τηλέφωνο επικοινωνίας εταιρείας: <?php echo $company_phone; ?></p>
+				                                        Τηλέφωνο επικοινωνίας εταιρείας: <?php echo $company_phone; ?><br>
+				                                        <?php if ($company_address == "-"){ ?>
+									                    	<button class="btn btn-success" onclick="
+									                    	<?php echo"window.open('https://www.vrisko.gr/search/".$company_name."/')";?>
+									                    		" type="button">
+									                    		<i class="fas fa-search"></i>&nbsp;Εύρεση επιχείρησης
+									                    	</button>
+									                    <?php }else{ ?>
+									                    	<button class="btn btn-success" onclick="
+									                    	<?php echo"window.open('https://www.vrisko.gr/search/".$company_name."/".$company_address."/')";?>
+									                    		" type="button">
+									                    		<i class="fas fa-search"></i>&nbsp;Εύρεση επιχείρησης
+									                    	</button>
+
+									                    	<?php } ?>
+										                      </p>
 				                </div>
 			            	</div>
 			            </div>
