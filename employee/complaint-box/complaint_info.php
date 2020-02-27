@@ -37,10 +37,10 @@ include ("../time_out_session.php");
 							<div class="card">
 				                <div class="card-body">
 				                  <h5 class="card-title">Στοιχεία Καταγγελόμενου</h5>
-				                  <p class="card-text"> Επωνυμία εταιρείας: <?php echo $company_name; ?><br>
-				                                        Διεύθυνση εταιρείας: <?php echo $company_address; ?><br>
-				                                        ΑΦΜ εταιρείας: <?php echo $company_taxId; ?><br>
-				                                        Τηλέφωνο επικοινωνίας εταιρείας: <?php echo $company_phone; ?><br>
+				                  <p class="card-text"> Επωνυμία Επιχείρησης: <?php echo $company_name; ?><br>
+				                                        Διεύθυνση Επιχείρησης: <?php echo $company_address; ?><br>
+				                                        ΑΦΜ Επιχείρησης: <?php echo $company_taxId; ?><br>
+				                                        Τηλέφωνο επικοινωνίας Επιχείρησης: <?php echo $company_phone; ?><br>
 				                                        <?php if ($company_address == "-"){ ?>
 									                    	<button class="btn btn-success" onclick="
 									                    	<?php echo"window.open('https://www.vrisko.gr/search/".$company_name."/')";?>

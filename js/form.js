@@ -144,7 +144,7 @@ function submitForm() {
 			document.getElementById("comment").reportValidity();
 		}
 		if(!document.getElementById("company_name").checkValidity()){
-			document.getElementById("company_name").setCustomValidity("Παρακαλώ συμπληρώστε την επωνυμία της εταιρείας!");
+			document.getElementById("company_name").setCustomValidity("Παρακαλώ συμπληρώστε την επωνυμία της Επιχείρησης!");
 			document.getElementById("company_name").reportValidity();
 		}
 	}
