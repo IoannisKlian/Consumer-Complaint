@@ -18,8 +18,7 @@
   <script type="text/javascript" src="js/form.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <style type="text/css">
-    <style>
+  <style>
     input[type="number"] {
       -webkit-appearance: textfield;
          -moz-appearance: textfield;
@@ -29,273 +28,215 @@
     input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none;
     }
-    .main-section{
-  margin:0 auto;
-  padding: 20px;
-  margin-top: 100px;
-  background-color: #fff;
-  box-shadow: 0px 0px 20px #c1c1c1;
-}
-.fileinput-upload{
-  display: none;
-}
-  </style>
+
+    .fileinput-upload{
+      display: none;
+    }
+
+    @media (min-width:768px){
+      #named-container {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+</style>
 
 </head>
 
+<!-- Body -->
 <body style="background-color:#f7f7f7;padding: 0;margin:0;">
-<div  style="padding-left:5%;padding-top: 2%;">
 
-<form class="form-horizontal" action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
-
-  <div class="form-row" style="padding: 0; margin:0;">
-    <div class="col-md-4 mb-3">
-      <label for="name">Όνομα</label>
-      <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name" >
-    </div>
-
-  
-    <div class="col-md-4 mb-3">
-      <label for="surname">Επώνυμο</label>
-      <input type="text" class="form-control" id="surname" placeholder="Επώνυμο" name="surname">
-    </div>
-
-    <div class=" form-check">
-      <br><br>
-    <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" value="Yes">
-    <label class="form-check-label" for="exampleCheck1">Επιλογή επώνυμης καταγγελίας</label>
-  </div>
+  <!-- Title -->
+  <div class="form-label" style="background-color: #e9ecef" > 
+    <div style="font-size: 3vh; color: #5b5d5f; padding-left:5%; padding-top: 1vh; padding-bottom: 1vh;"> Φόρμα Καταγγελείας Υπηρεσίας</div>
   </div>
 
+  <!-- Main container -->
+  <div  style="padding-top: 2%;">
 
-  <div class=" form-row" style="padding: 0; margin:0;">
-    <div class="col-md-4 mb-3">
-    <label for="phone">Τηλέφωνο επικοινωνίας</label>
-    <input type="number" class="form-control" id="phone" data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="phone">
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="email">Email address</label>
-      <input type="email" data-original-title="" data-placement="right" class="form-control" id="email" placeholder="name@example.com" name="email">
-    </div>
-  </div>
+    <!-- Form -->
+    <form class="form-horizontal" action="complaintSumbitHandler.php" id="form" method="post" enctype="multipart/form-data">
 
-  <div style="">
-  <hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 10;
-    border-top: 1px solid #eeeeee;
-      }>
-    </div>
-
-  <div class="form-row" style="padding: 0; margin:0;">
-    <div class="col-md-4 mb-3">
-      <label for="company_name">Επωνυμία εταιρείας*</label>
-      <input type="text" class="form-control" id="company_name" placeholder="Επωνυμία εταιρείας" name="company_name" required>
-      <div class="invalid-tooltip">
-        Παρακαλώ εισάγετε την σωστή επωνυμία.
+      <!-- Title for Complainer  -->
+      <div class="form-label" style="background-color: #e9ecef"> 
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Ατομικά Στοιχεία</div>
       </div>
-    </div>
 
-    <div class="col-md-4 mb-3">
-      <label for="company_address">Διεύθυνση εταιρείας</label>
-      <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση εταιρείας" name="company_address">
-      <button type="button" id="geolocation_btn"><i class="fa fa-map-marker-alt" aria-hidden="true"></i></button>
-      <div class="invalid-tooltip">
-        Παρακαλώ εισάγετε σωστή διεύθυνση!.
+      <!-- DIV for complainer -->
+      <div class="complainer-container" style=" padding-left: 5%; padding-top: 1%; padding-bottom: 1%;">
+        <div class="form-row" style="padding: 0; margin:0;">
+          <div class="col-md-4 mb-3">
+            <label for="name">Όνομα</label>
+            <input type="text" class="form-control" id="name" placeholder="Όνομα" name="name" >
+          </div>
+
+        
+          <div class="col-md-4 mb-3">
+            <label for="surname">Επώνυμο</label>
+            <input type="text" class="form-control" id="surname" placeholder="Επώνυμο" name="surname">
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <div id="named-container">
+              <label class="form-check-label" for="checkbox">Επιλογή επώνυμης καταγγελίας</label>
+              <input type="checkbox" id="checkbox" name="checkbox" value="Yes">
+            </div>
+          </div>
+        </div>
+
+
+        <div class=" form-row" style="padding: 0; margin:0;">
+          <div class="col-md-4 mb-3">
+          <label for="phone">Τηλέφωνο επικοινωνίας</label>
+          <input type="number" class="form-control" id="phone" data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="phone">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="email">Ηλεκτρονική Διεύθυνση</label>
+            <input type="email" data-original-title="" data-placement="right" class="form-control" id="email" placeholder="name@example.com" name="email">
+          </div>
+        </div>
       </div>
+
+      <!-- End DIV for Complainer -->
+
+      <!-- Title for Enterprise  -->
+      <div class="form-label" style="background-color: #e9ecef;"> 
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία Επιχείρησης</div>
+      </div>
+
+      <!-- DIV for Enterprise -->
+      <div class="enterprise-container" style=" padding-left: 5%; padding-top: 1%; padding-bottom: 1%;">
+        <div class="form-row" style="padding: 0; margin:0;">
+          <div class="col-md-4 mb-3">
+            <label for="company_name">Επωνυμία Επιχείρησης*</label>
+            <input type="text" class="form-control" id="company_name" placeholder="Επωνυμία Επιχείρησης" name="company_name" required>
+            <div class="invalid-tooltip">
+              Παρακαλώ εισάγετε την σωστή επωνυμία.
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label for="company_address">Διεύθυνση Επιχείρησης</label>
+            <div style="display: flex;flex-direction: row;">
+            <input type="text" class="form-control" id="company_address" placeholder="Διεύθυνση Επιχείρησης" name="company_address">
+                          <button type="button" id="geolocation_btn" class="btn btn-secondary" style="font-size:24px">
+                <span class="fa fa-map-marker-alt" style="height: 100%;"></span>
+              </button>
+            <div class="invalid-tooltip">
+              Παρακαλώ εισάγετε σωστή διεύθυνση!.
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="form-row" style="padding: 0; margin:0;">
+          <div class="col-md-4 mb-3">
+            <label for="company_taxId">ΑΦΜ Επιχείρησης</label>
+            <input type="number" class="form-control" id="company_taxId" data-original-title="" data-placement="right" placeholder="ΑΦΜ" name="company_taxId">
+          </div>
+       
+          <div class="col-md-4 mb-3">
+            <label for="company_phone">Τηλέφωνο επικοινωνίας Επιχείρησης</label>
+            <input type="number" class="form-control" id="company_phone"data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="company_phone">
+          </div>
+        </div>
+      </div>
+
+      <!-- End DIV for Enterprise -->
+
+      <!-- Title for Complaint Details  -->
+      <div class="form-label" style="background-color: #e9ecef;"> 
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία Προβλήματος</div>
+      </div>
+
+      <!-- DIV for Complaint Details -->
+      <div class="complaint-container" style=" padding-left: 5%; padding-top: 1%; padding-bottom: 1%;">
+        <div class="form-row" style="padding: 0; margin:0;">
+          <div class="input-group col-md-8">
+            <div class="input-group-prepend">
+            <span class="input-group-text">Περιγραφή προβλήματος*</span>
+          </div>
+          <textarea style="resize: none;" rows="3" type="text" class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
+          </div>
+        </div><br> 
+
+
+        <div class="form-row" style="padding: 0; margin:0;">
+        	<div class="input-group col-md-8">
+        	  <div class="input-group-prepend">
+        	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
+        	  </div>
+            <div class="file-loading">
+                  <input id="file" name="file" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
+             </div>
+        	</div>
+        </div>
+      </div>
+
+    <br>
+
+      <div class="row" style="padding:0; margin: 0; ">
+        <div class="col-sm-4" style="padding-left: 5%;">
+          <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
+        </div>
+<!--         <div class="col-sm-4">
+          <button type="button" class="btn btn-secondary" value="Submit" id="test-btn" >Test (Temp)</button>
+        </div> -->
+      </div>
+
+    </form>
+
+    <!-- End Form -->
+
+    <div style="padding-left: 5%;">
+      <p>Τα πεδία που περιέχουν * είναι αναγκαίο να συμπληρωθούν</p>
     </div>
   </div>
 
-  <div class="form-row" style="padding: 0; margin:0;">
-    <div class="col-md-4 mb-3">
-      <label for="company_taxId">ΑΦΜ εταιρείας</label>
-      <input type="number" class="form-control" id="company_taxId" data-original-title="" data-placement="right" placeholder="ΑΦΜ" name="company_taxId">
-    </div>
- 
-    <div class="col-md-4 mb-3">
-      <label for="company_phone">Τηλέφωνο επικοινωνίας εταιρείας</label>
-      <input type="number" class="form-control" id="company_phone"data-original-title="" data-placement="right" placeholder="Τηλέφωνο" name="company_phone">
-    </div>
-  </div>
+  <!-- End Main Container -->
 
-<div class="form-row" style="padding: 0; margin:0;">
-  <div class="input-group col-md-8">
-    <div class="input-group-prepend">
-    <span class="input-group-text">Περιγραφή προβλήματος*</span>
-  </div>
-  <textarea style="resize: none;" rows="3" type="text" class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
-  </div>
-</div><br> 
-
-
-<div class="form-row" style="padding: 0; margin:0;">
-	<div class="input-group">
-	  <div class="input-group-prepend">
-	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
-	  </div>
-    <div class="file-loading">
-          <input id="file" name="file" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
-     </div>
-	</div>
-</div>
-<script type="text/javascript">
-  $("#file").fileinput({
-    theme: '',
-    browseLabel: "Αναζήτηση",
-    removeLabel: "Διαγραφή",
-    initialCaption: " ",
-    hideThumbnailContent:false,
-    viewDetails:false,
-    showZoom:false,
-    allowedFileExtensions: ['jpg', 'png', 'gif','pdf','PDF'],
-    overwriteInitial: false,
-    maxFileSize:8000,
-    maxFilesNum: 10,
-    fileActionSettings: {
-                        showRemove: true,
-                        showUpload: false,
-                        showZoom: false,
-                        showDrag: false},
-    slugCallback: function (filename) {
-        return filename.replace('(', '_').replace(']', '_');
-    }
-});
-</script>
-
-<br>
-
-  <div class="row" style="padding:0; margin: 0;">
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
-    </div>
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-secondary" value="Submit" id="test-btn" >Test (Temp)</button>
-    </div>
-  </div>
-
-</form>
-<div>
-  <p>Τα πεδία που περιέχουν * είναι αναγκαίο να συμπληρωθούν</p>
-</div>
-</div>
-
-<!-- <div id="map" style="height: 100%"></div> -->
-
-<!--     <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
-        });
-        infoWindow = new google.maps.InfoWindow;
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
+  <script type="text/javascript">
+    $("#file").fileinput({
+      theme: '',
+      browseLabel: "Αναζήτηση",
+      removeLabel: "Διαγραφή",
+      initialCaption: " ",
+      hideThumbnailContent:false,
+      viewDetails:false,
+      showZoom:false,
+      allowedFileExtensions: ['jpg', 'png', 'gif','pdf','PDF'],
+      overwriteInitial: false,
+      maxFileSize:8000,
+      maxFilesNum: 10,
+      fileActionSettings: {
+                          showRemove: true,
+                          showUpload: false,
+                          showZoom: false,
+                          showDrag: false},
+      slugCallback: function (filename) {
+          return filename.replace('(', '_').replace(']', '_');
       }
+    });
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfREn8CszbxHdERDcxRDZ7cvJ1Zwe56dE&callback=initMap">
-    </script> -->
-    <script type="text/javascript">
-      //Reverse geolocation
-      $("#geolocation_btn").on( "click", function() {
-        getLocation2();
-      }); 
-      function getLocation() {
+    $("#geolocation_btn").on( "click", function() {
       if (navigator.geolocation) {
-            /* Initialise Reverse Geocode API Client */
-            var reverseGeocoder=new BDCReverseGeocode();
-            
-            /* Get the current user's location information, based on the coordinates provided by their browser */
-            /* Fetching coordinates requires the user to be accessing your page over HTTPS and to allow the location prompt. */
-            reverseGeocoder.getClientLocation(function(result) {
-                //console.log(result.principalSubdivision +", "+result.locality);
-                $("#company_address").val(result.principalSubdivision +", "+result.locality);
-
-            });
-
-            /* You can also set the locality language as needed */
-            reverseGeocoder.localityLanguage='el';
-
-            /* Request the current user's coordinates (requires HTTPS and acceptance of prompt) */
-
-
-      } 
-      else {
-       //console.log("Geolocation is not supported by this browser.");
-       alert("Ο εντοπισμός τοποθεσίας δεν υποστηρίζεται!")
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+pos.lat+","+pos.lng+"&key=AIzaSyD66HFGjShwc9-Lqj-dZXckhnV0wcK1BuY&language=el";
+          fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            $("#company_address").val(data.results[0].formatted_address);
+          })
+        })
       }
-    }
+    });
 
-    function getLocation2() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } 
-      else {
-       //console.log("Geolocation is not supported by this browser.");
-       alert("Ο εντοπισμός τοποθεσίας δεν υποστηρίζεται!")
-      }
-    }
 
-    function showPosition(position) {
-      var request = new XMLHttpRequest()
-
-        request.open('GET', 'https://nominatim.openstreetmap.org/reverse?format=json&lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&zoom=18&addressdetails=1', true)
-        request.onload = function() {
-          // Begin accessing JSON data here
-          var data = JSON.parse(this.response)
-
-          if (request.status >= 200 && request.status < 400) {
-            if(typeof data.address.residential !== "undefined"){
-              console.log(data.address.residential+", "+data.address.suburb+", "+data.address.county+", "+data.address.postcode);
-              $("#company_address").val(data.address.residential+", "+data.address.suburb+", "+data.address.town+", "+data.address.postcode);
-            }
-            else{
-              console.log(data.address.suburb+", "+data.address.county+", "+data.address.postcode);
-              $("#company_address").val(data.address.suburb+", "+data.address.town+", "+data.address.postcode);
-            }
-
-          } else {
-            console.log('error')
-          }
-        }
-
-        request.send()
-    }
-      
-    </script>
-
+  </script>
 
 </body>
 </HTML>
