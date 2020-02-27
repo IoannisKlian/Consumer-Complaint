@@ -199,6 +199,7 @@
     $("#file").fileinput({
       theme: '',
       browseLabel: "Αναζήτηση",
+      browseClass: "btn btn-secondary",
       removeLabel: "Διαγραφή",
       initialCaption: " ",
       hideThumbnailContent:false,
