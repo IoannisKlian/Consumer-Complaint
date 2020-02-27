@@ -28,7 +28,13 @@ include ("../time_out_session.php");
 			                    Τηλέφωνο επικοινωνίας: <?php echo $phone; ?><br>
 			                    Διεύθυνση e-mail: <?php echo $email; ?>
 			                    <?php if ($email != "-"){ ?>
-			                    	<button class="btn btn-success" style="margin-left: 3%;" onclick="location.href=<?php echo "'mailto:".$email."?subject=Καταγγελία #".$_SESSION['complaintID']."'"; ?>;"><i class="fas fa-envelope"></i>&nbsp;Αποστολή e-mail!</button></p>
+			                    	<div>
+			                    		<button class="btn btn-success" onclick="location.href=<?php echo "'mailto:".$email."?subject=Καταγγελία #".$_SESSION['complaintID']."'"; ?>;">
+			                    			<i class="fas fa-envelope"></i>&nbsp;Αποστολή e-mail!
+			                    		</button>
+			                    	</div>
+			                    </p>
+			                    	
 			                    <?php }; ?>
 			                </div>
 			              </div>
@@ -41,6 +47,7 @@ include ("../time_out_session.php");
 				                                        Διεύθυνση Επιχείρησης: <?php echo $company_address; ?><br>
 				                                        ΑΦΜ Επιχείρησης: <?php echo $company_taxId; ?><br>
 				                                        Τηλέφωνο επικοινωνίας Επιχείρησης: <?php echo $company_phone; ?><br>
+				                                        <div>
 				                                        <?php if ($company_address == "-"){ ?>
 									                    	<button class="btn btn-success" onclick="
 									                    	<?php echo"window.open('https://www.vrisko.gr/search/".$company_name."/')";?>
@@ -55,6 +62,7 @@ include ("../time_out_session.php");
 									                    	</button>
 
 									                    	<?php } ?>
+									                    	</div>
 										                      </p>
 				                </div>
 			            	</div>
