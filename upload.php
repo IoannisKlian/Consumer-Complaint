@@ -36,9 +36,11 @@ if(!empty($_FILES["file"]["name"])) {
 		    if ($_FILES["file"]["size"] < 8000000) {
 
 		        if(move_uploaded_file($_FILES["file"]["tmp_name"],$targetFilePath )){
-		        	mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now() ,0)");
+		        	date_default_timezone_set('Europe/Athens');
+
+		        	mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."','".date('Y-m-d H:i:s')."',0)");
 					$complaint_id = mysqli_insert_id($connection);
-					date_default_timezone_set('Europe/Athens');
+					
 
 					$log = "Καταχώρηση καταγγελίας";
 					mysqli_query($connection,"INSERT INTO log (`description`, `datetime`, `complaint_id`) 
@@ -70,9 +72,11 @@ if(!empty($_FILES["file"]["name"])) {
     }
 }
 else{
-	mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."',now() ,0)");
+	date_default_timezone_set('Europe/Athens');
+
+	mysqli_query($connection,"INSERT INTO complaint VALUES ( DEFAULT ,'".$fullname."' ,'".$email."','".$phone."','".$company_name."','".$company_address."','".$company_phone."','".$company_taxId."','".$comment."','".date('Y-m-d H:i:s')."',0)");
 		$complaint_id = mysqli_insert_id($connection);
-		date_default_timezone_set('Europe/Athens');
+		
 		$log = "Καταχώρηση καταγγελίας";
 		mysqli_query($connection,"INSERT INTO log (`description`, `datetime`, `complaint_id`) 
 									VALUES ('".$log."','".date('Y-m-d H:i:s')."','".$complaint_id."')");

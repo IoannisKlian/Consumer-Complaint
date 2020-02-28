@@ -12,19 +12,7 @@ CREATE TABLE IF NOT EXISTS `employee_complaint` (
   KEY `foreign_key_employee_id` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Άδειασμα δεδομένων του πίνακα `employee_complaint`
---
 
-INSERT INTO `employee_complaint` (`employee_id`, `complaint_id`, `datetime`) VALUES
-(4, 27, '2019-12-11 15:25:10'),
-(1, 28, '2019-12-11 15:37:32'),
-(3, 29, '2019-12-11 15:52:55'),
-(4, 40, '2019-12-11 16:34:51');
-
---
--- Περιορισμοί για άχρηστους πίνακες
---
 
 --
 -- Περιορισμοί για πίνακα `employee_complaint`

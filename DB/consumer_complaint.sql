@@ -28,11 +28,7 @@ CREATE TABLE `complaint` (
 -- Άδειασμα δεδομένων του πίνακα `complaint`
 --
 
-INSERT INTO `complaint` (`id`, `complainant_name`, `email`, `phonenumber`, `company_name`, `company_adress`, `company_phone`, `company_taxid`, `description`, `subdate`, `status`) VALUES
-(1, 'empty', 'empty', 'empty', 'test1', 'empty', 'empty', 'empty', 'test1', '2019-11-28 15:18:59', 1),
-(2, 'empty', 'empty', 'empty', 'test2', 'empty', 'empty', 'empty', 'test2', '2019-11-28 15:19:13', 0),
-(3, 'empty', 'empty', 'empty', 'test3 assign to else', 'empty', 'empty', 'empty', 'test3 to else', '2019-11-28 15:19:37', 1),
-(4, 'empty', 'empty', 'empty', 'test4', 'empty', 'empty', 'empty', 'test4', '2019-11-28 15:31:06', 0);
+
 
 -- --------------------------------------------------------
 
