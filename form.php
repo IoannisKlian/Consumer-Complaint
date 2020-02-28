@@ -79,7 +79,7 @@
 
           <div class="col-md-4 mb-3">
             <div id="named-container">
-              <label class="form-check-label" for="checkbox">Επιλογή επώνυμης καταγγελίας</label>
+              <label class="form-check-label" for="checkbox">Αποδοχή κοινοποίησης προσωπικών στοιχείων στον καταγγελόμενο</label>
               <input type="checkbox" id="checkbox" name="checkbox" value="Yes">
             </div>
           </div>
