@@ -60,7 +60,7 @@
 	      <div class="col-sm-12">
 	        <div class="card">
 	            <div class="card-body">
-	                <h5 class="card-title">Περιγραφή προβλήματος</h5>
+	                <h5 class="card-title">Περιγραφή</h5>
 	                <p class="card-text"> <?php echo $comment; ?></p>
 	              </div>
 	            </div>
@@ -74,7 +74,7 @@
 		      	<div class="col-sm-12">
 		        	<div class="card">
 		            	<div class="card-body">
-			                <h5 class="card-title">Αποδεικτικά στοιχεία</h5>
+			                <h5 class="card-title">Συνοδευτικά στοιχεία</h5>
 			                <?php 
 		                		$query = 'SELECT * FROM file 
 		                      WHERE complaint_id = '.$complaintID;

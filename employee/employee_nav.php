@@ -48,13 +48,13 @@
 
       <!-- Open -->
       <li class="nav-item" id="index" style="border-right: solid;  border-color: #a1f8ff;">
-        <a class="nav-link" id="employee-open" href="../complaint-list/?page_id=0">Ανοιχτά <?php echo "(".$total_rows_open.")"; ?></a>
+        <a class="nav-link" id="employee-open" href="../complaint-list/?page_id=0">Μη αναληφθείσες<?php echo " (".$total_rows_open.")"; ?></a>
       </li>
 
       <!-- Pending -->
       <li class="nav-item dropdown" id="pending" style="border-right: solid; border-color: #a1f8ff;">
         <a class="nav-link dropdown-toggle" href="../complaint-list/" id="employee-pending" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Εκκρεμή<?php echo " (".$total_rows_pending_all.")"; ?>
+          Ενεργές<?php echo " (".$total_rows_pending_all.")"; ?>
         </a>
 
         <!-- Pending Subcategories -->
@@ -72,7 +72,7 @@
       </li>
       <!-- Archived -->
       <li class="nav-item" id="archived">
-        <a class="nav-link" id="employee-archived" href="../complaint-list/?page_id=4">Αρχειοθετημένα<?php echo " (".$total_rows_closed.")"; ?></a>
+        <a class="nav-link" id="employee-archived" href="../complaint-list/?page_id=4">Κλειστές<?php echo " (".$total_rows_closed.")"; ?></a>
       </li>
 
       <?php if($_SESSION['admin'] == 1){?>
@@ -83,7 +83,7 @@
 
       <!-- Log Out Button and Employee Name -->
       <li class="nav-item" style="text-align: right;">
-        <div class="btn"><?php echo $_SESSION["name"]?></div>       
+        <div class="btn"><?php echo "Χειριστής: ".$_SESSION["name"]?></div>       
         
         <a href="../logout.php" class="btn btn-info btn-sm btn-dark">
           <span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση

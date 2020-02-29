@@ -17,13 +17,13 @@
     <!-- Determine Category  -->
     <b style="color: white"><?php 
           if ($complaint_navigation["status"] == 0) {
-            echo "Ανοιχτά / ";
+            echo "Μη αναληφθείσες / ";
           }
           else if ($complaint_navigation["status"] == 1) {
-            echo "Eκκρεμή / ";
+            echo "Ενεργές / ";
           }
           else if ($complaint_navigation["status"] == 2) {
-            echo "Αρχειοθετημένα / ";
+            echo "Κλειστές / ";
           }
           echo $complaint_navigation["company_name"];?>
     </b> 

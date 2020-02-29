@@ -6,7 +6,7 @@
 
 <HTML>
 <head>
-  <title>Φόρμα Καταγγελίας Υπηρεσίας</title>
+  <title>Καταγγελία</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -49,7 +49,7 @@
 
   <!-- Title -->
   <div class="form-label" style="background-color: #e9ecef" > 
-    <div style="font-size: 3vh; color: #5b5d5f; padding-left:5%; padding-top: 1vh; padding-bottom: 1vh;"> Φόρμα Καταγγελίας Υπηρεσίας</div>
+    <div style="font-size: 3vh; color: #5b5d5f; padding-left:5%; padding-top: 1vh; padding-bottom: 1vh;">Καταγγελία</div>
   </div>
 
   <!-- Main container -->
@@ -60,7 +60,7 @@
 
       <!-- Title for Complainer  -->
       <div class="form-label" style="background-color: #e9ecef"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Ατομικά Στοιχεία</div>
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;">Στοιχεία καταναλωτή</div>
       </div>
 
       <!-- DIV for complainer -->
@@ -79,7 +79,7 @@
 
           <div class="col-md-4 mb-3">
             <div id="named-container">
-              <label class="form-check-label" for="checkbox">Αποδοχή κοινοποίησης προσωπικών στοιχείων στον καταγγελόμενο</label>
+              <label class="form-check-label" for="checkbox">Αποδοχή κοινοποίησης προσωπικών στοιχείων στον καταγγελλόμενο</label>
               <input type="checkbox" id="checkbox" name="checkbox" value="Yes">
             </div>
           </div>
@@ -102,7 +102,7 @@
 
       <!-- Title for Enterprise  -->
       <div class="form-label" style="background-color: #e9ecef;"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία Επιχείρησης</div>
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία καταγγελλόμενης επιχείρησης</div>
       </div>
 
       <!-- DIV for Enterprise -->
@@ -147,7 +147,7 @@
 
       <!-- Title for Complaint Details  -->
       <div class="form-label" style="background-color: #e9ecef;"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία Προβλήματος</div>
+        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Καταγγελλόμενο περιστατικό</div>
       </div>
 
       <!-- DIV for Complaint Details -->
@@ -155,7 +155,7 @@
         <div class="form-row" style="padding: 0; margin:0;">
           <div class="input-group col-md-8">
             <div class="input-group-prepend">
-            <span class="input-group-text">Περιγραφή προβλήματος*</span>
+            <span class="input-group-text">Περιγραφή*</span>
           </div>
           <textarea style="resize: none;" rows="3" type="text" class="form-control" aria-label="Περιγραφή προβλήματος" id="comment" name="comment" placeholder="Δώστε πληροφορίες σχετικά με το πρόβλημα που αντιμετωπίζεται" required></textarea>
           </div>
@@ -165,7 +165,7 @@
         <div class="form-row" style="padding: 0; margin:0;">
         	<div class="input-group col-md-8">
         	  <div class="input-group-prepend">
-        	    <span class="input-group-text" id="inputGroupFileAddon01">Αποδεικτικά στοιχεία</span>
+        	    <span class="input-group-text" id="inputGroupFileAddon01">Συνοδευτικά στοιχεία</span>
         	  </div>
             <div class="file-loading">
                   <input id="file" name="file" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
@@ -178,7 +178,7 @@
 
       <div class="row" style="padding:0; margin: 0; ">
         <div class="col-sm-4" style="padding-left: 5%;">
-          <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Καταχώρηση</button>
+          <button type="button" class="btn btn-secondary" value="Submit" id="submit-btn" >Υποβολή καταγγελίας</button>
         </div>
 <!--         <div class="col-sm-4">
           <button type="button" class="btn btn-secondary" value="Submit" id="test-btn" >Test (Temp)</button>
