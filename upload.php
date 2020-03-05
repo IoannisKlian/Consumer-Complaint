@@ -46,7 +46,7 @@ if(!empty($_FILES["file"]["name"])) {
 					mysqli_query($connection,"INSERT INTO log (`description`, `datetime`, `complaint_id`) 
 									VALUES ('".$log."','".date('Y-m-d H:i:s')."','".$complaint_id."')");
 
-		        	mysqli_query($connection,"INSERT INTO file (id, name, complaint_id) 
+		        	mysqli_query($connection,"INSERT INTO file (`id`, `name`, `complaint_id`) 
 												VALUES (DEFAULT, '".$fileName."', '".$complaint_id."')");
 		        	include ("employee/email_notification.php");
 		        	echo '<script type="text/javascript">','location.replace("successFormFilling.php?cid='.$complaint_id.'&email='.$email.'&em='.$emailExist.'");','</script>';
