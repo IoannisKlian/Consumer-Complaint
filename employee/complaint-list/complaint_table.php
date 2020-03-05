@@ -10,7 +10,7 @@ include ("../time_out_session.php");
     <thead class="thead-dark">
     <tr>
       <th scope="col">Αριθμός καταγγελίας</th>
-      <th scope="col">Καταγγελόμενη επιχείρηση</th>
+      <th scope="col">Καταγγελλόμενη επιχείρηση</th>
       <th scope="col">Στοιχεία καταναλωτή</th>
       <th scope="col">Ημερομηνία υποβολής</th>
       <th scope="col">Αναλήφθηκε από</th>
