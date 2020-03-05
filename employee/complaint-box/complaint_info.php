@@ -24,9 +24,9 @@ include ("../time_out_session.php");
 			                <div class="card-body">
 			                  <h5 class="card-title">Στοιχεία καταναλωτή  </h5>
 			                  <p class="card-text">
-			                    Ονομ/νυμο: <?php echo $fullname; ?><br>
-			                    Τηλέφωνο επικοινωνίας: <?php echo $phone; ?><br>
-			                    Διεύθυνση e-mail: <?php echo $email; ?>
+			                    Ονομ/νυμο: <b><?php echo $fullname; ?></b><br>
+			                    Τηλέφωνο επικοινωνίας:<b> <?php echo $phone; ?></b><br>
+			                    Διεύθυνση e-mail: <b><?php echo $email; ?></b>
 			                    <?php if ($email != "-"){ ?>
 			                    	<div>
 			                    		<button class="btn btn-success" onclick="location.href=<?php echo "'mailto:".$email."?subject=Καταγγελία #".$_SESSION['complaintID']."'"; ?>;">
@@ -43,10 +43,10 @@ include ("../time_out_session.php");
 							<div class="card">
 				                <div class="card-body">
 				                  <h5 class="card-title">Στοιχεία καταγγελλόμενης επιχείρησης</h5>
-				                  <p class="card-text"> Επωνυμία επιχείρησης: <?php echo $company_name; ?><br>
-				                                        Διεύθυνση επιχείρησης: <?php echo $company_address; ?><br>
-				                                        ΑΦΜ επιχείρησης: <?php echo $company_taxId; ?><br>
-				                                        Τηλέφωνο επικοινωνίας επιχείρησης: <?php echo $company_phone; ?><br>
+				                  <p class="card-text"> Επωνυμία επιχείρησης: <b><?php echo $company_name; ?></b><br>
+				                                        Διεύθυνση επιχείρησης: <b><?php echo $company_address; ?></b><br>
+				                                        ΑΦΜ επιχείρησης: <b><?php echo $company_taxId; ?></b><br>
+				                                        Τηλέφωνο επικοινωνίας επιχείρησης: <b><?php echo $company_phone; ?></b><br>
 				                                        <div>
 				                                        <?php if ($company_address == "-"){ ?>
 									                    	<button class="btn btn-success" onclick="
