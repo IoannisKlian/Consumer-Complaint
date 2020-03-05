@@ -27,7 +27,9 @@ include ("../time_out_session.php");
 			                    Ονομ/νυμο: <b><?php echo $fullname; ?></b><br>
 			                    Τηλέφωνο επικοινωνίας:<b> <?php echo $phone; ?></b><br>
 			                    Διεύθυνση e-mail: <b><?php echo $email; ?></b>
-			                    <?php if ($email != "-"){ ?>
+			                    <?php 
+			                    	if ($email != "-" && $status == 1){ 
+			                    ?>
 			                    	<div>
 			                    		<button class="btn btn-success" onclick="location.href=<?php echo "'mailto:".$email."?subject=Καταγγελία #".$_SESSION['complaintID']."'"; ?>;">
 			                    			<i class="fas fa-envelope"></i>&nbsp;Αποστολή e-mail!

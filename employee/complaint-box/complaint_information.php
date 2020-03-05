@@ -62,6 +62,8 @@ include ("../time_out_session.php");
 			$comment = "Χωρίς περιγραφή!";
 		}
 
+		$status = $row['status'];
+
 		$date_added = $row['subdate'];
 
 ?>
