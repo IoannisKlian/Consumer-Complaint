@@ -7,9 +7,9 @@ include ("../time_out_session.php");
 ?>
 
 <ul class="pagination justify-content-end" style="position: relative; margin: auto auto; bottom: -15px;">
-    <li><a class="page-link" href="?pageno=1">First</a></li>
+    <li><a class="page-link" href="?pageno=1">Πρώτο</a></li>
     <li class="<?php if($pageno <= 1){ echo 'page-item disabled'; } ?>">
-        <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+        <a class="page-link" href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Προηγούμενο</a>
     </li>
     <?php
       for ($i = 1; $i <= $total_pages; $i++) {
@@ -19,9 +19,9 @@ include ("../time_out_session.php");
       } 
     ?>
     <li class="<?php if($pageno >= $total_pages){ echo 'page-item disabled'; } ?>">
-        <a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+        <a class="page-link" href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Επόμενο</a>
     </li>
-    <li><a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+    <li><a class="page-link" href="?pageno=<?php echo $total_pages; ?>">Τελευταίο</a></li>
 </ul>
 
 
