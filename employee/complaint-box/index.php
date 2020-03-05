@@ -110,7 +110,7 @@
 	    <!-- Assign and Close Buttons -->
 		<div class="card-body">
 		    <div class="row">
-		      <div class="col-sm-4">
+		      <div class="col-sm-2">
 		    <?php
 		      if(isset($_SESSION['user_id'])){
 
@@ -152,7 +152,7 @@
 			    </div>
 
 
-			      <div class="col-sm-4">
+			      <div class="col-sm-8" style="text-align: center;">
 			      <?php        
 			         echo "Η καταγγελία έχει αναληφθεί απο ".$row_employee['name']." στις ".$row_employee['datetime'];   
 			       }
@@ -160,7 +160,7 @@
 
 			        </div>
 
-			        <div class="col-sm-4" style="text-align: right;">
+			        <div class="col-sm-2" style="text-align: right;">
 			        <?php
 
 			       // Enable/Disable "Close Case" Button depending on the employee's ID.

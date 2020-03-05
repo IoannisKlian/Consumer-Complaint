@@ -12,7 +12,7 @@
 ?>
 
 <div class="row bg-dark" style="margin: auto; flex-grow: 1;">
-  <div class="col-sm-2 btn">
+  <div class="col-sm-4 btn" style="text-align: left;">
 
     <!-- Determine Category  -->
     <b style="color: white"><?php 
@@ -30,7 +30,7 @@
   </div>  
 
   <!-- Empty Space -->
-  <div class="col-sm-6"> 
+  <div class="col-sm-4"> 
   </div> 
 
   <!-- Button for First Tab -->

@@ -49,7 +49,7 @@
 
   <!-- Title -->
   <div class="form-label" style="background-color: #e9ecef" > 
-    <div style="font-size: 3vh; color: #5b5d5f; padding-left:5%; padding-top: 1vh; padding-bottom: 1vh;">Καταγγελία</div>
+    <div style="font-size: 2em; color: #5b5d5f; padding-left:5%; padding-top: 1vh; padding-bottom: 1vh;">Καταγγελία</div>
   </div>
 
   <!-- Main container -->
@@ -60,7 +60,7 @@
 
       <!-- Title for Complainer  -->
       <div class="form-label" style="background-color: #e9ecef"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;">Στοιχεία καταναλωτή</div>
+        <div style="font-size: 1.3em; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;">Στοιχεία καταναλωτή</div>
       </div>
 
       <!-- DIV for complainer -->
@@ -102,7 +102,7 @@
 
       <!-- Title for Enterprise  -->
       <div class="form-label" style="background-color: #e9ecef;"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία καταγγελλόμενης επιχείρησης</div>
+        <div style="font-size: 1.3em; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Στοιχεία καταγγελλόμενης επιχείρησης</div>
       </div>
 
       <!-- DIV for Enterprise -->
@@ -147,7 +147,7 @@
 
       <!-- Title for Complaint Details  -->
       <div class="form-label" style="background-color: #e9ecef;"> 
-        <div style="font-size: 2vh; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Καταγγελλόμενο περιστατικό</div>
+        <div style="font-size: 1.3em; color: #5b5d5f; padding-left:5%; padding-top: 0.5vh; padding-bottom: 0.5vh;"> Καταγγελλόμενο περιστατικό</div>
       </div>
 
       <!-- DIV for Complaint Details -->

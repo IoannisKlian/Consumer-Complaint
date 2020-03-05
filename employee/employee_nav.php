@@ -83,7 +83,7 @@
 
       <!-- Log Out Button and Employee Name -->
       <li class="nav-item" style="text-align: right;">
-        <div class="btn"><?php echo "Χειριστής: ".$_SESSION["name"]?></div>       
+        <div class="btn"><?php echo "<b>Χειριστής:</b> ".$_SESSION["name"]?></div>       
         
         <a href="../logout.php" class="btn btn-info btn-sm btn-dark">
           <span class="glyphicon glyphicon-log-out"></span> Αποσύνδεση

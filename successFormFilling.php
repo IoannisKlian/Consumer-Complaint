@@ -10,7 +10,7 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h2 class="display-4">Η καταγγελία καταχωρήθηκε με αριθμό #<?php  if (isset($_GET['cid'])&&!empty($_GET['cid'])){echo $_GET['cid'];}?> </h2>
+  <h3 class="display-4">Η καταγγελία καταχωρήθηκε με αριθμό #<?php  if (isset($_GET['cid'])&&!empty($_GET['cid'])){echo $_GET['cid'];}?> </h3>
   <p class="lead">
   	<strong>
 	  	<?php 
